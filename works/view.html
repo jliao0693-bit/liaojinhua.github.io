@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>作品详情 · 12 的个人空间</title>
+  <meta name="description" content="12 的个人空间 · 作品详情。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <!-- Inter + Noto Sans SC, same stack as the home page. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here" data-view-crumb>作品详情</span>
+    </nav>
+
+    <!-- 由 assets/work-view.js 用 localStorage 里的新增作品渲染；
+         出厂作品的详情是静态页，这里会直接 replace 过去。 -->
+    <div data-view hidden>
+      <header class="phead">
+        <span class="phead__eyebrow glass glass--soft glass--d35" data-view-eyebrow>Case Study</span>
+        <h1 class="phead__title" data-view-title>作品详情</h1>
+        <p class="phead__lead" data-view-lead></p>
+      </header>
+
+      <section class="case-meta" aria-label="项目信息" data-view-meta></section>
+
+      <section class="block" aria-labelledby="view-visual-title" data-view-figure>
+        <h2 class="sr-only" id="view-visual-title">封面</h2>
+        <figure class="figure figure--cover">
+          <img class="figure__img" data-view-cover src="" alt="" />
+          <figcaption class="figure__cap" data-view-cap></figcaption>
+        </figure>
+      </section>
+
+      <section class="block" aria-labelledby="view-body-title">
+        <div class="block__head">
+          <h2 class="block__title" id="view-body-title">项目背景</h2>
+          <p class="block__note" data-view-body-note></p>
+        </div>
+        <div class="panel glass glass--soft glass--d60">
+          <div class="prose" data-view-body></div>
+        </div>
+      </section>
+
+      <section class="block block--last" aria-labelledby="view-tools-title">
+        <div class="block__head">
+          <h2 class="block__title" id="view-tools-title">继续</h2>
+          <p class="block__note">这个条目保存在本机浏览器里</p>
+        </div>
+        <div class="view-acts">
+          <a class="btn btn--primary" href="../works.html">返回作品列表</a>
+          <a class="btn btn--ghost" data-view-edit href="../manage.html">在作品管理里编辑</a>
+        </div>
+      </section>
+    </div>
+
+    <section class="block" data-missing hidden>
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>没有找到这个作品。可能是链接里的 slug 不对，或者这条本地新增的作品已经被删除了。</p>
+          <p><a href="../works.html">回到作品列表</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+      <hr class="footer__divider" />
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+
+  <script src="../assets/works-index.js"></script>
+  <script src="../assets/works-store.js"></script>
+  <script src="../assets/work-view.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>关于我 · 12 的个人空间</title>
+  <meta name="description" content="12，复合型 UI/UX 与视觉设计师，现居成都：深耕 C 端产品体验设计，覆盖交互方案、高保真界面、设计规范与营销素材，历史设计还原度 98%。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="index.html">首页</a>
+        <a class="nav__link" href="works.html">作品</a>
+        <a class="nav__link" href="design-system.html">设计规范</a>
+        <a class="nav__link" href="about.html" aria-current="page">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">关于我</span>
+    </nav>
+
+    <section class="profile" aria-labelledby="about-name">
+      <img class="profile__avatar" src="assets/images/avatar.png" width="148" height="148"
+        alt="12 的头像：水彩插画风格，抱着黑色小猫的女孩" />
+
+      <div class="profile__body">
+        <h1 class="profile__name" id="about-name">你好，我是 12</h1>
+        <p class="profile__role">UI/UX 与视觉设计师 · 现居成都 · 接受远程协作</p>
+        <div class="profile__bio">
+          <p>复合型 UI/UX 与视觉设计师。深耕 C 端产品体验设计，擅长将复杂的业务需求转化为清晰、可落地的交互方案与高保真界面，精通响应式 Web 与移动端设计，能妥善处理多语言及各类异常状态展示。</p>
+          <p>具备扎实的排版、色彩与字体功底，不仅能主导产品端界面与设计规范搭建，更能独立产出高质量营销素材（Banner / 社媒图）并完成基础营销短视频（剪辑 / 动效）的制作。</p>
+          <p>具备丰富的敏捷开发与驻场经验，对设计还原度与交付质量有极高要求（历史还原度 98%）。在 AI 赋能方面，熟练使用 ChatGPT、Lovart 等工具进行创意发散与提效，致力于用设计驱动用户增长与业务转化。</p>
+        </div>
+        <div class="profile__actions">
+          <a class="btn btn--primary" href="works.html">查看作品</a>
+          <a class="btn btn--ghost glass glass--d35" href="design-system.html">我的设计规范</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="num-title">
+      <h2 class="sr-only" id="num-title">数字概览</h2>
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">4 年</span>
+          <span class="stat__label">界面与视觉设计经验</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">30+</span>
+          <span class="stat__label">交付项目，覆盖 App / 后台 / 营销</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 套</span>
+          <span class="stat__label">从零搭建并维护的设计系统</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="skill-title">
+      <div class="block__head">
+        <h2 class="block__title" id="skill-title">技能与工具</h2>
+        <p class="block__note">按熟练度排序</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="skills-row">
+          <span class="skills-row__k">能力</span>
+          <ul class="skills" aria-label="设计能力">
+            <li class="skill glass">UI 设计</li>
+            <li class="skill glass">视觉设计</li>
+            <li class="skill glass">设计系统</li>
+            <li class="skill glass">动效</li>
+            <li class="skill glass">C 端社交</li>
+            <li class="skill glass">B 端大屏</li>
+            <li class="skill glass">数据可视化</li>
+          </ul>
+        </div>
+
+        <div class="skills-row">
+          <span class="skills-row__k">工具</span>
+          <ul class="skills" aria-label="设计与 AI 工具">
+            <li class="skill glass">Figma</li>
+            <li class="skill glass">MasterGo</li>
+            <li class="skill glass">Adobe XD</li>
+            <li class="skill glass">AIGC（ChatGPT / Lovart）</li>
+          </ul>
+        </div>
+
+        <p class="skills-note">
+          <strong>擅长</strong>把混乱的界面收敛成有秩序的系统：先从信息结构入手，再定组件，最后才是视觉。精通 iOS / Web
+          端设计规范（HIG），具备丰富的驻场与敏捷开发经验，能直接和前端一起对 token 与标注，保障设计稿落地还原度达 95%–98%。
+        </p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="exp-title">
+      <div class="block__head">
+        <h2 class="block__title" id="exp-title">工作经历</h2>
+        <p class="block__note">2023.04 — 至今</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ol class="timeline">
+          <li class="tl-item">
+            <span class="tl-when">2025.05 — 2026.11</span>
+            <div>
+              <p class="tl-what">UI 设计师 · 成都月辉星煜有限公司</p>
+              <p class="tl-desc">负责垂直领域社交直播 iOS App 视觉设计与体验迭代。主导直播间重构，结合微动效与毛玻璃效果打造沉浸式直播体验。负责社交互动全链路优化，并严格遵循 Apple HIG 规范，从 0 到 1 搭建专属社交组件库，保障还原度 95% 以上。</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-when">2023.04 — 2025.04</span>
+            <div>
+              <p class="tl-what">UI 设计师 · 成都景晖科技有限公司</p>
+              <p class="tl-desc">负责「啾啾」情感倾诉社交 App 整体 UI 视觉与动效规范；独立承担凉山州政务大屏及采编审媒资系统（B 端）设计；负责银行金融 App（出海）及学英语平台 App 的 UI 设计。建立组件化设计系统，成功解决 15+ 项还原问题，设计匹配度达 98%。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="contact-title">
+      <div class="block__head">
+        <h2 class="block__title" id="contact-title">联系方式</h2>
+        <p class="block__note">通常 24 小时内回复</p>
+      </div>
+
+      <a class="contact contact--wide glass glass--soft glass--d35" href="mailto:2366790328@qq.com">
+        <span class="contact__label">Email</span>
+        <span class="contact__value">2366790328@qq.com</span>
+      </a>
+    </section>
+
+    <section class="block block--last" aria-labelledby="how-title">
+      <div class="panel glass glass--soft glass--d60">
+        <h2 class="block__title" id="how-title">和我合作会经历什么</h2>
+        <ul class="checklist" style="margin-top: 16px">
+          <li>先花半天对齐问题与成功标准，再开始画界面。</li>
+          <li>每轮评审给出可执行的选项，而不是只有一张漂亮图。</li>
+          <li>交付物包含组件、标注、状态与边界情况说明。</li>
+          <li>上线后参与一次走查，把问题收进下一版规范。</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="works.html">作品</a>
+          <a class="footer__link" href="design-system.html">设计规范</a>
+          <a class="footer__link" href="about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>
+

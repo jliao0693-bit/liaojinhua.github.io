@@ -1,0 +1,377 @@
+/* ============================================================================
+   运营 / 营销活动页 —— 封面 292x200 / 主视觉 824x474
+   ----------------------------------------------------------------------------
+   三个作品共用一份 CSS，靠 .pm-cv--* / .pm-hero--* 切换色与版式：
+     · summer-fair       夏日趣市 · 电商促销（纸白 + 天蓝 + 鸭黄 + 芥绿）
+     · finance-campaign  金融活动页三张（墨黑 + 香槟金 + 琥珀橙 + 品牌蓝）
+     · reading-campaign  阅读 App 充值返券（奶油白 + 玫红 + 珊瑚橙）
+   活动页本身是交付稿原图（assets/images/*-page.png / finance-campaign-*.png），
+   这里只做「底色 + 文案 + 长图斜放」的拼版，不重绘任何页面。
+   ========================================================================== */
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fdfaf3;
+  overflow: hidden;
+}
+
+p { margin: 0; }
+
+.pm-cv,
+.pm-hero {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(158deg, #fffdf7 0%, #fff7e2 52%, #eef7e6 100%);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* 长页外框：封面与主视觉共用，只改尺寸；object-position 50% 0 取长页顶部 */
+.pm-shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(40, 40, 40, .1);
+  box-shadow: 0 14px 30px rgba(60, 50, 30, .2);
+}
+
+.pm-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+
+/* 价签纸：夏日趣市的「满 50 / 100 / 200」三行，做成一张小白卡 */
+.pm-tag {
+  position: absolute;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: #fffdf6;
+  border: 1px solid rgba(46, 158, 91, .22);
+  box-shadow: 0 10px 22px rgba(80, 70, 30, .18);
+}
+
+.pm-tag__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pm-tag__row + .pm-tag__row { margin-top: 4px; }
+
+.pm-tag__k {
+  font-size: 6px;
+  font-weight: 700;
+  color: #6b7a5f;
+}
+
+.pm-tag__v {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: -.3px;
+  color: #1fb6e8;
+}
+
+.pm-tag__v em {
+  font-style: normal;
+  color: #2e9e5b;
+}
+
+/* 小徽标：阅读活动页的「90% OFF」，玫红底白字 */
+.pm-badge {
+  position: absolute;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #f1267a;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  box-shadow: 0 10px 22px rgba(220, 30, 100, .3);
+}
+
+.pm-badge small {
+  display: block;
+  margin-top: 1px;
+  font-size: 5.5px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  color: rgba(255, 255, 255, .82);
+}
+
+/* ================================================================ 封面 292x200 */
+.pm-cv__copy {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  width: 152px;
+}
+
+.pm-cv__eyebrow {
+  display: inline-block;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: rgba(31, 182, 232, .18);
+  color: #1687b0;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .9px;
+}
+
+.pm-cv__title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -.6px;
+  color: #2b3a2f;
+}
+
+.pm-cv__rule {
+  display: block;
+  width: 3px;
+  height: 19px;
+  border-radius: 2px;
+  background: #1fb6e8;
+}
+
+.pm-cv__en {
+  margin-top: 7px;
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  color: #1c94be;
+}
+
+.pm-cv__sub {
+  margin-top: 9px;
+  font-size: 9px;
+  line-height: 1.6;
+  color: #6d7a68;
+}
+
+.pm-cv__meta {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  color: #7a8471;
+}
+
+.pm-cv__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f6c53f;
+}
+
+/* ------------------------------------------------ 金融活动页：墨黑 + 香槟金 */
+.pm-cv--fin,
+.pm-hero--fin {
+  background: linear-gradient(160deg, #17120a 0%, #0d0b07 56%, #1d1409 100%);
+}
+
+.pm-cv--fin .pm-cv__eyebrow,
+.pm-hero--fin .pm-hero__eyebrow {
+  background: rgba(233, 201, 126, .16);
+  color: #e9c97e;
+}
+
+.pm-cv--fin .pm-cv__title,
+.pm-hero--fin .pm-hero__title { color: #f6efdf; }
+
+.pm-cv--fin .pm-cv__rule,
+.pm-hero--fin .pm-hero__rule { background: #e9c97e; }
+
+.pm-cv--fin .pm-cv__en,
+.pm-hero--fin .pm-hero__en { color: #d9b169; }
+
+.pm-cv--fin .pm-cv__sub,
+.pm-hero--fin .pm-hero__lead { color: #b6a891; }
+
+.pm-cv--fin .pm-cv__meta,
+.pm-hero--fin .pm-hero__note { color: #9b8f7a; }
+
+.pm-cv--fin .pm-cv__dot,
+.pm-hero--fin .pm-hero__note i { background: #ff8a3d; }
+
+.pm-cv--fin .pm-shot,
+.pm-hero--fin .pm-shot {
+  border-color: rgba(233, 201, 126, .28);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .55);
+}
+
+/* ------------------------------------------------ 阅读充值页：奶油白 + 玫红 */
+.pm-cv--read,
+.pm-hero--read {
+  background: linear-gradient(158deg, #fffaf5 0%, #fff0ea 50%, #ffe6ee 100%);
+}
+
+.pm-cv--read .pm-cv__eyebrow,
+.pm-hero--read .pm-hero__eyebrow {
+  background: rgba(241, 38, 122, .14);
+  color: #d21f68;
+}
+
+.pm-cv--read .pm-cv__title,
+.pm-hero--read .pm-hero__title { color: #33222a; }
+
+.pm-cv--read .pm-cv__rule,
+.pm-hero--read .pm-hero__rule { background: #f1267a; }
+
+.pm-cv--read .pm-cv__en,
+.pm-hero--read .pm-hero__en { color: #e0397c; }
+
+.pm-cv--read .pm-cv__sub,
+.pm-hero--read .pm-hero__lead { color: #7c6068; }
+
+.pm-cv--read .pm-cv__dot,
+.pm-hero--read .pm-hero__note i { background: #ff8a3d; }
+
+/* ============================================================= 主视觉 824x474 */
+.pm-hero__copy {
+  position: absolute;
+  left: 56px;
+  top: 70px;
+  width: 384px;
+}
+
+.pm-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: rgba(31, 182, 232, .18);
+  color: #1489b4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.pm-hero__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -1.6px;
+  color: #2b3a2f;
+}
+
+.pm-hero__rule {
+  display: block;
+  width: 5px;
+  height: 38px;
+  border-radius: 3px;
+  background: #1fb6e8;
+}
+
+.pm-hero__en {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1c94be;
+}
+
+.pm-hero__lead {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #62705c;
+}
+
+.pm-hero__chips {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.pm-hero__chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .86);
+  border: 1px solid rgba(31, 182, 232, .34);
+  color: #1489b4;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pm-hero--fin .pm-hero__chip {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(233, 201, 126, .34);
+  color: #e9c97e;
+}
+
+.pm-hero--read .pm-hero__chip {
+  border-color: rgba(241, 38, 122, .3);
+  color: #d21f68;
+}
+
+.pm-hero__note {
+  position: absolute;
+  left: 56px;
+  bottom: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #7a8471;
+  font-variant-numeric: tabular-nums;
+}
+
+.pm-hero__note i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f6c53f;
+}
+
+.pm-hero__note b {
+  margin-left: 14px;
+  color: #2e9e5b;
+}
+
+.pm-hero--fin .pm-hero__note b { color: #e9c97e; }
+.pm-hero--read .pm-hero__note b { color: #d21f68; }
+
+/* 主视觉里的价签纸与徽标放大一档 */
+.pm-hero .pm-tag {
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.pm-hero .pm-tag__row + .pm-tag__row { margin-top: 9px; }
+.pm-hero .pm-tag__k { font-size: 10px; }
+.pm-hero .pm-tag__v { font-size: 22px; }
+
+.pm-hero .pm-badge {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 21px;
+}
+
+.pm-hero .pm-badge small {
+  margin-top: 3px;
+  font-size: 10px;
+}

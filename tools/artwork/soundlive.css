@@ -1,0 +1,187 @@
+/* ============================================================================
+   声浪 SoundLive · 音乐直播分享 App
+   ----------------------------------------------------------------------------
+   CSS 化的素材：封面 292x200、主视觉 824x474（都是把你的设计稿原图拼进去，
+   不再用 CSS 重绘界面）。由 tools/build-images.ps1 用无头 Chrome 截图成
+   assets/images/work-soundlive*.png 与 soundlive-hero.png。
+
+   配色沿用 App 自身的暗色霓虹：深墨底 + 玫红 / 紫 / 青，金色只用于金币与等级。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #0f0d13;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 拉丁标题用衬线，和中文字面形成这家 App 的「演出海报」气质 */
+.sl-serif { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+
+/* ---------------------------------------------------------------- 封面 292x200 */
+.sl-cover {
+  position: relative;
+  width: 292px;
+  height: 200px;
+  overflow: hidden;
+  background: radial-gradient(120% 100% at 84% 6%, #3a1440 0%, #1b1220 46%, #100e17 100%);
+}
+
+.sl-cover__glow { position: absolute; border-radius: 50%; filter: blur(30px); }
+.sl-cover__glow--a { width: 170px; height: 170px; left: -52px; bottom: -78px; background: rgba(124, 58, 237, .75); }
+.sl-cover__glow--b { width: 150px; height: 150px; right: -34px; top: -54px; background: rgba(255, 45, 116, .72); }
+
+.sl-cover__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, .18) 1px, transparent 1px);
+  background-size: 9px 9px;
+  opacity: .5;
+  -webkit-mask-image: radial-gradient(circle at 74% 42%, #000 0%, transparent 68%);
+  mask-image: radial-gradient(circle at 74% 42%, #000 0%, transparent 68%);
+}
+
+.sl-cover__badge {
+  position: absolute; left: 17px; top: 16px;
+  padding: 3px 8px 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 45, 116, .6);
+  background: rgba(255, 45, 116, .22);
+  color: #ffd7e4;
+  font-size: 8px; font-weight: 700; letter-spacing: .18em;
+}
+
+.sl-cover__cn {
+  position: absolute; left: 16px; top: 44px;
+  font-size: 44px; font-weight: 800; letter-spacing: .02em;
+  color: #fff;
+  text-shadow: 0 0 26px rgba(255, 45, 116, .6), 0 6px 18px rgba(0, 0, 0, .45);
+}
+
+.sl-cover__en {
+  position: absolute; left: 18px; top: 98px;
+  font-size: 8px; font-weight: 700; letter-spacing: .34em;
+  color: rgba(255, 255, 255, .62);
+}
+
+.sl-cover__sub {
+  position: absolute; left: 18px; top: 114px;
+  font-size: 11px; letter-spacing: .04em;
+  color: rgba(255, 255, 255, .46);
+}
+
+.sl-cover__meta {
+  position: absolute; left: 18px; bottom: 38px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 9px; font-weight: 700; letter-spacing: .06em;
+  color: rgba(255, 255, 255, .78);
+}
+
+.sl-cover__live {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #ff2d74; box-shadow: 0 0 8px #ff2d74;
+}
+
+/* 封面底部的波形 */
+.sl-wave {
+  position: absolute; left: 17px; bottom: 15px;
+  display: flex; align-items: flex-end; gap: 3px;
+  height: 18px;
+}
+.sl-wave span {
+  width: 3px; border-radius: 2px;
+  background: linear-gradient(180deg, #ff2d74, #a855f7);
+  opacity: .92;
+}
+
+/* 真实界面截图：直接用既有设计稿原图（assets/images/soundlive-*.png），
+   不再用 CSS 画一遍界面。位置 / 尺寸 / 角度写在页面 inline style 里。 */
+.sl-shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  box-shadow: 0 26px 54px rgba(0, 0, 0, .62), 0 0 0 5px rgba(255, 255, 255, .045);
+  background: #0f0d13;
+}
+.sl-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ------------------------------------------------------------ 主视觉 824x474 */
+.sl-hero {
+  position: relative;
+  width: 824px;
+  height: 474px;
+  overflow: hidden;
+  background: radial-gradient(120% 120% at 74% -10%, #40154a 0%, #1a1220 44%, #0d0b12 100%);
+}
+
+.sl-hero__glow { position: absolute; border-radius: 50%; filter: blur(70px); }
+.sl-hero__glow--a { width: 380px; height: 380px; left: -120px; bottom: -170px; background: rgba(124, 58, 237, .55); }
+.sl-hero__glow--b { width: 340px; height: 340px; right: -80px; top: -130px; background: rgba(255, 45, 116, .5); }
+.sl-hero__glow--c { width: 240px; height: 240px; left: 300px; top: 210px; background: rgba(43, 231, 200, .22); }
+
+.sl-hero__dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, .16) 1px, transparent 1px);
+  background-size: 12px 12px;
+  opacity: .55;
+  -webkit-mask-image: radial-gradient(circle at 72% 46%, #000 0%, transparent 66%);
+  mask-image: radial-gradient(circle at 72% 46%, #000 0%, transparent 66%);
+}
+
+.sl-hero__copy { position: absolute; left: 56px; top: 96px; width: 340px; }
+
+.sl-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 12px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 45, 116, .5);
+  background: rgba(255, 45, 116, .18);
+  color: #ffd7e4;
+  font-size: 10px; font-weight: 700; letter-spacing: .2em;
+}
+
+.sl-hero__title {
+  margin-top: 22px;
+  font-size: 62px; font-weight: 800; line-height: 1; letter-spacing: .01em;
+  color: #fff;
+  text-shadow: 0 0 40px rgba(255, 45, 116, .5);
+}
+
+.sl-hero__en {
+  margin-top: 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: .46em;
+  color: rgba(255, 255, 255, .55);
+}
+
+.sl-hero__lead {
+  margin-top: 26px;
+  font-size: 13px; line-height: 1.9;
+  color: rgba(255, 255, 255, .6);
+}
+
+.sl-hero__chips { margin-top: 30px; display: flex; gap: 8px; }
+.sl-hero__chip {
+  padding: 7px 13px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .05);
+  color: rgba(255, 255, 255, .78);
+  font-size: 11px; letter-spacing: .04em;
+}
+
+.sl-hero__wave {
+  position: absolute; left: 56px; bottom: 54px;
+  display: flex; align-items: flex-end; gap: 4px; height: 26px;
+}
+.sl-hero__wave span {
+  width: 4px; border-radius: 2px;
+  background: linear-gradient(180deg, #ff2d74, #a855f7);
+  opacity: .85;
+}
+
+/* 主视觉右侧的两台手机：位置见 soundlive-hero.html 的 inline style（.sl-shot） */
+

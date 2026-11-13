@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>分期借款 App · 西语 / 英语双语钱包 — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="分期借款 App 案例：墨西哥市场的借款 App 三屏核心界面，西语与英语各出一版——还款计划页把「还剩多少、还到第几期、下一期哪天」压进一张深绿金额卡（$9,108 剩余 · $19,352 已还 · 68% pagado · 3 / 12 cuotas），账单页用最近 / 已还 / 逾期三态管理每一期（$2,380 × 12，逾期行标 7d atraso），账户页先给可用额度 $12,450.00 再给六行设置，另有西英双版营销 Banner（按时还款，下一期最多省 30%）；暖纸白底 + 深松绿金额卡 + 金黄进度，双语共用同一套版式。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">分期借款 App · 西语 / 英语双语钱包</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 分期借款 App（墨西哥市场 · 西 / 英双语）</span>
+      <h1 class="phead__title">分期借款 App · 西语 / 英语双语钱包</h1>
+      <p class="phead__lead">
+        借款类 App 里用户其实只问一句话：「我还欠多少，下一期什么时候扣？」后台越复杂，前台越要一句话答完。这次交付的就是这条答案链路上的三屏——计划页回答总额与进度、账单页回答每一期的状态、账户页回答还剩多少额度可用，西语与英语各一版，同一个版式跑两种语言长度。视觉上把「信任」做成可读的：钱用深松绿、进度用金黄、只有逾期才允许出现酒红。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">分期借款 App（墨西哥市场 · 西 / 英双语）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI 设计（三屏 × 双语 + 营销 Banner）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/loan-hero.png" width="1648" height="948"
+          alt="分期借款 App 主视觉：暖纸底上还款计划、账单与账户三块界面叠放，标题下压一条金黄下划线" />
+        <figcaption class="figure__cap">
+          主视觉 · 计划、账单、账户同框：一张深绿卡回答「还剩多少」，一张列表回答「哪一期该扣」。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">墨西哥市场 · 12 期分期 · 西 / 英双语</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这款 App 面向墨西哥市场，向当地用户提供 12 期分期借款，界面同时提供西班牙语与英语——客群既有本地西语用户，也有跨境工作、习惯英文的借贷人。金融类界面的信息密度天生高：本金、已还、剩余、期数、到期日、逾期天数、可用额度，全都要在手机上交代清楚。</p>
+          <p>旧版的思路是「把数据都放上来」：12 期摊成一张长表，金额左对齐、日期缩成小字，用户要滑到第三屏才知道自己还欠多少、有没有逾期。重做只做了一件事——按用户的问题重排信息：先结论（还剩 $9,108、已还 68%），再进度（3 / 12 期），最后才是逐期明细；账单页则把「哪一期要处理」单独拎成一条可筛选的列表。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">先结论，再明细，最后才是设置</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>计划页把答案压进一张卡：Saldo restante $9,108 占最大字号，右上角 68% pagado，卡底一行 $19,352 pagado · 3 / 12 cuotas · Próximo vence 28 jun——四个数字之外不再放任何装饰。</li>
+          <li>卡下面是 Cuotas 列表：每期一行，左侧状态点（金黄=已还、松绿=最近一期、灰=未到期），中间序号与日期（Pagada 28 abr / Vence 28 jun），金额 $2,380 一律右对齐，扫一列就能看出规律。</li>
+          <li>账单页是「要处理的事」的入口：顶部 All / Upcoming / Paid 三枚胶囊，每行左侧一枚状态圆点、右侧金额，逾期行补一句 7d atraso，让「晚了几天」也成为可读字段，而不只是一个红点。</li>
+          <li>账户页先给钱再给设置：Available balance $12,450.00 与 ···· 4521 单独成一块，下面才是六行等高设置（Personal details / Notifications / Security / Language / Help &amp; support / Sign out），每行一颗线性图标。</li>
+          <li>底部四格 tab（Inicio / Cuotas / Plan / Perfil）里，Plan 单独用深绿胶囊托起：这是用户真正的目的地，其余三格只是路径。</li>
+          <li>双语不是翻译，是同一套版式跑两种长度：西语普遍比英语长 15–20%，所以卡片高度、金额列宽、日期格式（28 abr / Apr 28）都按更长的那一版定，换来的是换语言不换布局。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">三块界面 × 西 / 英两种语言 · 这里放 5 屏</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>三块界面各出一版西语与英语，下面 5 屏全部来自设计稿原图：计划详情页（Plan de pagos / Payment Plan）、账单页（Cuotas / Bills）、账户页（Perfil）。</p>
+          <p>把同一屏的两种语言并排放，看的不是翻译对不对，而是版式撑不撑得住：西语 Cuota 3 · Vence 28 jun 与英语 Installment 3 · Due Jun 28 长度差近一倍，卡片高度、金额列与状态点位置都不许动。双版营销 Banner 比例不同，单独放在下一段。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/loan-plan-es.png" width="390" height="844" alt="分期借款 App 还款计划页（西语）：Saldo restante $9,108、68% pagado、3 / 12 cuotas 的深绿金额卡，下方是 Cuotas 逐期列表" />
+          <figcaption class="shots__cap">计划 · 西语版：$9,108 与 68% 压在同一张卡里，四期明细紧随其后。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/loan-plan-en.png" width="390" height="844" alt="分期借款 App 还款计划页（英语）：Total remaining $9,108、68% paid、3 / 12 installments 与四期 Installment 列表" />
+          <figcaption class="shots__cap">计划 · 英语版：同一张卡换一种语言，高度与列宽不动。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/loan-bills-es.png" width="390" height="844" alt="分期借款 App 账单页（西语）：Todas / Próximas / Pagadas 三枚筛选胶囊，Cuota 3 与 Cuota 2 已还，Cuota 1 逾期 7 天" />
+          <figcaption class="shots__cap">账单 · 西语版：三枚胶囊切状态，逾期行直接写 7d atraso。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/loan-bills-en.png" width="390" height="844" alt="分期借款 App 账单页（英语）：All / Upcoming / Paid 筛选与 Installment 1-3，逾期行标注 Overdue 与 7d late" />
+          <figcaption class="shots__cap">账单 · 英语版：Overdue / Upcoming / Paid 三种状态共用一颗圆点。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/loan-account-es.png" width="390" height="844" alt="分期借款 App 账户页（西语）：Heqing Yue 头像与电话、Saldo disponible $12,450.00、六行设置与底部四格 tab" />
+          <figcaption class="shots__cap">账户 · 额度在上、设置在下的六行等高结构。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="banner-title">
+      <div class="block__head">
+        <h2 class="block__title" id="banner-title">营销 Banner · 西 / 英双版</h2>
+        <p class="block__note">同一套版式，只换语言</p>
+      </div>
+
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/loan-banner.png" width="788" height="282" alt="营销 Banner 西英双版：Paga a tiempo, vive tranquilo 与 Pay on time, live at ease，标注按时还款最高省 30%" />
+        <figcaption class="figure__cap">
+          Banner · OFERTA ESPECIAL 与 SPECIAL OFFER 两张同一版式：金色涟漪弧线、底部 Saber más / Learn more 胶囊都不动，只换文案；西语版给深松绿底，英语版用陶土橙，一眼分得清语言，也分得清这不是产品界面。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">暖纸白底 · 深松绿 · 金黄 · 陶土橙 · 酒红</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--loanpaper"></span>
+          <span class="swatch swatch--pine"></span>
+          <span class="swatch swatch--ochre"></span>
+          <span class="swatch swatch--clay"></span>
+          <span class="swatch swatch--wine"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>底色用暖纸白 #f7f1e7 而不是纯白：金融界面全是白卡叠白卡，纯白会把层级糊成一片，暖一点反而能看出「哪张卡在上面」。钱只出现在一种颜色里——深松绿 #14524a，金额卡、余额块与进度条共用同一个底色，用户不用读标签就知道「这块是钱」。金黄 #d8b64a 全站只表示「已完成 / 已到账」：68% pagado、已还那几期的状态点、Banner 里的弧线，从不用来装饰标题。酒红 #4a1728 只有一个用途——逾期：Cuota 1 的状态点、$2,380 与 7d atraso。陶土橙 #c3714f 属于英文版 Banner 的暖色底，是整套色里唯一的「营销色」，只出现在广告位，不进产品界面。文字近黑 #1d1a17、副文 #6b6157、辅助 #9a8f83 三档；圆角跟着信息走：金额卡 24px、列表行 16px、胶囊按钮与底部 tab 999px，金额一列用等宽数字，保证 $2,380 上下永远对齐。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">4 个「金融 + 双语」带来的取舍</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>一屏要塞六七个数字（剩余、已还、期数、比例、到期日、单期金额），用户其实只想确认一件事：我还欠多少。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>定死字号阶梯与位置：$9,108 独占最大字号与卡片左上，68% pagado 退到右上角辅助位，$19,352 pagado 与 3 / 12 cuotas 收进卡底一行 13px；列表里的金额 15px 右对齐、日期 12px 灰度。同一块屏幕里只允许一个「最大数字」，其余全部降级。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>西语普遍比英语长，同一张卡片换语言后不是顶破高度，就是把金额挤成两行。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>版式按更长的那一版定：先用西语出稿，卡片高度留 20% 余量、金额列给固定宽度、标题设一行上限（Saldo restante / Total remaining 都不折行）；日期按语言本地化（28 abr / Apr 28），不共用一套字符串。英语版只是留白变多，布局不重排。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>逾期状态如果只靠酒红，色弱用户和强光下的屏幕都读不出来。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>三重编码：状态圆点（酒红逾期 / 松绿最近一期 / 金黄已还 / 灰未到期）+ 明确文案（Pagada / Vence / Overdue）+ 具体天数（7d atraso / 7d late）。颜色只负责让人扫得更快，真正的判断交给文字与数字。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>底部四格 tab 里，用户最常来的 Plan 混在中间，和首页没有区别。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>用一颗深绿胶囊把 Plan 托起——和金额卡同一个颜色，把「钱」与「目的地」绑成同一件事；其余三格用线性图标 + 小字，视觉重量压到最低。导航也因此在任何一屏都指向同一条主路径。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 先把问题写成三句话</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 把「还剩多少」定成一句话</p>
+          <p class="flow__text">先不画界面，先把三个问题写成三句话：我还欠 $9,108、已还 3 期共 $19,352、下一期 6 月 28 日扣 $2,380。再决定每句话落在哪一屏的哪个位置，颜色只用来区分「这是钱」与「这是时间」。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 三屏 × 双语，同时出稿</p>
+          <p class="flow__text">计划页先做西语版（更长的那一版），英语版只换文案；账单页把列表行做成组件（状态点 + 标题 + 日期 + 金额四个槽位），逾期只换颜色与一句后缀；账户页把设置压成等高六行；Banner 单独出西 / 英两张，共用弧线与角标。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付三屏 × 双语的组件与页面清单，和开发一起走查：金额千分位与小数位、日期本地化（28 abr / Apr 28）、长姓名与长号码在卡片里的截断、逾期红在小屏上的对比度、屏幕阅读器读金额的顺序（先总额再进度），逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 屏 × 2</span>
+          <span class="stat__label">计划详情 / 账单 / 账户，西语与英语各一版，另加一张双版营销 Banner</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">暖纸白 + 深松绿金额卡 + 金黄进度的规范：状态圆点、右对齐金额列、四格 tab</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 态</span>
+          <span class="stat__label">账单状态（Pagada / Vence / Overdue 7d atraso）用一个行组件覆盖，颜色 + 文案 + 天数三重编码</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="diy-drink.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">DIY 饮品 · 自己调一杯的饮品社区 App</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="crappo-site.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">CRAPPO · 加密资产交易官网（PC 端）</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>游泳社交 · 游泳技术分享社区 App — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="游泳社交 App 案例：把「想学游泳」和「想找人一起游」放进同一个话题广场——Recommendation 双列动态、话题列表 Join、加号拉起水花浮层分流「发动态 / 开话题」、个人主页作品墙与会员条、池边视频通话；话题、动态、发布、主页、通话构成完整 App，这里展示其中 5 屏，一套淡紫蓝 + 泳池蓝的组件规范。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">游泳社交 · 游泳技术分享社区 App</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 游泳社交 App（C 端 · 运动社区）</span>
+      <h1 class="phead__title">游泳社交 · 游泳技术分享社区 App</h1>
+      <p class="phead__lead">
+        学游泳最难的两件事：找不到人问，也没人看见你在练。这个 App 把两件事拆成两条路——话题广场负责「被看见」，话题列表与讨论负责「有人答」，加号把发布分成 Post Updates 与 Topic Discussion，视频通话让人直接出现在池边。视觉上只留两种蓝：淡紫蓝做纸，泳池蓝只给按下会发生事的按钮，珊瑚红只给点赞与挂断。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">游泳社交 App（C 端 · 运动社区）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI + 交互设计（话题 / 动态 / 发布 / 主页 / 通话）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/swim-hero.png" width="1648" height="948"
+          alt="游泳社交 App 主视觉：淡紫蓝背景上，话题广场与视频通话两块界面并排展示" />
+        <figcaption class="figure__cap">
+          主视觉 · 话题广场与视频通话同框：一半是内容流，一半是把泳友拉进池边。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">运动社区 · 话题与动态双线</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这款 App 服务两类人：刚学游泳、想找教程与同伴的新手，和已经游得很好、想被看见的泳者。旧版把两者塞进同一条按时间排的信息流——新手刷到一堆炫技视频，找不到一条可执行的建议；老手发了作品也只有陌生人点个赞，聊不起来。</p>
+          <p>重做没有加新功能，而是把「看」和「聊」分开：广场用双列动态承接内容，话题用列表承接讨论，发布入口用一张水花浮层把两条路一次问清；再往外补齐个人主页与视频通话，让「这个人」和「这个人在池边」两件事都成立。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">两个入口、三种容器、一条动线</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>广场三段式，一屏交代清楚：顶部一条 92px 的插画 banner，标题 Discuss with like-minded friends 直接压在插画里；下面 Recommendation 双列动态；底部固定五格 tab（home / Feed / ＋ / Message / Me）。banner 不占内容位，第一屏至少露出 1.5 张动态卡。</li>
+          <li>动态卡只留三处文字：图片右上角一颗浏览量角标（1.2k），卡片下方一句正文（最多两行，超出省略），底部三个统计（点赞 / 评论 / 更多）。作者名与 follow 胶囊固定在卡片顶部一行，滑到哪都在同一高度。</li>
+          <li>发布不直接进编辑器：点中间加号，先把一张水花浮层推上来，只放两张卡——Post Updates（发动态）与 Topic Discussion（开讨论），右下角一颗 × 关闭。先分流，再进各自的编辑页，避免一半人发错类型。</li>
+          <li>话题列表一行一话题：左边 96×96 缩略图，右边标题 + Join 蓝胶囊，行尾一颗竖三点收举报与屏蔽。缩略图统一 12px 圆角，标题最多两行，Join 只在未加入时出现——状态本身就是区分点。</li>
+          <li>个人主页用全屏实拍开场：照片占上半屏，白色 sheet 从图下沿升起，头像 + 昵称 + 性别符号 + 地点（Peru Inca Trail）压在第一行；下面是简介、三个数字（点赞 / 关注 / 会员天数）与一条金色环 + 珊瑚红 25 天的会员条，再往下 Recent works 双列作品墙，底部 tab 与广场一致。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">交付覆盖话题 / 动态 / 发布 / 主页 / 通话 · 这里节选 5 屏</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这个 App 是按整站交付的：话题广场、话题列表与讨论、动态详情、发布（Post Updates / Topic Discussion 两条）、个人主页与作品墙、消息、视频通话、设置都有稿。下面 5 屏是节选，全部来自设计稿原图；同一批导出里另有一版首页（第 6 张），保留作对照，没有进正文。</p>
+          <p>挑这 5 屏是因为它们各自回答一个问题——内容怎么分两层（广场）、话题怎么被挑出来（列表）、两条发布路怎么分开（水花浮层）、这个人是谁（个人主页）、怎么把人拉到池边（视频通话）。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/swim-home.png" width="780" height="1688" alt="游泳社交 App 话题广场：插画 banner、Recommendation 双列动态与底部五格 tab" />
+          <figcaption class="shots__cap">话题广场 · banner 顶住第一眼，双列动态接着往下，五格 tab 把发布放在正中。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/swim-topic.png" width="780" height="1688" alt="游泳社交 App 话题列表：Discuss with like-minded friends 横幅与一行一话题的 Join 胶囊" />
+          <figcaption class="shots__cap">话题列表 · 一行一话题：缩略图 + 标题 + Join，行尾三点收起低频操作。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/swim-publish.png" width="780" height="1688" alt="游泳社交 App 发布分流：加号拉起的半透明水花浮层，内含 Post Updates 与 Topic Discussion 两张卡" />
+          <figcaption class="shots__cap">发布分流 · 两张卡一次问清「发动态」还是「开讨论」，点 × 回广场。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/swim-profile.png" width="780" height="1688" alt="游泳社交 App 个人主页：全屏实拍、白色信息 sheet、三项数据、会员条与 Recent works 作品墙" />
+          <figcaption class="shots__cap">个人主页 · 实拍开场，sheet 承担简介与数据，作品墙双列接着滚。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/swim-call.png" width="780" height="1688" alt="游泳社交 App 视频通话：对方全屏、自己缩在右上角小窗、底部静音挂断扬声器三键" />
+          <figcaption class="shots__cap">视频通话 · 对方全屏，自己在右上角一枚小窗，挂断单独用珊瑚红。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">淡紫蓝 · 泳池蓝 · 珊瑚红 · 墨蓝</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--periwinkle"></span>
+          <span class="swatch swatch--pool"></span>
+          <span class="swatch swatch--coral"></span>
+          <span class="swatch swatch--deepnavy"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>淡紫蓝 #dfe6fb 铺满整屏，是水；泳池蓝 #2fa8ff 只给「按下去会发生事」的地方——Join、follow、发送、＋；珊瑚红 #ff5b5f 只给点赞与挂断，全屏只有这两处会出现暖色；墨蓝 #16234a 承担所有文字，比纯黑软一档。标题走衬线（Discuss with like-minded friends / Homepage Details），正文回到系统无衬线，一屏只用一个衬线标题做对比。形状上卡片 20–28px 圆角、图片圆角比卡片小一档、按钮全部胶囊、投影极浅——实拍本身已经够重，界面要往后退。话题名统一做成压在照片底部的深色胶囊，位置固定在左下，长名字截断。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">4 个「看」与「聊」打架的取舍</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>广场既要有话题入口，又要有内容；banner 一占位，第一屏就只剩半张动态卡。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把 banner 做成一条 92px 高的插画胶囊，标题直接压在插画里，不再是「标题 + 图」两块；banner 不进双列网格，下面紧接 Recommendation 标签，保证第一屏永远露出 1.5 张动态卡。高度写进组件，后续换插画不改版式。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>加号是全 App 最高频的位置，但它同时通向「发动态」和「开话题」，直接进编辑器会让一半人发错类型。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>加号先弹一张水花浮层：两张卡 + 一句提示，Post Updates 与 Topic Discussion 各占一边，右下角一颗 × 关闭；浮层用半透明水花遮住底下内容，让「现在在做选择」一眼可见，选完再进各自的编辑页。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>话题列表每一行长得一模一样，用户无法判断该进哪个。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>缩略图固定 96×96 但保留原图的裁切差异，标题允许两行并把关键词放前面；行尾三点收走举报与屏蔽，Join 只在未加入时出现——用状态差与文字差区分，而不是加更多图标。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>个人主页要同时放实拍、简介、数据、会员与作品墙，一屏根本放不下。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>按「人 → 关系 → 内容」排：实拍只在顶部做开场，滚过 240px 后收起；白色 sheet 承担简介 + 三个数字 + 会员条；Recent works 用 1:1 与 4:5 两种比例混排，避免整屏等宽，也让作品墙一眼看得出是两列而不是两栏。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 定淡紫蓝、拆两条发布路、对双端</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 一条「池边」的动线</p>
+          <p class="flow__text">先定气质：淡紫蓝底 + 衬线标题 + 满屏实拍，读起来像一场夏日泳池，而不是一个运动数据工具。用话题广场与个人主页两屏打样，确认「照片在前、界面退后」这条底线。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 先拆发布，再铺全站</p>
+          <p class="flow__text">把「看内容」与「发内容」两条路拆清楚之后才铺页面：话题广场、话题列表、动态详情、Post Updates、Topic Discussion、个人主页与作品墙、消息、视频通话、设置；follow 胶囊、Join、会员条收成一套图标与组件规范。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付组件 Variant 与页面清单，和开发一起走查 iOS / Android：长屏实拍在 2x / 3x 下的裁切、淡紫蓝在 OLED 上的偏色、视频通话里自己小窗的安全区，以及长话题名与长简介是否顶破压条，逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">全站</span>
+          <span class="stat__label">话题广场 / 话题列表与讨论 / 动态详情 / 发布两条路 / 个人主页 / 消息 / 视频通话 / 设置</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">淡紫蓝 + 泳池蓝规范：圆角卡、关注与 Join 胶囊、话题压条、会员条</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 段</span>
+          <span class="stat__label">核心动线：逛话题 → 发一条 → 找人约泳（视频）</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="camp-share.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">露营分享 · 户外足迹社区 App</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="dive-share.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">潜水分享 · 潜水员约潜社区 App</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# 本地临时产物：截图校对、测量页、抓下来的 DOM 等，不进仓库
+_inbox/
+
+# 编辑器 / 系统文件
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 依赖与构建产物（本项目零构建，留作兜底）
+node_modules/
+dist/

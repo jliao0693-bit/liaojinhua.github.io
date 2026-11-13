@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>声浪 · 音乐直播分享 App — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="声浪 SoundLive 案例：海外音乐直播分享 App 的全站界面设计，把「听别人唱 → 自己发作品 → 开一场直播」串成一条动线，交付首页、附近、直播间、热度榜、直播详情、主播资料等 8 屏。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">声浪 · 音乐直播分享 App</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 音乐直播 / 作品分享 App（C 端）</span>
+      <h1 class="phead__title">声浪 · 音乐直播分享 App</h1>
+      <p class="phead__lead">
+        声浪是一款面向海外的音乐直播分享 App：用户既可以听别人唱，也可以自己录一段发出去，还能随时开一场自己的直播。这次交付的是全站界面——从首页的信息流、附近页的直播间，到直播间里的礼物与聊天、把人气量化成排名的热度榜，一屏一屏落定。视觉上让内容自己说话：暗色底把画面推到最前面，玫红只留给「正在发生」的直播与互动。
+      </p>
+    </header>
+
+    <section class="case-meta" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">声浪 SoundLive（海外音乐直播 App）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI 设计（全站界面 + 图标规范）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">周期</span>
+        <span class="meta-item__v">12 周（2025.03 - 2025.06）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/soundlive-hero.png" width="1648" height="948"
+          alt="声浪 SoundLive 主视觉：深色霓虹背景上，直播间与热度榜两块界面并排展示" />
+        <figcaption class="figure__cap">
+          主视觉 · 直播间与热度榜同框：一块是正在发生的事，一块是人气被量化之后的样子。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">海外市场 · 音乐 + 直播 + 作品</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>声浪的旧版把「看直播」和「刷作品」做成了两条互不相干的流：用户在直播里听到一首好歌，想找这个人的其他作品，就得退回首页重新搜；歌手发了一条作品，也没有任何入口可以顺势开播。内容在跑，动线断在半路。</p>
+          <p>这次重做的目标很具体：把「听别人唱」「自己唱一首发出去」「开一场自己的直播」接成同一条路。所以设计从场景出发——首页负责发现，附近负责决定进谁的直播间，直播间负责留住人，热度榜负责给出留下来的理由。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">一条动线贯穿全站</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>首页信息流一屏两列，缩略图就是内容本身：歌名、人声量、作者、播放按钮各占一个固定位置，滑动时不跳动。</li>
+          <li>附近页把「谁在直播」做成全屏封面 + 右侧操作条（赞 / 评论 / 分享 / 更多），进直播间只需要一次点击。</li>
+          <li>直播间分三层：舞台层（画面）、互动层（观众席 / 礼物 / 聊天）、系统层（音量、举报、关闭），礼物只从底部上浮，永不遮挡主播。</li>
+          <li>热度榜把「名次、等级、金币」拆成三种视觉符号——数字、徽章、金色币值，只有前三名用渐变底座。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">全站 8 屏里的 5 屏 · 首页 / 直播间 / 热度榜 / 直播详情 / 个人中心</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>下面 5 屏只是整个 App 的一部分。实际交付还包含附近（直播间列表）、主播资料、唱歌发作品等页面，连同空态与加载态一起交付。</p>
+          <p>挑这 5 屏，是因为它们各自代表一种页面类型——信息流、沉浸式直播间、排行榜、半屏面板、个人主页。同一套暗色层级与组件在这 5 类页面上站得住，剩下的页面就都是复用。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/soundlive-home.png" width="780" height="1688" alt="声浪首页关注流：顶部歌手段头像横滑，下方是全屏的演唱作品卡片" />
+          <figcaption class="shots__cap">首页 · 关注流：头像条负责跳人，大卡片负责跳进作品。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/soundlive-room.png" width="780" height="1688" alt="声浪直播间：全屏歌手画面，顶部主播信息与观众头像，底部聊天与输入框" />
+          <figcaption class="shots__cap">直播间 · 舞台层与互动层分离，礼物与聊天从底部上浮。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/soundlive-rank.png" width="780" height="1688" alt="声浪热度榜：红色渐变背景上的前三名领奖台，下方是带 LIVE 标记的排名列表" />
+          <figcaption class="shots__cap">热度榜 · 前三名上领奖台，4 名之后回到列表，一屏两种密度。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/soundlive-detail.png" width="780" height="1688" alt="声浪直播详情：上半屏主播画面，下半屏是吸底的主播资料面板与关注按钮" />
+          <figcaption class="shots__cap">直播详情 · 画面与资料上下分层，关注按钮固定在底部。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/soundlive-profile.png" width="780" height="1688" alt="声浪个人中心：红色演唱会背景条、头像资料、金币横幅与作品九宫格" />
+          <figcaption class="shots__cap">个人中心 · 金币横幅前置，作品用带播放量的九宫格。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">深墨底 + 玫红霓虹，金色只给金币与等级</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--rose"></span>
+          <span class="swatch swatch--violet"></span>
+          <span class="swatch swatch--cyan"></span>
+          <span class="swatch swatch--ink"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>底色压到近黑（#0f0d13），让画面里的光成为唯一亮源；玫红 #ff2d74 只用于「正在直播」与互动按钮，紫色 #a855f7 承担礼物与等级，青色只做氛围补光。金色被严格限制在金币、皇冠与前三名，避免和霓虹抢注意力。标题用衬线体（Georgia 一类），和直播封面上的演出海报气质对齐；正文与数值回到无衬线。层级只用三档背景（#0f0d13 / #171320 / #211a2c）加一层玻璃浮层，字色四档封顶。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">2 个直播场景类的权衡</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>直播间要全屏沉浸，但观众席、礼物、聊天、输入框全都要在同一屏，信息一多就把歌手挡住。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把直播间拆成舞台层 / 互动层 / 系统层三层：舞台层永远在最下且不被覆盖，互动层压缩在底部三分之一，礼物只从底部上浮并在 1.5 秒后消散，右上角统一收「人数、举报、关闭」。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>暗色界面里层级一多就糊成一片，弹层、卡片、底部导航看起来在同一层。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>定三档背景（#0f0d13 / #171320 / #211a2c）+ 一档玻璃浮层，字色四档封顶；弹层必须比底下一层更亮一档，并把这条写进组件注释，后续页面只按档位取色。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 定语言、铺页面、对双端</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 定「舞台」语言</p>
+          <p class="flow__text">先定气质：把直播间当成一个舞台，画面是唯一主角。由此推出暗色底、全屏画面、底部浮层互动、衬线标题四条规则，再做首页与直播间两屏打样确认方向。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 按页面类型铺开</p>
+          <p class="flow__text">把页面归成五类（信息流 / 沉浸页 / 榜单 / 半屏面板 / 主页），每类先做一屏模板，再套到 8 屏全部页面上；图标、徽章、礼物与等级做成一套 2px 线性 + 彩色徽章的规范。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付组件 Variant、页面清单与标注，和开发一起走查 iOS / Android 两端：暗色在 OLED 上的对比、礼物上浮是否会遮挡主播、长歌名与长聊天文案是否顶破卡片，逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">全站</span>
+          <span class="stat__label">覆盖首页 / 附近 / 直播间 / 热度榜 / 直播详情 / 主播资料 / 发布 / 个人中心</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">图标与徽章规范：线性图标 + 等级 / 礼物徽章</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 段</span>
+          <span class="stat__label">核心动线：听别人唱 → 自己发作品 → 开一场直播</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="jiujiu-app.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">啾啾 · 泛娱乐社交 App</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="food-social.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">美食社交 App · 美食社区与同城约饭</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

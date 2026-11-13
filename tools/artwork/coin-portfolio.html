@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>screen / 持仓 Portofolio 390x844</title>
+  <link rel="stylesheet" href="coinwallet.css" />
+</head>
+<body>
+  <div class="scr">
+    <div class="status">
+      <span>9:41</span>
+      <span class="status__icons">
+        <span class="sig"><i></i><i></i><i></i><i></i></span>
+        <svg class="wifi" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+          <path d="M1.2 4.2a10.4 10.4 0 0 1 13.6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M4.1 7.2a6.1 6.1 0 0 1 7.8 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          <circle cx="8" cy="10.1" r="1.15" fill="currentColor" />
+        </svg>
+        <span class="batt"><i></i></span>
+      </span>
+    </div>
+
+    <div class="scr__head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M11 6l-6 6 6 6" />
+      </svg>
+      <p>Portofolio</p>
+    </div>
+
+    <div class="scr__body scr__body--pf">
+      <div class="bal bal--total">
+        <p class="bal__lab">Total Portofolio</p>
+        <div class="bal__row">
+          <p class="bal__num">$56.98</p>
+          <em class="pillwhite">↗ 15.3%</em>
+        </div>
+        <p class="bal__ret">Total Return <b>$2.78</b></p>
+        <svg class="bal__wave" viewBox="0 0 350 84" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 42c46-16 80 8 124 4s68-24 110-18 76 24 116 12v44H0z" fill="rgba(255,255,255,.13)" />
+          <path d="M0 64c56-16 90 8 136 4s72-18 116-10 58 16 98 10v16H0z" fill="rgba(255,255,255,.18)" />
+        </svg>
+      </div>
+
+      <ul class="plist">
+        <li class="prow">
+          <div class="prow__top">
+            <span class="logo logo--btc"><i>₿</i></span>
+            <span class="coinrow__id"><b>BTC</b><i>Bitcoin</i></span>
+            <em class="delta">↗ 15.3%</em>
+          </div>
+          <div class="prow__bot">
+            <span class="prow__qty">0.0012 BTC</span>
+            <span class="prow__val"><b>$26.46</b><i class="up">+ $2.3</i></span>
+          </div>
+        </li>
+        <li class="prow">
+          <div class="prow__top">
+            <span class="logo logo--eth"><i><span></span></i></span>
+            <span class="coinrow__id"><b>ETH</b><i>Ethereum</i></span>
+            <em class="delta delta--down">↘ -2.1%</em>
+          </div>
+          <div class="prow__bot">
+            <span class="prow__qty">1.58 ETH</span>
+            <span class="prow__val"><b>$26.46</b><i class="down">- $0.4</i></span>
+          </div>
+        </li>
+        <li class="prow">
+          <div class="prow__top">
+            <span class="logo logo--btc"><i>₿</i></span>
+            <span class="coinrow__id"><b>BTC</b><i>Bitcoin</i></span>
+            <em class="delta">↗ 15.3%</em>
+          </div>
+          <div class="prow__bot">
+            <span class="prow__qty">0.0012 BTC</span>
+            <span class="prow__val"><b>$26.46</b><i class="up">+ $2.3</i></span>
+          </div>
+        </li>
+        <li class="prow">
+          <div class="prow__top">
+            <span class="logo logo--eth"><i><span></span></i></span>
+            <span class="coinrow__id"><b>ETH</b><i>Ethereum</i></span>
+            <em class="delta delta--down">↘ -2.1%</em>
+          </div>
+          <div class="prow__bot">
+            <span class="prow__qty">1.58 ETH</span>
+            <span class="prow__val"><b>$26.46</b><i class="down">- $0.4</i></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <nav class="tabbar">
+      <span class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 10.6 12 4l8 6.6V20a1 1 0 0 1-1 1h-4.6v-6H9.6v6H5a1 1 0 0 1-1-1z" />
+        </svg>
+        Home
+      </span>
+      <span class="tab tab--on">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M5.9 8h12.2l-1.1 10.1a1.9 1.9 0 0 1-1.9 1.7H8.9A1.9 1.9 0 0 1 7 18.1z" />
+          <path d="M9.3 9.4V7.2a2.7 2.7 0 0 1 5.4 0v2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+        Market
+      </span>
+      <span class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="8.4" r="3.6" />
+          <path d="M4.9 20.4c0-3.7 3.2-6 7.1-6s7.1 2.3 7.1 6" />
+        </svg>
+        Profile
+      </span>
+    </nav>
+  </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/* ============================================================================
+   摄影社区 · PHOTO COMMUNITY
+   ----------------------------------------------------------------------------
+   CSS 化的素材：封面 292x200、主视觉 824x474。界面部分不用 CSS 重绘，直接把
+   设计稿原图（assets/images/photoshare-*.png）以 .ps-shot 拼进去。
+   由 tools/build-images.ps1 用无头 Chrome 截图成
+   assets/images/work-photo*.png 与 photo-hero.png。
+
+   配色照搬 App 自身：暖纸白底（#f4f2ec）、荧光青柠做高亮与 Join（#d8f36b）、
+   薄荷薄卡的浅绿（#eaf6dd）、珊瑚粉的题材标签（#ff8f8f）、近黑正文（#1b1b1b）。
+   标题用重字重无衬线，配一支荧光笔压在半高位置 —— 这是 App 里唯一的装饰动作。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow: hidden;
+  background: #f4f2ec;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --ps-paper: #f4f2ec;
+  --ps-lime: #d8f36b;
+  --ps-lime-deep: #c4e04a;
+  --ps-mint: #eaf6dd;
+  --ps-rosy: #ff8f8f;
+  --ps-ink: #1b1b1b;
+  --ps-ink-soft: #5b5f58;
+  --ps-ink-dim: #8d9187;
+}
+
+/* 纸底：右上一点青柠、左下一点天空蓝，大面积留白 */
+.ps-paper {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 58% at 82% 4%, rgba(216, 243, 107, .55) 0%, rgba(216, 243, 107, 0) 62%),
+    radial-gradient(64% 52% at 6% 96%, rgba(168, 214, 240, .42) 0%, rgba(168, 214, 240, 0) 60%),
+    linear-gradient(168deg, #fbfaf6 0%, #f4f2ec 48%, #eceade 100%);
+}
+
+/* 弥散色块：超出画布的大圆，只留一段弧 */
+.ps-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(18px);
+}
+
+/* 网点：极淡的一层，只在大图里出现，给留白一点质地 */
+.ps-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(27, 27, 27, .16) 0 1px, transparent 1px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse at 88% 12%, #000 0%, transparent 58%);
+  mask-image: radial-gradient(ellipse at 88% 12%, #000 0%, transparent 58%);
+}
+
+/* 荧光笔：压在半高位置的青柠条，App 里标题的唯一装饰 */
+.ps-mark {
+  position: absolute;
+  border-radius: 2px;
+  background: var(--ps-lime);
+}
+
+/* 真实界面截图：白边 + 柔和投影，像贴在纸上的两张相纸 */
+.ps-shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(27, 27, 27, .10);
+  box-shadow: 0 18px 34px rgba(27, 27, 27, .18), 0 0 0 4px rgba(255, 255, 255, .82);
+  background: #fff;
+}
+.ps-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ---------------------------------------------------------------- 封面 292x200 */
+.ps-cover {
+  position: relative;
+  width: 292px;
+  height: 200px;
+  overflow: hidden;
+  background: var(--ps-paper);
+}
+
+.ps-cover__eyebrow {
+  position: absolute; left: 16px; top: 15px;
+  padding: 3px 8px 2px;
+  border-radius: 999px;
+  background: var(--ps-lime);
+  color: #2b2f1a;
+  font-size: 7.5px; font-weight: 800; letter-spacing: .18em;
+}
+
+/* 标题 + 荧光笔：先在标题后面压一条青柠，再把字放上去 */
+.ps-cover__title {
+  position: absolute; left: 15px; top: 41px;
+  isolation: isolate;
+}
+
+.ps-cover__title .ps-mark {
+  left: -3px; bottom: 3px; width: calc(100% + 6px); height: 12px;
+  z-index: -1;
+}
+
+.ps-cover__cn {
+  font-size: 27px; font-weight: 800; line-height: 1.12;
+  letter-spacing: .01em;
+  color: var(--ps-ink);
+}
+
+.ps-cover__en {
+  position: absolute; left: 17px; top: 82px;
+  font-size: 7.5px; font-weight: 800; letter-spacing: .28em;
+  color: var(--ps-ink-dim);
+}
+
+.ps-cover__sub {
+  position: absolute; left: 17px; top: 97px;
+  font-size: 10.5px; letter-spacing: .04em;
+  color: var(--ps-ink-soft);
+}
+
+/* 题材标签：App 里压在作品缩略图左上角的那颗 portrait */
+.ps-cover__tag {
+  position: absolute; left: 17px; top: 122px;
+  display: inline-flex; align-items: center;
+  padding: 3px 9px 2px;
+  border-radius: 999px;
+  background: var(--ps-rosy);
+  color: #59211f;
+  font-size: 8px; font-weight: 700; letter-spacing: .04em;
+}
+
+.ps-cover__meta {
+  position: absolute; left: 17px; bottom: 16px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 8.5px; font-weight: 800; letter-spacing: .06em;
+  color: var(--ps-ink-dim);
+}
+
+.ps-cover__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--ps-lime-deep);
+  box-shadow: 0 0 0 1px rgba(27, 27, 27, .22);
+}
+
+
+/* ------------------------------------------------------------ 主视觉 824x474 */
+.ps-hero {
+  position: relative;
+  width: 824px;
+  height: 474px;
+  overflow: hidden;
+  background: var(--ps-paper);
+}
+
+.ps-hero__copy { position: absolute; left: 56px; top: 80px; width: 352px; }
+
+.ps-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 12px 4px;
+  border-radius: 999px;
+  background: var(--ps-lime);
+  color: #2b2f1a;
+  font-size: 10px; font-weight: 800; letter-spacing: .2em;
+}
+
+.ps-hero__title {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  margin-top: 24px;
+  font-size: 54px; font-weight: 800; line-height: 1.04;
+  letter-spacing: .01em;
+  color: var(--ps-ink);
+}
+
+.ps-hero__title .ps-mark {
+  left: -6px; bottom: 7px; width: calc(100% + 10px); height: 20px;
+  z-index: -1;
+}
+
+.ps-hero__en {
+  margin-top: 14px;
+  font-size: 11px; font-weight: 800; letter-spacing: .4em;
+  color: var(--ps-ink-dim);
+}
+
+.ps-hero__lead {
+  margin-top: 22px;
+  font-size: 13px; line-height: 1.92;
+  color: #4a4e46;
+}
+
+.ps-hero__chips { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.ps-hero__chip {
+  padding: 7px 13px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(27, 27, 27, .14);
+  background: rgba(255, 255, 255, .78);
+  color: #41453c;
+  font-size: 11px; letter-spacing: .04em;
+}
+
+/* 左下角一行小注：作品数 / 点赞 / 金币这类真实数字 */
+.ps-hero__note {
+  position: absolute; left: 56px; bottom: 46px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 800; letter-spacing: .08em;
+  color: var(--ps-ink-dim);
+}
+.ps-hero__note i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ps-lime-deep);
+  box-shadow: 0 0 0 1px rgba(27, 27, 27, .2);
+}

@@ -1,0 +1,1062 @@
+/* ==========================================================================
+   12 的个人空间 - design system + layout
+   Mirrors Ardot board 2:1 (1440 x 2487) 1:1.
+   Every radius / shadow / size below is authored from the design tree,
+   not eyeballed, so the page can be diffed against the canvas.
+   ========================================================================== */
+
+:root {
+  /* --- ink & text ------------------------------------------------------ */
+  --ink: #141822;
+  --ink-strong: #1B1F2A;
+  --ink-deep: #1A1C26;
+  --body: #5B6472;
+  --muted: #6B7280;
+  --muted-2: #6B7A99;
+  --faint: #9AA3B2;
+  --on-dark-soft: #3A4354;
+  --chip-text: #4A5568;
+
+  /* --- brand ----------------------------------------------------------- */
+  --brand-blue: #7399FF;
+  --brand-violet: #B28CFF;
+  --brand-mint: #73D9BF;
+  --brand-dot: #80A6FF;
+  --divider: #D9DEEB;
+
+  /* --- glass surfaces: fill + hairline + top highlight ------------------ */
+  --glass-50: rgba(255, 255, 255, .50);
+  --glass-40: rgba(255, 255, 255, .40);
+  --glass-35: rgba(255, 255, 255, .35);
+  --glass-30: rgba(255, 255, 255, .30);
+  --glass-line: rgba(255, 255, 255, .65);
+  --glass-inset: inset 0 1px 0 rgba(255, 255, 255, .75);
+
+  /* --- elevation ------------------------------------------------------- */
+  --shadow-card: 0 10px 24px rgba(102, 128, 229, .18);
+  --shadow-hero: 0 16px 40px rgba(102, 128, 229, .20);
+  --shadow-soft: 0 8px 20px rgba(102, 128, 229, .16);
+  --shadow-float: 0 6px 16px rgba(102, 128, 229, .16);
+  --shadow-ink: 0 8px 20px rgba(26, 28, 38, .22);
+
+  /* --- radii ----------------------------------------------------------- */
+  --r-hero: 28px;
+  --r-card: 22px;
+  --r-panel: 20px;
+  --r-shot: 18px;
+  --r-chip: 16px;
+  --r-pill: 999px;
+
+  /* --- frame ----------------------------------------------------------- */
+  --page-max: 1440px;
+  --gutter: 48px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei',
+    system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--body);
+  /* Matches the last stop of the artboard gradient so short viewports never
+     show a seam under the page. */
+  background: #F2EDFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* Anchor links land below the sticky-free header without a jump. */
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+
+/* Focus treatment for keyboard users only. */
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Page shell - the 1440 artboard with the canvas gradient
+   #F5F7FF -> #EBF2FF -> #F2EDFF
+   -------------------------------------------------------------------------- */
+.page {
+  position: relative;
+  width: 100%;
+  max-width: var(--page-max);
+  min-height: 100vh;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #F5F7FF 0%, #EBF2FF 50%, #F2EDFF 100%);
+  overflow: clip;
+}
+
+.shell {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* --------------------------------------------------------------------------
+   Glass primitives
+   The canvas uses a GLASS effect (refraction / depth / light intensity).
+   No browser exposes those three knobs, so each depth tier is mapped onto the
+   closest backdrop-filter pair - depth 20/35/60/70 -> 14/18/22/24px blur:
+     refr .40 depth 20 light .50  ->  blur(14px) saturate(140%)
+     refr .50 depth 35 light .60  ->  blur(18px) saturate(150%)
+     refr .60 depth 60 light .70  ->  blur(22px) saturate(160%)
+     refr .70 depth 70 light .80  ->  blur(24px) saturate(170%)
+   -------------------------------------------------------------------------- */
+.glass {
+  background: var(--glass-40);
+  border: 1px solid var(--glass-line);
+  box-shadow: var(--glass-inset);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+}
+
+.glass--soft { background: var(--glass-35); }
+.glass--faint { background: var(--glass-30); }
+.glass--strong { background: var(--glass-50); }
+
+.glass--d35 {
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+
+.glass--d60 {
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+}
+
+.glass--d70 {
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  backdrop-filter: blur(24px) saturate(170%);
+}
+
+/* --------------------------------------------------------------------------
+   Header - 0,0 1440x72  (pad 20/48, space-between)
+   -------------------------------------------------------------------------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 20px var(--gutter);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.brand__mark {
+  display: block;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  box-shadow: 0 4px 12px rgba(115, 140, 255, .45);
+}
+
+/* 品牌图标是位图 assets/images/logo-12.png（紫渐变 +「12」+ 心形点）。
+   圆角与投影留在 CSS 上，保证 32px 尺寸下阴影仍贴着圆角走。 */
+
+.brand__text {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--ink-strong);
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  justify-content: flex-start;
+  /* Canvas: the Nav frame is 826 wide and sits flush to the 1392 content
+     edge, so the first link lands at x=566 even though the links only
+     span 249px. Keep the frame width, not the visual right-alignment. */
+  flex: 0 1 826px;
+}
+
+.nav__link {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--muted);
+  transition: color .2s var(--ease);
+}
+
+.nav__link:hover { color: var(--ink-strong); }
+
+.nav__link[aria-current="page"] {
+  color: var(--ink-strong);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   About strip - 0,72 1440x276  (pad 48, gap 40)
+   -------------------------------------------------------------------------- */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 48px var(--gutter);
+}
+
+.about__avatar {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
+  border-radius: var(--r-pill);
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(102, 128, 229, .28);
+  position: relative;
+  isolation: isolate;
+  object-fit: cover;
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.about__title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--ink);
+  letter-spacing: -.01em;
+}
+
+.about__copy {
+  margin: 0;
+  max-width: 1124px;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--body);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 8px 16px;
+  border-radius: var(--r-chip);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--on-dark-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Hero - 0,348 1440x580  (pad 80/48, gap 60, centered)
+   content 520 + 60 + 560 = 1140  ->  150px optical margin on both sides
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px var(--gutter);
+}
+
+/* The hero card is glass, so it needs something colourful to refract. On the
+   canvas that colour comes from the artwork itself; here a soft bloom sits
+   behind the card and the backdrop-filter does the rest. */
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 72px;
+  top: 50%;
+  width: 660px;
+  height: 520px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(150, 178, 255, .58), rgba(150, 178, 255, 0) 62%),
+    radial-gradient(circle at 72% 76%, rgba(196, 154, 255, .48), rgba(196, 154, 255, 0) 64%);
+  filter: blur(26px);
+}
+
+.hero__text,
+.hero__visual { position: relative; z-index: 1; }
+
+.hero__text {
+  flex: 0 0 520px;
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  height: 32px;
+  padding: 8px 14px;
+  border-radius: var(--r-chip);
+  box-shadow: var(--shadow-float);
+}
+
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-dot);
+  box-shadow: 0 0 0 3px rgba(128, 166, 255, .22);
+}
+
+.hero__badge-text {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--chip-text);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.hero__sub {
+  margin: 0;
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--body);
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Shared pill button - 46 tall, r24, pad 14/28, 15 SemiBold */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 14px 28px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease),
+    background-color .22s var(--ease);
+}
+
+.btn--primary {
+  background: var(--ink-deep);
+  color: #fff;
+  box-shadow: var(--shadow-ink);
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(26, 28, 38, .28);
+}
+
+.btn--ghost {
+  color: var(--ink-strong);
+  box-shadow: var(--glass-inset);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, .58);
+  transform: translateY(-1px);
+}
+
+/* Hero visual card - 730,428 560x420, r28, glass .30 */
+.hero__visual {
+  flex: 0 0 560px;
+  width: 560px;
+  height: 420px;
+  padding: 24px;
+  border-radius: var(--r-hero);
+  box-shadow: var(--shadow-hero);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Inner screenshot - 512x340, r18 */
+.hero__shot {
+  flex: 0 0 auto;
+  width: 512px;
+  height: 340px;
+  border-radius: var(--r-shot);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  background: #ECEFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Shared section header (used by 作品展示墙 and 设计规范)
+   -------------------------------------------------------------------------- */
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  /* Header frame is 127 tall in the canvas (129 for 设计规范); the text wrap
+     and the pill are both vertically centred inside it, which is what puts
+     the title at +16 and the pill at +45. */
+  min-height: 127px;
+}
+
+.section-head__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Guide header measures 97 tall in the canvas (title + 12 + one-line sub),
+   which parks its title at 1908 rather than the gallery's 992 offset. */
+.guide .section-head__text { min-height: 97px; }
+
+.section-title {
+  margin: 0;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.section-sub {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--body);
+}
+
+/* "查看全部作品 / 查看完整规范" - 146x37, r20, pad 10/20, gap 6 */
+.more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  height: 37px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  color: var(--on-dark-soft);
+  transition: background-color .22s var(--ease), transform .22s var(--ease);
+}
+
+.more-btn:hover {
+  background: rgba(255, 255, 255, .58);
+  transform: translateY(-1px);
+}
+
+.more-btn svg { flex: 0 0 auto; display: block; }
+
+/* --------------------------------------------------------------------------
+   作品展示墙 - 0,928 1440x916  (pad 48, gap 32)
+   -------------------------------------------------------------------------- */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 48px var(--gutter);
+}
+
+.gallery__sub { max-width: 400px; }
+
+/* Filter row - chips 35 tall, r18, pad 9/18, gap 10 */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  padding: 9px 18px;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  color: var(--on-dark-soft);
+  transition: background-color .22s var(--ease), color .22s var(--ease),
+    transform .22s var(--ease);
+}
+
+.chip:hover { transform: translateY(-1px); }
+
+.chip--active {
+  background: var(--ink-deep);
+  color: #fff;
+  font-weight: 600;
+  border-color: transparent;
+}
+
+/* Shared carousel - one row of cards, one card slides out every 15s.
+   首页「精选作品」(19 张作品卡 · 3 张一屏) 和设计规范页「项目级规范」
+   (按实际作品渲染的项目卡) 共用这一套类，位移逻辑在 assets/carousel.js。
+   一屏张数只有一个开关 --carousel-visible（3 / 2 / 1），卡片宽度按
+   (100% - gap x (visible - 1)) / visible 算，所以 3 张正好铺满 1344 内容宽。 */
+.carousel {
+  --carousel-visible: 3;
+  --carousel-gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Clips the next card horizontally. The 10/44px padding bled back out with
+   negative margins keeps the card shadow from being cut and leaves the
+   layout height equal to a single card row, so the section still stacks. */
+.carousel__viewport {
+  overflow: hidden;
+  padding: 10px 10px 44px;
+  margin: -10px -10px -44px;
+}
+
+.carousel__track {
+  display: flex;
+  gap: var(--carousel-gap);
+  /* transform 由 assets/carousel.js 逐张推进 */
+  transition: transform .62s var(--ease);
+  will-change: transform;
+}
+
+.carousel__slide {
+  --carousel-gap-total: calc(var(--carousel-gap) * (var(--carousel-visible) - 1));
+  flex: 0 0 calc((100% - var(--carousel-gap-total)) / var(--carousel-visible));
+  min-width: 0;
+}
+
+/* Control row - 01 / 19  ·  15s progress  ·  prev / next */
+.carousel__bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.carousel__counter {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: .04em;
+  color: var(--muted-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.carousel__progress {
+  flex: 1 1 auto;
+  height: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: rgba(122, 143, 200, .22);
+}
+
+.carousel__progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
+  transform: scaleX(0);
+  transform-origin: left center;
+  /* 15s 一格：JS 只负责推进卡片，进度条交给 CSS，两者同时起步 */
+  animation: carousel-progress var(--carousel-interval, 15s) linear infinite;
+}
+
+/* 暂停（hover / 聚焦 / 离开视口 / 切后台）时两者一起停 */
+.carousel.is-paused .carousel__progress-fill { animation-play-state: paused; }
+
+@keyframes carousel-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.carousel__nav {
+  /* 进度条已经在 flex:1 里吃满了剩余空间；auto 留白是给弱动效下进度条隐藏时
+     兜底，让前后按钮仍然贴右。 */
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.carousel__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-pill);
+  color: var(--on-dark-soft);
+  transition: background-color .22s var(--ease), transform .22s var(--ease);
+}
+
+.carousel__btn:hover {
+  background: rgba(255, 255, 255, .58);
+  transform: translateY(-1px);
+}
+
+.carousel__btn:active { transform: translateY(0); }
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px;
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease),
+    background-color .28s var(--ease);
+}
+
+.work:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(102, 128, 229, .24);
+  background: rgba(255, 255, 255, .45);
+}
+
+.work__cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 292 / 200;
+  border-radius: var(--r-chip);
+  overflow: hidden;
+  isolation: isolate;
+  background: #E9EDFB;
+}
+
+/* Rasterised artwork. The CSS originals live in covers.css and are only used by
+   the tools/artwork render pages that produce these PNGs. */
+.work__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* 20 + 6 + 16 = 42, the canvas frame rounds to 43 and the card to 285. */
+  min-height: 43px;
+}
+
+.work__title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--ink);
+}
+
+.work__cat {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--muted-2);
+}
+
+/* --------------------------------------------------------------------------
+   设计规范 - 0,1844 1440x460  (pad 48, gap 32)
+   Cards: 432 wide, r20, pad 24, gap 20, glass .35, shadow y8 b20
+   Heights differ per card by content: 202 / 206 / 196.
+   -------------------------------------------------------------------------- */
+.guide {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 48px var(--gutter);
+}
+
+.guide__sub { max-width: 548px; }
+
+.guide__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-radius: var(--r-panel);
+  box-shadow: var(--shadow-soft);
+}
+
+.guide-card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--ink);
+}
+
+/* Colour swatches - 48x48, r14, gap 12 */
+.swatches {
+  display: flex;
+  gap: 12px;
+}
+
+.swatch {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+
+.swatch--blue { background: var(--brand-blue); }
+.swatch--violet { background: var(--brand-violet); }
+.swatch--mint { background: var(--brand-mint); }
+.swatch--ink { background: var(--ink-deep); }
+/* 个别项目的自有主色（如声浪的玫红 / 青色），只用于案例页色板 */
+.swatch--rose { background: #ff2d74; }
+.swatch--cyan { background: #2be7c8; }
+/* 美食社交 App：柠檬黄只给金币与会员 */
+.swatch--gold { background: #ffcc4d; }
+/* 露营分享 App：薄荷绿底 / 翡翠绿主操作 / 珊瑚红点赞 */
+.swatch--mintsoft { background: #d9f8ec; }
+.swatch--jade { background: #22e39a; }
+.swatch--coral { background: #ff5a4e; }
+/* 游泳社交 App：淡紫蓝底 / 泳池蓝主操作 / 珊瑚红点赞挂断 / 墨蓝文字 */
+.swatch--periwinkle { background: #dfe6fb; box-shadow: inset 0 0 0 1px rgba(22, 35, 74, .14); }
+.swatch--pool { background: #2fa8ff; }
+.swatch--deepnavy { background: #16234a; }
+/* 潜水分享 App：深水暗底 / 珊瑚橙主操作 / 海蓝链接 / 薄荷绿已关注 / 雾白文字 */
+.swatch--abyss { background: #0b1a22; }
+.swatch--ember { background: #f4623a; }
+.swatch--lagoon { background: #2f9bf5; }
+.swatch--divegreen { background: #33d67d; }
+.swatch--froth { background: #eaf4f8; box-shadow: inset 0 0 0 1px rgba(11, 26, 34, .16); }
+/* 摄影社区 App：暖纸白底 / 荧光青柠高亮与 Join / 薄薄荷卡片 / 珊瑚粉题材标签 / 近黑正文 */
+.swatch--paper { background: #f4f2ec; box-shadow: inset 0 0 0 1px rgba(27, 27, 27, .14); }
+.swatch--lime { background: #d8f36b; }
+.swatch--mintcard { background: #eaf6dd; box-shadow: inset 0 0 0 1px rgba(27, 27, 27, .10); }
+.swatch--rosy { background: #ff8f8f; }
+.swatch--photoblack { background: #1b1b1b; }
+.swatch--drinkmist { background: #f7f4fd; box-shadow: inset 0 0 0 1px rgba(27, 27, 27, .14); }
+.swatch--lilac { background: #efe7fd; box-shadow: inset 0 0 0 1px rgba(27, 27, 27, .08); }
+.swatch--grape { background: #a97bf0; }
+.swatch--butter { background: #ffd84d; }
+.swatch--drinkink { background: #1b1b1b; }
+/* 金融借款 App：暖纸白底 / 深松绿金额卡 / 金黄进度与已还 / 陶土橙英文版 Banner / 酒红逾期 */
+.swatch--loanpaper { background: #f7f1e7; box-shadow: inset 0 0 0 1px rgba(29, 26, 23, .14); }
+.swatch--pine { background: #14524a; }
+.swatch--ochre { background: #d8b64a; }
+.swatch--clay { background: #c3714f; }
+.swatch--wine { background: #4a1728; }
+/* 加密资产官网（CRAPPO · PC 端）：墨蓝底 / 深紫特性段 / 电光蓝动作 / 薄荷涨 / 玫红跌 */
+.swatch--cryptovoid { background: #0d0d2b; }
+.swatch--nebula { background: #2b076e; }
+.swatch--volt { background: #3671e9; }
+.swatch--cryptomint { background: #6edcb5; }
+.swatch--cryptopink { background: #ff325f; }
+
+/* 加密钱包 App（印尼 · 薄荷绿系）：雾白底、薄荷绿、深薄荷、珊瑚红、金币黄 */
+.swatch--coinmist { background: #f4f6f9; box-shadow: inset 0 0 0 1px rgba(18, 21, 27, .12); }
+.swatch--mintleaf { background: #3ad6a0; }
+.swatch--mintdeep { background: #24bd88; }
+.swatch--coralred { background: #ff6e7e; }
+.swatch--goldcoin { background: #ffc94d; }
+
+/* 融媒体媒资后台（PC · 品牌蓝系）：深蓝主色、品牌蓝、浅灰页面底、琥珀提醒、告警红 */
+.swatch--mpdeep { background: #2a70e8; }
+.swatch--mpblue { background: #2f7cf6; }
+.swatch--mpbg { background: #eff2f7; box-shadow: inset 0 0 0 1px rgba(31, 35, 41, .12); }
+.swatch--amp { background: #f5a623; }
+.swatch--alert { background: #f5535a; }
+
+/* 香氛社区 App：雾粉白底 / 丁香紫交互色与雷达线 / 浅丁香胶囊 / 深梅墨标题 / 精油绿数字 */
+.swatch--mistrose { background: #fdf7fa; box-shadow: inset 0 0 0 1px rgba(59, 47, 60, .12); }
+.swatch--lilacdeep { background: #cf9df5; }
+.swatch--lilacsoft { background: #f6ebfb; box-shadow: inset 0 0 0 1px rgba(59, 47, 60, .08); }
+.swatch--plum { background: #3b2f3c; }
+.swatch--mossgreen { background: #1d6b5f; }
+
+/* 运营 / 营销活动页：夏日趣市（纸白 / 天蓝 / 芥绿 / 鸭黄） */
+.swatch--faircream { background: #fff7e2; box-shadow: inset 0 0 0 1px rgba(43, 58, 47, .12); }
+.swatch--fairsky { background: #69c9f5; }
+.swatch--fairgreen { background: #2e9e5b; }
+.swatch--fairduck { background: #f6c53f; }
+
+/* 金融活动页：墨黑 / 香槟金 / 琥珀橙 / 品牌蓝 */
+.swatch--finink { background: #0d0b07; }
+.swatch--fingold { background: #e9c97e; }
+.swatch--finamber { background: #ff8a3d; }
+.swatch--finblue { background: #2f9bf5; }
+
+/* 阅读充值页：奶油白 / 玫红 / 珊瑚橙 / 深梅字 */
+.swatch--readcream { background: #fff0ea; box-shadow: inset 0 0 0 1px rgba(51, 34, 42, .1); }
+.swatch--readrose { background: #f1267a; }
+.swatch--readcoral { background: #ff8a3d; }
+.swatch--readplum { background: #33222a; }
+
+.guide-card__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--body);
+}
+
+/* Type ramp */
+.type-display {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+
+.type-body {
+  margin: 0;
+  font-size: 17px;
+  line-height: 21px;
+  color: var(--body);
+}
+
+.type-caption {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--muted-2);
+}
+
+.guide-item {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--body);
+}
+
+/* --------------------------------------------------------------------------
+   Footer - 0,2304 1440x183  (pad 48, gap 24, #FAFAFF@60%)
+   -------------------------------------------------------------------------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px var(--gutter);
+  background: rgba(250, 250, 255, .60);
+}
+
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer__brand {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--ink);
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer__link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  color: var(--muted);
+  transition: color .2s var(--ease);
+}
+
+.footer__link:hover { color: var(--ink); }
+
+.footer__divider {
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--divider);
+}
+
+.footer__bottom {
+  margin: 0;
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--faint);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   The artboard is 1440 wide; below that the two-column hero and the 3-up
+   carousel (home + design system) are the only things that cannot simply compress.
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .hero { gap: 40px; }
+  .hero__text { flex: 0 1 520px; width: auto; }
+  .hero__visual { flex: 0 0 clamp(400px, 42vw, 560px); width: clamp(400px, 42vw, 560px); height: auto; }
+  .hero__shot { width: 100%; height: auto; aspect-ratio: 512 / 340; }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 44px;
+    padding: 64px var(--gutter);
+  }
+  .hero__text { flex: 1 1 auto; width: 100%; max-width: 560px; }
+  .hero__visual { flex: 0 0 auto; width: 100%; height: auto; padding: 20px; }
+  .hero__title { font-size: 44px; line-height: 54px; }
+  .carousel { --carousel-visible: 2; }
+  .guide__grid { grid-template-columns: 1fr; gap: 20px; }
+  .about { gap: 28px; }
+  .guide-card { max-width: 100%; }
+}
+
+@media (max-width: 760px) {
+  :root { --gutter: 24px; }
+
+  .header { height: 64px; padding: 16px var(--gutter); }
+  .nav { gap: 18px; }
+  .nav__link { font-size: 14px; }
+
+  .about {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px var(--gutter);
+  }
+  .about__avatar { width: 120px; height: 120px; }
+  .about__title { font-size: 24px; line-height: 30px; }
+  .about__copy { line-height: 26px; }
+
+  .hero { padding: 40px var(--gutter) 48px; gap: 36px; }
+  .hero__title { font-size: 34px; line-height: 44px; }
+  .hero__sub { font-size: 16px; line-height: 26px; }
+
+  .gallery,
+  .guide { padding: 32px var(--gutter); gap: 24px; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 16px; min-height: 0; }
+  .guide .section-head__text { min-height: 0; }
+  .section-title { font-size: 26px; line-height: 34px; }
+
+  .carousel { --carousel-visible: 1; --carousel-gap: 16px; }
+
+  .footer { padding: 32px var(--gutter); }
+  .footer__top { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+@media (max-width: 480px) {
+  .hero__actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .btn { width: 100%; }
+  .filters { gap: 8px; }
+  .chip { padding: 9px 14px; }
+}
+
+/* Phones: the dashboard is a 512x340 artefact - cropping it like an inset
+   screenshot beats shrinking its 5px type into an unreadable mush. */
+@media (max-width: 600px) {
+  .hero__visual { overflow: hidden; }
+  .hero__shot {
+    flex: 0 0 auto;
+    width: 512px;
+    height: 340px;
+    max-width: none;
+    aspect-ratio: auto;
+  }
+}
+
+/* Narrow phones: the 826-wide nav frame can no longer share a row with the
+   wordmark, so the header becomes two rows instead of scrolling sideways. */
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 12px;
+    padding: 16px var(--gutter) 6px;
+  }
+  .nav {
+    flex: 1 1 100%;
+    width: auto;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+}
+
+/* Honour the OS-level motion preference: kill every transform / transition. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .work:hover,
+  .btn:hover,
+  .chip:hover,
+  .more-btn:hover,
+  .carousel__btn:hover { transform: none; }
+
+  /* 弱动效下不自动轮播，15s 进度条也就没有意义 */
+  .carousel__progress { display: none; }
+}
+

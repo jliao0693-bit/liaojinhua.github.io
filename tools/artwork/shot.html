@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>2:25 hero dashboard 512x340</title>
+  <link rel="stylesheet" href="../../assets/covers.css" />
+  <style>
+    html, body { margin: 0; padding: 0; background: #fff; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <div class="shot" style="position:relative;width:512px;height:340px;overflow:hidden" role="img" aria-label="ApexHub 数据看板界面预览">
+    <div class="shot__side" aria-hidden="true">
+      <div class="shot__brand"><span class="shot__brand-dot"></span>ApexHub</div>
+      <div class="shot__nav-item shot__nav-item--active">Overview</div>
+      <div class="shot__nav-item">Analytics</div>
+      <div class="shot__nav-item">Projects</div>
+      <div class="shot__nav-item">Tasks</div>
+      <div class="shot__nav-item">Calendar</div>
+      <div class="shot__nav-item">Messages</div>
+      <div class="shot__nav-item">Settings</div>
+      <div class="shot__user">
+        <span class="shot__user-avatar"></span>
+        <span>
+          <span class="shot__user-name">Alex Morgan</span><br />
+          <span class="shot__user-role">Product Designer</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="shot__main" aria-hidden="true">
+      <div class="shot__topbar">
+        <div class="shot__search">Search anything...</div>
+        <span class="shot__icon"></span>
+        <span class="shot__icon"></span>
+        <span class="shot__me"></span>
+      </div>
+
+      <div class="shot__kpis">
+        <div class="shot__kpi">
+          <div class="shot__kpi-label">Revenue</div>
+          <div class="shot__kpi-value">$12,450</div>
+          <div class="shot__kpi-delta">+15% vs last month</div>
+        </div>
+        <div class="shot__kpi">
+          <div class="shot__kpi-label">New Signups</div>
+          <div class="shot__kpi-value">24</div>
+          <div class="shot__kpi-delta">+8% vs last month</div>
+        </div>
+        <div class="shot__kpi">
+          <div class="shot__kpi-label">Task Completion</div>
+          <div class="shot__kpi-value">85%</div>
+          <div class="shot__kpi-delta shot__kpi-delta--down">-4% vs last month</div>
+        </div>
+        <div class="shot__kpi">
+          <div class="shot__kpi-label">New Tickets</div>
+          <div class="shot__kpi-value">16</div>
+          <div class="shot__kpi-delta">+12% vs last month</div>
+        </div>
+      </div>
+
+      <div class="shot__row">
+        <div class="shot__chart">
+          <div class="shot__chart-head">
+            <span class="shot__chart-title">Analytics Overview</span>
+            <span class="shot__pill">Last 7 days</span>
+          </div>
+          <div class="shot__plot">
+            <svg viewBox="0 0 240 90" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="shotArea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#7399FF" stop-opacity=".34" />
+                  <stop offset="100%" stop-color="#7399FF" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M0 68 L34 52 L68 58 L102 34 L136 45 L170 22 L204 31 L240 12 L240 90 L0 90 Z" fill="url(#shotArea)" />
+              <path d="M0 68 L34 52 L68 58 L102 34 L136 45 L170 22 L204 31 L240 12" fill="none" stroke="#6E8BF0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="shot__axis">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span>
+            <span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+        </div>
+
+        <div class="shot__feed">
+          <div class="shot__feed-title">Recent Activity</div>
+          <div class="shot__feed-item">New project created</div>
+          <div class="shot__feed-item">Payment received</div>
+          <div class="shot__feed-item">Report exported</div>
+          <div class="shot__feed-item">Team invited</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

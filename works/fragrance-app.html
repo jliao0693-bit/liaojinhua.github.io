@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>香水 App · 香调分析 / 香方社区 — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="香氛社区 App 案例：六屏英文界面——首页把「Fragrance analysis 输入配方」做成整条淡紫入口（Popular fragrance 三瓶横滑是柑橘茶 / 黑兰 / 琥珀，Daily Combo 用一张圆环白卡拆出黑兰精油配方的 3 滴柠檬 + 3 滴橙花 + 4 滴依兰 + 10ml 基底油，Daily 是 Amy 的动态）、分析页把配方变成四维香调雷达（Floral / oriental / fresh fragrance / woody）并给出一段 Analysis detail、For You 用整屏大图讲一瓶怎么调（1.2k 赞 / 1.2k 评论）、作品详情把同一张图放大到全屏、Luna 的个人主页把 13 Posts / 5 followers / 196 following 与 Floral note · Citrus tone · Fresh 三个标签叠成一张卡、香方详情把柑橘茶香拆成前中后调共 18 滴；雾粉白打底，丁香紫只出现在按钮、胶囊与雷达线上，产品色全部交给照片。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">香水 App · 香调分析 / 香方社区</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 香氛社区 App（香调雷达 + 香方生成 · 英文界面）</span>
+      <h1 class="phead__title">香水 App · 香调分析 / 香方社区</h1>
+      <p class="phead__lead">
+        香水 App 最难讲的是「闻不到」。文字描述再准也隔一层，所以这次交付把看不见的气味全部换成能数的东西：一张四维雷达、一串滴数、一页香方。用户点开任何一瓶，看到的不是形容词，而是 Floral 打了多高、柠檬几滴、依兰几滴、总共 18 滴。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">香氛社区 App（英文界面 · 六屏核心链路）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI 设计（信息结构 + 视觉语言）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/fragrance-hero.png" width="1648" height="948"
+          alt="香水 App 主视觉：雾粉白与丁香紫纸面上香调分析、首页与香方详情三屏叠放，标题左侧压一条丁香紫竖线" />
+        <figcaption class="figure__cap">
+          主视觉 · 分析、首页、香方同框：气味看得见形状，也数得清滴数。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">英文界面 · 香调分析 + 香方社区 · 六屏</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这是一款面向英文用户的香氛社区 App：一端是「我有一份配方，想知道它闻起来是什么形状」，另一端是「我看到别人晒的一瓶，想照着调出来」。产品把这两件事绑在同一条链路上——输入配方拿到香调分析，看懂一瓶之后再把它存成自己的香方，最后发到 For You 里被别人复刻。</p>
+          <p>难点不在页面多少，而在翻译：气味没法拍照，也没法试听。所以整套界面只承认两种可数的东西——四轴雷达图（Floral / oriental / fresh fragrance / woody）与滴数（柠檬 6 滴、甜橙 5 滴……共 18 滴）。所有形容词都退到第二层，用来解释这两个数字，而不是替代它们。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">一屏只答一个问题 · 形状给直觉，滴数给操作</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>首页只走一条竖线：整条淡紫入口（Fragrance analysis）→ Popular fragrance 三瓶横滑 → Daily Combo 一张配方卡 → Daily 动态列表；从「我能做什么」读到「别人在做什么」，扫一眼不用回看。</li>
+          <li>主按钮只有一个：入口条里的 Enter 是整屏第一个实心胶囊，分析页顶部又把同一件事拆成输入框 + generate 两颗控件，前后一呼一应，用户不会在两个地方犹豫。</li>
+          <li>香调雷达只画四个方向 + 三层同心圆，不写百分比：形状本身就是结论（这一瓶偏花香与清新），再配一段 Analysis detail 把形状翻译成前中后调。</li>
+          <li>配方永远写成滴数：Daily Combo 是 3 + 3 + 4 滴 + 10ml 基底油，香方详情是 6 / 5 / 3 + 2 / 1 + 1 共 18 滴。能照着手做，比任何形容词都可信。</li>
+          <li>社区用整屏大图：For You 两张大图上下叠，文字只压底部一张磨砂卡（标题 + 配方一行 + 头像 + 1.2k 赞 / 1.2k 评论），照片负责情绪，卡负责信息。</li>
+          <li>个人主页把身份压成一行标签：Floral note / Citrus tone / Fresh 三颗淡紫胶囊紧贴名字，13 Posts / 5 followers / 196 following 用大字号并排；Scents / Likes 两栏切换，作品只看图。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">六屏 · 首页 / 分析 / 社区 / 作品详情 / 个人主页 / 香方</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>下面六屏全部来自交付稿：首页回答「这里能做什么」，分析页回答「这瓶闻起来是什么形状」，社区流回答「别人怎么调」，作品详情回答「这一瓶的完整配方」，个人主页回答「谁在调、调什么」，香方详情回答「照着做要几滴」。六屏共用一套淡紫胶囊、白卡与磨砂卡，切页时只有内容在变。</p>
+          <p>重点看两处：一是雷达图与滴数永远成对出现——形状给直觉，数字给操作；二是所有大图卡片底部的文字都压进同一个磨砂容器，照片再亮也不会吃掉一行配方。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/fragrance-home.png" width="780" height="1688" alt="香水 App 首页：Fragrance analysis 淡紫入口卡与 Enter 按钮，Popular fragrance 三瓶横滑（柑橘茶 / 黑兰 / 琥珀），Daily Combo 黑兰精油配方卡，Daily 里 Amy 的动态与底部五个 tab" />
+          <figcaption class="shots__cap">首页 · 先给入口，再给三瓶现货，最后给一张能照着调的配方。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/fragrance-analysis.png" width="780" height="1688" alt="香水 App 香调分析页：输入框 Black orchid 与 generate 按钮，四维香调雷达（Floral / oriental / fresh fragrance / woody）与 Analysis detail 前中后调说明" />
+          <figcaption class="shots__cap">分析 · 气味变成一张菱形：四个方向、三层刻度、一句话解读。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/fragrance-feed.png" width="780" height="1688" alt="香水 App 社区流：For You 与 Following 切换，两张大图作品卡（滴管调香与白花）底部磨砂卡写 Fragrance of flowers 与依兰 4 滴 / 橙花 3 滴 / 柠檬 3 滴，1.2k 赞 1.2k 评论" />
+          <figcaption class="shots__cap">社区 · 整屏大图，底部一张卡只说配方。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/fragrance-post.png" width="780" height="1688" alt="香水 App 作品详情：全屏调香大图，左上三颗分页圆点、右上警告角标，底部磨砂卡与点赞评论 1.2k" />
+          <figcaption class="shots__cap">作品详情 · 同一张卡放大到全屏，结构不动。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/fragrance-profile.png" width="780" height="1688" alt="香水 App 个人主页：Luna 头像与 Floral note / Citrus tone / Fresh 三个标签，简介与 Exclusive fragrance 圆图，13 Posts / 5 followers / 196 following，Scents 与 Likes 两栏三列作品网格" />
+          <figcaption class="shots__cap">个人主页 · 三个标签说明她调什么，三个数字说明她被看多少。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/fragrance-formula.png" width="780" height="1688" alt="香水 App 香方详情：CITRUS THÉ 瓶身大图，Carrier 10ml 香水酒精或荷荷巴油，浓度 about 9%，前调柠檬 6 滴 / 甜橙 5 滴 / 葡萄柚 3 滴，中调苦橙叶 2 滴 / 橙花 1 滴，后调岩兰草 1 滴，共约 18 滴" />
+          <figcaption class="shots__cap">香方 · 前中后调各几滴，一页写完，看完就能动手。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">雾粉白底 · 丁香紫交互色 · 深梅墨 · 精油绿</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--mistrose"></span>
+          <span class="swatch swatch--lilacdeep"></span>
+          <span class="swatch swatch--lilacsoft"></span>
+          <span class="swatch swatch--plum"></span>
+          <span class="swatch swatch--mossgreen"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>底色是雾粉白 #fdf7fa，丁香紫 #cf9df5 只用在「可点 / 可选 / 可读」三类元素上——Enter 与 generate、标签胶囊与选中态、雷达线与刻度；浅一档的 #f6ebfb 做成胶囊底与入口卡的渐变收尾。深梅墨 #3b2f3c 负责标题与正文层级，副文用 #7d7183。精油绿 #1d6b5f 取自瓶身液体，只出现在数字与提示（about 18 drops、about 9%，light flavor EDP level）上，一个绿字都不做装饰。整套色板里没有装饰色：每一颗都能在界面上指出它管什么，产品色全部交给照片里的绿瓶、酒红瓶与琥珀瓶。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">4 个「闻不到 + 大图社区」带来的取舍</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>「气味」看不见，用户凭什么相信这份分析？</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把气味拆成形状与滴数：雷达图给形状（Floral / oriental / woody / fresh 四个轴、三层刻度），Analysis detail 用一句话翻译成前中后调，香方详情再把每一滴写死（柠檬 6 滴、甜橙 5 滴、葡萄柚 3 滴……共 18 滴）。形状负责「一眼判断」，数字负责「照着做」，两者缺一都不可信。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>首页要同时放入口、现货、配方、动态四件事，怎么不打架？</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>按「我能做什么 → 别人在做什么」排成竖向三段，每段换一种容器：入口条是淡紫渐变的整条横卡（唯一实心按钮 Enter），Popular fragrance 是三瓶横滑、右侧半张暗示可滑，Daily Combo 是一张带圆环产品图的白卡，Daily 是纯列表。容器形状不同，扫读时自然分层。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>整屏大图 + 配方文字，怎么保证字一定读得清？</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>文字一律压在底部半透明磨砂卡上，卡内三行结构固定：标题 → 配方一行 → 头像与点赞评论。卡片左右留 20px、距底部 24px，图片再亮也吃不掉文字对比度；作品详情把同一张卡放大到全屏，结构完全不动。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>淡紫色铺得不少，会不会显廉价？</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>丁香紫只出现在三类元素：可点的（Enter / generate / 创建按钮）、可选的（标签胶囊 / For You 选中态）、可读的（雷达线与刻度）。大面积底色始终是雾粉白，产品颜色交给照片里的绿瓶、酒红瓶与琥珀瓶——紫色退成「交互色」，就不抢产品。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="flow-title">
+      <div class="block__head">
+        <h2 class="block__title" id="flow-title">设计顺序</h2>
+        <p class="block__note">先解「闻不到」，再定容器，最后做社区</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">先解「闻不到」</p>
+          <p class="flow__text">把气味翻译成两种可数的东西——四轴雷达与滴数。先写分析页与 Analysis detail 的文案结构，再回头做首页，避免首页做成空壳入口。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">再定一屏一个主容器</p>
+          <p class="flow__text">首页四段各用一种容器（横卡 / 横滑 / 圆环白卡 / 列表），颜色只落在可点元素上，保证整屏注意力优先级唯一。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">最后做社区与主页</p>
+          <p class="flow__text">For You、作品详情、个人主页全部以照片为主体，文字统一压进磨砂卡；Scents / Likes 保持三列等宽，换人不变形。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="stats-title">
+      <div class="block__head">
+        <h2 class="block__title" id="stats-title">交付摘要</h2>
+        <p class="block__note">六屏 · 四个香调维度 · 一份 18 滴香方</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">6</span>
+          <span class="stat__label">屏核心链路</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">4</span>
+          <span class="stat__label">香调维度（花 / 木 / 东方 / 清新）</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">18</span>
+          <span class="stat__label">滴 · 一份完整香方</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="coin-wallet.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">加密钱包 App · 行情 / 持仓 / 买卖</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="ai-edit-emotion.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">AI 剪辑 · 营销视频 · 金融类型 1</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

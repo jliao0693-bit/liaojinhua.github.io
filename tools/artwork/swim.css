@@ -1,0 +1,207 @@
+/* ============================================================================
+   游泳社交 · SWIM SOCIAL
+   ----------------------------------------------------------------------------
+   CSS 化的素材：封面 292x200、主视觉 824x474。界面部分不用 CSS 重绘，直接把
+   设计稿原图（assets/images/swim-*.png）以 .sw-shot 拼进去。
+   由 tools/build-images.ps1 用无头 Chrome 截图成
+   assets/images/work-swim*.png 与 swim-hero.png。
+
+   配色照搬 App 自身：淡紫蓝底（#eef1ff → #dfe6fb）、泳池蓝主操作（#2fa8ff）、
+   珊瑚红点赞与挂断（#ff5b5f）、墨蓝文字（#16234a）。
+   标题沿用 App 里的衬线字，其余全部无衬线 —— 一屏里只有一种字族做对比。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow: hidden;
+  background: #eef1ff;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --sw-pool: #2fa8ff;
+  --sw-pool-deep: #1a86e0;
+  --sw-coral: #ff5b5f;
+  --sw-ink: #16234a;
+  --sw-ink-soft: #5a6b95;
+  --sw-serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+}
+
+/* 淡紫蓝底 + 三团水光：取首页与个人主页的渐变关系 */
+.sw-pool {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(152deg, #f2f5ff 0%, #e6ecff 38%, #dfe6fb 70%, #e9f2ff 100%);
+}
+
+.sw-blob { position: absolute; border-radius: 50%; filter: blur(28px); }
+.sw-blob--sky { width: 176px; height: 176px; right: -58px; top: -68px; background: rgba(47, 168, 255, .42); }
+.sw-blob--lilac { width: 148px; height: 148px; left: -54px; bottom: -58px; background: rgba(150, 160, 255, .38); }
+.sw-blob--coral { width: 104px; height: 104px; left: 118px; bottom: -48px; background: rgba(255, 91, 95, .26); }
+
+/* 水面焦散：一层极淡的同心弧，暗示泳池水纹 */
+.sw-caustic {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-radial-gradient(circle at 14% 92%, rgba(47, 168, 255, .16) 0 1px, transparent 1px 15px);
+  -webkit-mask-image: radial-gradient(ellipse at 14% 92%, #000 0%, transparent 58%);
+  mask-image: radial-gradient(ellipse at 14% 92%, #000 0%, transparent 58%);
+}
+
+/* 泳道线：封面左下角三条极细的水线 */
+.sw-lane {
+  position: absolute;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(47, 168, 255, .34), rgba(47, 168, 255, 0) 78%);
+}
+
+/* 真实界面截图：白边 + 柔和投影，像贴在浅蓝纸上的一部手机 */
+.sw-shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, .94);
+  box-shadow: 0 18px 34px rgba(30, 62, 130, .24), 0 0 0 4px rgba(255, 255, 255, .52);
+  background: #fff;
+}
+.sw-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ---------------------------------------------------------------- 封面 292x200 */
+.sw-cover {
+  position: relative;
+  width: 292px;
+  height: 200px;
+  overflow: hidden;
+  background: #eef1ff;
+}
+
+.sw-cover__eyebrow {
+  position: absolute; left: 16px; top: 15px;
+  padding: 3px 8px 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 168, 255, .4);
+  background: rgba(255, 255, 255, .76);
+  color: var(--sw-pool-deep);
+  font-size: 7.5px; font-weight: 700; letter-spacing: .18em;
+}
+
+.sw-cover__cn {
+  position: absolute; left: 15px; top: 43px;
+  font-family: var(--sw-serif);
+  font-size: 26px; font-weight: 700; line-height: 1.15;
+  color: var(--sw-ink);
+}
+
+.sw-cover__en {
+  position: absolute; left: 17px; top: 82px;
+  font-size: 7.5px; font-weight: 700; letter-spacing: .3em;
+  color: #7c8bb5;
+}
+
+.sw-cover__sub {
+  position: absolute; left: 17px; top: 97px;
+  font-size: 10.5px; letter-spacing: .05em;
+  color: var(--sw-ink-soft);
+}
+
+/* 话题胶囊：App 里每张卡底部的「The benefits of swimming」压条 */
+.sw-cover__topic {
+  position: absolute; left: 17px; top: 120px;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px 2px;
+  border-radius: 999px;
+  background: rgba(22, 35, 74, .84);
+  color: #fff;
+  font-family: var(--sw-serif);
+  font-size: 8px; letter-spacing: .03em;
+}
+.sw-cover__topic i {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #7cc4ff;
+  box-shadow: 0 0 0 2px rgba(124, 196, 255, .28);
+}
+
+.sw-cover__meta {
+  position: absolute; left: 17px; bottom: 16px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 8.5px; font-weight: 700; letter-spacing: .06em;
+  color: #6b7ba6;
+}
+
+.sw-cover__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #ffd0d1, var(--sw-coral));
+  box-shadow: 0 0 0 1px rgba(190, 46, 50, .28);
+}
+
+/* ------------------------------------------------------------ 主视觉 824x474 */
+.sw-hero {
+  position: relative;
+  width: 824px;
+  height: 474px;
+  overflow: hidden;
+  background: #eef1ff;
+}
+
+.sw-hero .sw-blob--sky { width: 392px; height: 392px; right: -120px; top: -150px; filter: blur(72px); }
+.sw-hero .sw-blob--lilac { width: 320px; height: 320px; left: -90px; bottom: -150px; filter: blur(70px); }
+.sw-hero .sw-blob--coral { width: 232px; height: 232px; left: 286px; bottom: -130px; filter: blur(58px); }
+
+.sw-hero__copy { position: absolute; left: 56px; top: 88px; width: 348px; }
+
+.sw-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 12px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 168, 255, .36);
+  background: rgba(255, 255, 255, .78);
+  color: var(--sw-pool-deep);
+  font-size: 10px; font-weight: 700; letter-spacing: .2em;
+}
+
+.sw-hero__title {
+  margin-top: 22px;
+  font-family: var(--sw-serif);
+  font-size: 54px; font-weight: 700; line-height: 1.06;
+  color: var(--sw-ink);
+}
+
+.sw-hero__en {
+  margin-top: 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: .44em;
+  color: #7c8bb5;
+}
+
+.sw-hero__lead {
+  margin-top: 24px;
+  font-size: 13px; line-height: 1.9;
+  color: #46537d;
+}
+
+.sw-hero__chips { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px; }
+.sw-hero__chip {
+  padding: 7px 13px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .94);
+  background: rgba(255, 255, 255, .7);
+  color: #33406b;
+  font-size: 11px; letter-spacing: .04em;
+}
+
+/* 左下角一行小注：浏览量 / 评论 / 关注这类真实数字 */
+.sw-hero__note {
+  position: absolute; left: 56px; bottom: 48px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 700; letter-spacing: .08em;
+  color: #6b7ba6;
+}
+.sw-hero__note i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #ffd0d1, var(--sw-coral));
+  box-shadow: 0 0 0 1px rgba(190, 46, 50, .26);
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DIY 饮品 · 自己调一杯的饮品社区 App — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="DIY 饮品 App 案例：一个让人自己调一杯的饮品社区——整站界面一次交付：Home（今日推荐 + Daily Quiz / DIY Inspo + Daily Challenge + Trending Topics + Popular Drinks）、Share（AI 配方助手 + Featured Videos + Popular Recipes）、Create（Edit / Recipe upload / Blind box generation + 盲盒结果卡）、个人中心（My coins 999 + Piece + My Recipes）、他人主页与发布前的社区规则弹窗；薰衣草紫底 + 奶油黄按钮 + 大圆角卡，把「配方」做成随手就能试一次的东西。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">DIY 饮品 · 自己调一杯的饮品社区 App</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · DIY 饮品 App（C 端 · 饮品社区）</span>
+      <h1 class="phead__title">DIY 饮品 · 自己调一杯的饮品社区 App</h1>
+      <p class="phead__lead">
+        喝的东西从来不缺，缺的是「今天调点什么」：奶茶店的选择已经够多，但自己在家弄一杯，配方全靠刷短视频碰运气，试错成本全落在那杯难喝的饮料上。这个 App 把「试一杯」拆成三种成本递增的入径——首页每天给一杯推荐和一个挑战，分享页让 AI 按你手上的材料出配方，创作页还留了一个盲盒：什么都不用想，摇一杯出来。整套界面按一屏一屏铺完，不是几张效果图。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">DIY 饮品 App（C 端 · 饮品社区）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI + 交互设计（整个 App 的界面）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/drink-hero.png" width="1648" height="948"
+          alt="DIY 饮品 App 主视觉：紫雾底上，首页与发布页两块界面并排展示，标题下压一条奶油黄下划线" />
+        <figcaption class="figure__cap">
+          主视觉 · 首页与发布页同框：一半是「今天喝什么」，一半是「怎么把自己的那杯留下」。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">饮品社区 · 从「收藏配方」到「动手调一杯」</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这款 App 面向愿意在家动手的年轻饮者：会买茶包、会囤水果，也会为了自制一杯柠檬茶去买一个雪克杯。旧版是一个按时间排的配方流——收藏夹里躺着几十条配方，真正动手的次数一只手数得过来；卡住人的从来不是「没有配方」，而是「手上这几样东西能做什么」，以及「照着做完到底对不对」。</p>
+          <p>重做把「动手」这件事拆成三段，各给一个入口：首页负责给方向（今日推荐、每日挑战、话题），分享页负责给配方（AI 助手按材料生成，Featured Videos 看别人怎么做），创作页负责把结果留下来（拍一张、传配方，或者直接抽盲盒）。盲盒不是噱头：它把「不知道做什么」这种最常见的状态，变成一次成本极低的摇一摇，摇出来的结果带完整克数与甜度，可以存草稿再改，也可以直接发出去。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">三种入径，一套卡片</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>首页第一屏只放三样东西：一张今日推荐大卡（饮品实拍压在右侧，左侧 Today's Recommendation + 标题 + # Refreshing / # Low Sugar 两枚话题），一行两枚功能入口（Daily Quiz 带角标 1、DIY Inspo），再接一条 Daily Challenge。推荐每天换内容，位置与高度不动。</li>
+          <li>首页往下是「先参加、再浏览」的顺序：Daily Challenge 用整条薰衣草卡接住参与（标题 Summer Fruit Cooler + 一句 Share your summer drink! + Join Now 胶囊），Trending Topics 用三条等高行（emoji + 问题 + 188 joined），最后才是 Popular Drinks 双列 4:5 竖图，缩略图底部压一条半透明标签。</li>
+          <li>Share 页按「先让 AI 帮你想，再看别人怎么做，最后看榜单」排：顶部一张 AI Drink Recipe Assistant 卡（紫色标题 + 三行说明 + 奶油黄 Try Now + 右侧 3D 机器人），下面 Featured Videos 双列视频卡（播放图标 + 右上时长角标 + 作者行 + 点赞数），再往下 Popular Recipes 三条白卡只留名字与点赞。</li>
+          <li>Create 页把三种创作方式并排成三张等高卡（Edit / Recipe upload / Blind box generation），每张右侧一颗紫色圆角图标；下面 Generated result display 是盲盒的结果卡——一句结论 + 一行用逗号连起来的配方（6 green grapes, 180ml jasmine tea, 40ml coconut milk, 120g ice cubes）+ 两个可判断的参数（Sweetness 30% sugar / Taste: refreshing），右下角一颗 Draft。结果先落草稿，不直接发。</li>
+          <li>个人中心把「我调过什么」放得比「我是谁」重：头像 + 名字 + 性别 + ID 一行，一句签名，四项数据（Following / Followers / Likes / Black），一条 My coins 渐变条（999 + 柠檬图标），然后 Piece 双列作品、My Recipes 点赞列表；他人主页同一套骨架，只多一颗 Follow 与一颗私信。发布进入编辑前先弹一次社区规则，确认后才落笔。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">这个 App 是按整站交付的 · 这里挑 6 屏</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这次交付的是整个 App 的主界面，不是几张效果图：Home、Share、Create、个人中心、他人主页，以及发布前的社区规则弹窗，连同底部五格 tab（Home / Messages / Create / Share / Profile，中间是一颗紫色 FAB）一起出稿。下面 6 屏全部来自设计稿原图。</p>
+          <p>挑这 6 屏，是因为它们各自回答一个不同的问题——今天喝什么（Home）、配方从哪来（Share）、怎么把自己的那杯留下（Create）、我调过什么（个人中心）、别人值不值得关注（他人主页），以及什么不能发（规则弹窗）。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/drink-home.png" width="780" height="2050" alt="DIY 饮品 App 首页：Today's Recommendation 今日推荐卡、Daily Quiz 与 DIY Inspo 两枚入口、Daily Challenge 活动卡、Trending Topics 三条话题与 Popular Drinks 双列竖图" />
+          <figcaption class="shots__cap">首页 · 一张今日推荐开场，两枚入口，一条挑战，最后才是饮品流。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/drink-share.png" width="780" height="1688" alt="DIY 饮品 App 分享页：AI Drink Recipe Assistant 卡与 3D 机器人、奶油黄 Try Now、Featured Videos 双列视频卡与 Popular Recipes 三条白卡" />
+          <figcaption class="shots__cap">分享 · AI 助手在最上面，视频看别人怎么做，最后才是热门配方榜。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/drink-create.png" width="780" height="1688" alt="DIY 饮品 App 发布页：Edit、Recipe upload、Blind box generation 三张创作卡与紫色图标底，下方盲盒结果卡带配方、甜度与 Draft 按钮" />
+          <figcaption class="shots__cap">发布 · 三种创作入径并排，盲盒结果先落草稿再编辑。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/drink-profile.png" width="780" height="1688" alt="DIY 饮品 App 个人中心：头像与 ID 9527、四项数据、My coins 999 渐变金币条、Piece 双列作品与 My Recipes 点赞列表" />
+          <figcaption class="shots__cap">个人中心 · 四项数据 + 一条 My coins，作品与配方各占一段。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/drink-other.png" width="780" height="1688" alt="DIY 饮品 App 他人主页：返回与举报、紫色描边头像、Follow 与私信按钮、三项数据、Piece 与 My Recipes" />
+          <figcaption class="shots__cap">他人主页 · 同一套骨架，多一颗 Follow 与一颗私信。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/drink-edit.png" width="780" height="1688" alt="DIY 饮品 App 发布前的社区规则弹窗：鼓励分享自制配方与照片，禁止冒犯内容与酒精饮品，底部紫色 Done 按钮" />
+          <figcaption class="shots__cap">规则弹窗 · 进编辑前先说清什么鼓励、什么不发。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">紫雾白底 · 浅薰衣草 · 主色紫 · 奶油黄 · 近黑</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--drinkmist"></span>
+          <span class="swatch swatch--lilac"></span>
+          <span class="swatch swatch--grape"></span>
+          <span class="swatch swatch--butter"></span>
+          <span class="swatch swatch--drinkink"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>底色是一张带一点紫的冷白 #f7f4fd，不是纯白：饮品实拍压在上面不带灰，浅紫卡片叠上去也有边界。卡片统一用浅薰衣草 #efe7fd，只承担「这是一块可以点的内容」，不做第二种颜色。主色紫 #a97bf0 只出现在三处——图标底、按钮与金币条，且金币条用一个 96° 的渐变从 #c9a6fb 走到 #9a68ec，让「攒到的」和「花掉的」看起来是同一件事。奶油黄 #ffd84d 全站只有一种用法：Try Now 与 Follow 这类「试一下」的动作，永远配黑字，一屏最多一颗。点赞的莓红 #ff5b7f 单独一类，不参与界面装饰。正文回到近黑 #1b1b1b，副文 #5b5570、辅助 #948da8 各降一档。形状走大圆角：卡片 24–28px，图标底 20px，按钮与标签一律胶囊；3D 小图标是唯一的「插画」，只出现在三张创作卡、AI 助手卡与盲盒结果卡上，其余位置一律平面。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">3 个「生成 + 社区」带来的取舍</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>AI 生成配方最容易变成一句话甩给用户：看着挺对，但不知道从哪儿改。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把结果卡拆成三层可扫的结构：结论（The blind box is ready.）→ 材料与克数（逗号连写，一行读完）→ 两个能判断的参数（Sweetness 30% sugar / Taste: refreshing），最后给一颗 Draft。用户对结果的第一次接触是「可以改的草稿」，不是「已经发出去的成品」，改甜度、换材料都在这张卡上完成。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>首页要同时放推荐、入口、挑战、话题和饮品流，五段内容抢同一块地方。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>定死顺序与配额：推荐 1 张（约 190px 高）、入口 2 枚（同一行）、挑战 1 条、话题 3 条（等高 56px）、饮品双列。每天只换推荐与挑战的内容，位置与高度不动，滚动距离就不会随内容跳动；话题行等高，保证三条永远齐平，也不会因为问题变长而挤掉第三条。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>紫 + 黄很容易滑成糖果色，一屏里出现三种高饱和就收不住。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把紫色分两级：主色 #a97bf0 只给按钮与图标底，浅紫 #efe7fd 只给卡片；黄色只保留一种用法（Try Now / Follow 这类「试一下」的动作），并且永远配黑字；点赞的莓红单独一类，不参与装饰。结果整站只有「紫底 + 白卡 + 一处黄」三层，第 4 屏之后也不需要再加颜色。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 从两屏打样铺到整个 App</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 先把「盲盒」做成封面</p>
+          <p class="flow__text">先定气质：紫雾白底 + 浅紫大卡 + 一颗奶油黄按钮，读起来像一杯刚倒出来的气泡水，而不是一个食谱库。用 Create 与 Home 两屏打样，确认两条底线——生成结果先进草稿、一屏只允许一颗黄按钮——再动其他页面。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 三条创作入径各自铺完</p>
+          <p class="flow__text">把「动手」拆成成本递增的三条路：Edit（拍一张）→ Recipe upload（写配方）→ Blind box（摇一杯），三条各自成页后再互相导流；随后补 Share 的 AI 助手与视频、个人中心的 My coins 与 My Recipes、他人主页的 Follow 与规则弹窗；卡片、紫色图标底、话题行、金币条、底部五格 tab 收成一套组件。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付组件 Variant 与页面清单，和开发一起走查 iOS / Android：浅紫在 OLED 与低亮度下的偏色、3D 图标缩小到 20px 的清晰度、材料多时结果卡的换行、话题长句是否把 joined 挤掉、底部 tab 与 FAB 的安全区、键盘弹起时编辑页的滚动位置，逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">全站</span>
+          <span class="stat__label">Home / Share / Create（Edit · Recipe upload · Blind box）/ 个人中心 / 他人主页 / My coins / My Recipes / 规则弹窗 / 消息 / 设置</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">紫雾 + 奶油黄规范：大圆角卡、紫色图标底、胶囊按钮、渐变金币条、五格 tab</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 段</span>
+          <span class="stat__label">核心动线：看今日推荐 → 让 AI 出一份配方 → 摇盲盒落草稿</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="photo-share.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">摄影社区 · 摄影作品分享与找搭子 App</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="loan-app.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">分期借款 App · 西语 / 英语双语钱包</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

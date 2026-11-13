@@ -1,0 +1,808 @@
+/* ============================================================================
+   加密资产交易 App（金融 / 印尼市场）
+   ----------------------------------------------------------------------------
+   CSS 化的界面素材。和 CRAPPO 官网那套「直接贴设计稿截图」不同，这个项目只有
+   五张 750 宽的界面截图，没有可切片的原图，所以这里把五屏按原稿 1:1 重绘成
+   390x844 的 HTML（行情 / 首页 / 我的 / 持仓 / 币种详情），由
+   tools/build-images.ps1 截成 assets/images/coin-*.png；
+   封面 292x200 与主视觉 824x474 再用这五屏的渲染图拼版。
+
+   配色照搬原稿（绿系金融 App）：
+     雾白底   #f4f6f9  —— 列表页底色，白卡浮在上面
+     薄荷绿   #3ad6a0  —— 唯一的品牌色：资产卡、涨幅、选中态、主按钮
+     深薄荷   #24bd88  —— 薄荷绿上的字与图标（对比度够）
+     珊瑚红   #ff6e7e  —— 只表示跌（-2.1% / Jual / Keluar）
+     金币黄   #ffc94d  —— 只出现在图表的价格气泡上
+   形状：资产卡 20px、列表卡 16–18px、胶囊与圆点图标 999px，数字一律等宽。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow: hidden;
+  background: #f4f6f9;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --cw-bg: #f4f6f9;
+  --cw-card: #ffffff;
+  --cw-ink: #12151b;
+  --cw-ink-2: #5a6270;
+  --cw-dim: #a2a9b6;
+  --cw-line: #eef1f5;
+  --cw-mint: #3ad6a0;
+  --cw-mint-d: #24bd88;
+  --cw-mint-l: #8ce8c6;
+  --cw-rose: #ff6e7e;
+  --cw-gold: #ffc94d;
+  --cw-btc: #f7931a;
+  --cw-eth: #7d8794;
+  --cw-ltc: #1e68d6;
+  --cw-xrp: #15181d;
+  --cw-xlm: #15181d;
+  --cw-shadow: 0 10px 24px rgba(23, 31, 54, .06);
+}
+
+/* ---------- 手机外壳与系统栏 ---------------------------------------------- */
+
+.scr {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  overflow: hidden;
+  background: var(--cw-bg);
+  color: var(--cw-ink);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.scr b, .scr strong { font-weight: 700; }
+
+.status {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.status__icons { display: flex; align-items: center; gap: 6px; }
+
+.sig { display: flex; align-items: flex-end; gap: 2px; height: 10px; }
+.sig i { width: 3px; border-radius: 1px; background: var(--cw-ink); }
+.sig i:nth-child(1) { height: 4px; }
+.sig i:nth-child(2) { height: 6px; }
+.sig i:nth-child(3) { height: 8px; }
+.sig i:nth-child(4) { height: 10px; }
+
+.wifi { width: 15px; height: 11px; display: block; }
+
+.batt {
+  position: relative;
+  width: 22px; height: 11px;
+  border: 1.4px solid rgba(18, 21, 27, .85);
+  border-radius: 3px;
+}
+.batt::after {
+  content: "";
+  position: absolute;
+  right: -4px; top: 2.5px;
+  width: 2px; height: 4.5px;
+  border-radius: 0 1px 1px 0;
+  background: rgba(18, 21, 27, .45);
+}
+.batt i { position: absolute; inset: 1.5px; border-radius: 1.2px; background: var(--cw-ink); }
+
+/* 底部三格 tab：选中格用一颗短绿条压在顶边，图标与文字同时转绿 */
+.tabbar {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 84px;
+  display: flex;
+  padding-bottom: 16px;
+  background: var(--cw-card);
+  box-shadow: 0 -12px 28px rgba(23, 31, 54, .05);
+}
+
+.tab {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #b9bec9;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.tab svg { width: 21px; height: 21px; display: block; }
+
+.tab--on { color: var(--cw-mint-d); }
+
+.tab--on::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  width: 34px; height: 3px;
+  margin-left: -17px;
+  border-radius: 0 0 3px 3px;
+  background: var(--cw-mint);
+}
+
+/* ---------- 通用零件 ------------------------------------------------------ */
+
+.scr__body {
+  position: absolute;
+  left: 0; right: 0; top: 46px;
+  padding: 0 20px;
+}
+
+/* 币种图标：浅灰圆角方块里放一枚彩色币，和原稿一致 */
+.logo {
+  flex: none;
+  width: 46px; height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #f4f6f9;
+}
+
+.logo i {
+  width: 30px; height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.logo--btc i { background: var(--cw-btc); }
+.logo--eth i { background: var(--cw-eth); }
+.logo--ltc i { background: var(--cw-ltc); }
+.logo--xrp i { background: var(--cw-xrp); }
+.logo--xlm i { background: var(--cw-xlm); }
+
+/* ETH 用菱形摘一个：一段白三角压在灰币上，小尺寸下也认得出 */
+.logo--eth i span {
+  display: block;
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 11px solid #fff;
+  opacity: .94;
+}
+
+/* 涨跌胶囊：绿色向上 / 珊瑚红向下，箭头用文字，不做图标 */
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 8px;
+  background: var(--cw-mint);
+  color: #fff;
+  font-size: 10.5px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .1px;
+  white-space: nowrap;
+}
+
+.delta--down { background: var(--cw-rose); }
+.delta--xs { height: 19px; padding: 0 6px; border-radius: 7px; font-size: 9.5px; }
+
+/* 白卡：列表行共用一套内边距与投影，行高对齐才看得出「这是一列数据」 */
+.coinrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 18px;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+  list-style: none;
+}
+
+.coinrow__id { flex: 1; min-width: 0; }
+.coinrow__id b { display: block; font-size: 14px; font-weight: 700; letter-spacing: .1px; }
+.coinrow__id i { display: block; margin-top: 2px; font-size: 11px; font-style: normal; color: var(--cw-dim); }
+
+.coinrow__end { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.coinrow__end b { font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.sect {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 20px 0 12px;
+}
+
+.sect p { font-size: 14px; font-weight: 700; }
+.sect a { font-size: 11px; font-weight: 600; color: var(--cw-mint-d); text-decoration: none; }
+.sect--plain { margin: 22px 0 12px; }
+
+/* 设置 / 交易等「图标 + 两行字 + 箭头」的行共用同一个组件 */
+.rowcard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+  list-style: none;
+}
+
+.rowcard__ic {
+  flex: none;
+  width: 36px; height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+}
+.rowcard__ic svg { width: 18px; height: 18px; display: block; }
+
+.rowcard__txt { flex: 1; min-width: 0; }
+.rowcard__txt b { display: block; font-size: 13px; font-weight: 700; }
+.rowcard__txt i { display: block; margin-top: 2px; font-size: 10.5px; font-style: normal; color: var(--cw-dim); }
+
+.rowcard__arrow { flex: none; width: 16px; height: 16px; color: #c6cbd4; }
+
+/* 绿色资产卡：首页与「我的」共用一张卡，只是高度与内容不同 */
+.bal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 16px 18px;
+  background: linear-gradient(126deg, #63e0b2 0%, #3ad6a0 52%, #2fcf98 100%);
+  color: #fff;
+  box-shadow: 0 16px 30px rgba(58, 214, 160, .28);
+}
+
+.bal__lab { position: relative; font-size: 11.5px; font-weight: 600; opacity: .92; }
+
+.bal__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.bal__num {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -.6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bal__wave { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; display: block; }
+
+/* 卡上的白色胶囊：把涨幅压在白底上，绿字，和列表里的绿胶囊区分开 */
+.pillwhite {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--cw-mint-d);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(15, 90, 66, .16);
+}
+
+/* ---------- 带返回箭头的子页头（持仓 / 币种详情） ------------------------- */
+
+.scr__head {
+  position: absolute;
+  left: 0; right: 0; top: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.scr__head p { flex: 1; font-size: 15px; font-weight: 700; }
+.scr__head svg { width: 20px; height: 20px; display: block; }
+.scr__head .scr__head-end { color: var(--cw-ink-2); }
+
+/* ---------- 01 行情：搜索 + 一条竖列表 ------------------------------------ */
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 15px;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+}
+
+.search svg { width: 17px; height: 17px; color: var(--cw-mint); flex: none; }
+.search span { font-size: 12.5px; color: #c3c8d1; }
+
+.coinlist { display: flex; flex-direction: column; gap: 13px; margin-top: 16px; }
+
+/* ---------- 02 首页：问候 + 资产卡 + 两张小卡 + 关注列表 ------------------ */
+
+.home__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 16px;
+}
+
+.home__hi p { font-size: 11.5px; color: var(--cw-dim); }
+.home__hi b { display: block; margin-top: 3px; font-size: 18px; font-weight: 700; letter-spacing: -.2px; }
+
+.home__acts { display: flex; align-items: center; gap: 10px; }
+
+.iconbtn {
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+  color: var(--cw-ink-2);
+}
+.iconbtn svg { width: 16px; height: 16px; display: block; }
+
+.ava { width: 34px; height: 34px; border-radius: 50%; overflow: hidden; background: #dfe4ec; }
+.ava img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* 两张并排的持仓小卡：上半是币 + 涨幅，下半是金额与数量 */
+.minis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.mini {
+  padding: 12px 12px 11px;
+  border-radius: 16px;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+}
+
+.mini__top { display: flex; align-items: center; gap: 7px; }
+.mini__top .logo { width: 26px; height: 26px; border-radius: 8px; }
+.mini__top .logo i { width: 18px; height: 18px; font-size: 10px; }
+.mini__top .logo--eth i span { border-left-width: 4px; border-right-width: 4px; border-bottom-width: 7px; }
+
+.mini__id { flex: 1; min-width: 0; }
+.mini__id b { display: block; font-size: 11.5px; font-weight: 700; line-height: 1.1; }
+.mini__id i { display: block; margin-top: 1px; font-size: 8.5px; font-style: normal; color: var(--cw-dim); }
+
+.mini__hr { height: 1px; margin: 11px 0 9px; border: 0; background: var(--cw-line); }
+
+.mini__bot { display: flex; align-items: flex-end; justify-content: space-between; gap: 6px; }
+.mini__bot i { display: block; font-size: 8.5px; font-style: normal; color: var(--cw-dim); }
+.mini__bot b { display: block; margin-top: 2px; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.mini__qty { font-size: 8.5px; color: var(--cw-dim); font-variant-numeric: tabular-nums; }
+
+/* ---------- 03 我的：头像 + 余额卡 + 两个动作 + 设置 ---------------------- */
+
+.pf__head { display: flex; flex-direction: column; align-items: center; padding: 8px 0 18px; }
+
+.pf__ava { position: relative; width: 78px; height: 78px; }
+.pf__ava img {
+  display: block;
+  width: 78px; height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 22px rgba(23, 31, 54, .14);
+}
+.pf__edit {
+  position: absolute;
+  right: -2px; bottom: 2px;
+  display: grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--cw-mint);
+  color: #fff;
+  border: 2px solid var(--cw-bg);
+}
+.pf__edit svg { width: 11px; height: 11px; display: block; }
+
+.pf__name { margin-top: 12px; font-size: 17px; font-weight: 700; letter-spacing: -.1px; }
+
+/* 余额卡与动作条叠在一起：动作条压住绿卡底边，形成「一张卡两个按钮」 */
+.bal--pf { padding-bottom: 34px; }
+.bal--pf .bal__num { font-size: 27px; }
+
+.pf__acts {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: -26px 14px 0;
+  padding: 12px 0;
+  border-radius: 16px;
+  background: var(--cw-card);
+  box-shadow: 0 12px 26px rgba(23, 31, 54, .1);
+}
+
+.pf__acts button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  background: none;
+  color: var(--cw-mint-d);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+}
+.pf__acts button svg { width: 18px; height: 18px; display: block; }
+.pf__div { width: 1px; height: 26px; background: var(--cw-line); }
+
+.pf__row { margin-top: 16px; }
+
+.rows { display: flex; flex-direction: column; gap: 11px; list-style: none; }
+
+.ic--cyan { background: #e3f8f6; color: #23b8ae; }
+.ic--violet { background: #efe6fd; color: #8b5cf6; }
+.ic--amber { background: #fff5da; color: #e9a406; }
+.ic--rose { background: #ffe6e9; color: var(--cw-rose); }
+.ic--mint { background: #e2f9ef; color: var(--cw-mint-d); }
+
+/* ---------- 04 持仓：总额卡 + 逐币明细 ------------------------------------ */
+
+.scr__body--pf { top: 92px; }
+
+.bal--total { padding: 16px 18px 18px; }
+.bal--total .bal__num { font-size: 33px; }
+
+.bal__ret {
+  position: relative;
+  margin-top: 10px;
+  font-size: 11px;
+  opacity: .9;
+}
+.bal__ret b { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.plist { display: flex; flex-direction: column; gap: 13px; margin-top: 18px; }
+
+.prow {
+  padding: 13px 14px;
+  border-radius: 18px;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+  list-style: none;
+}
+
+.prow__top { display: flex; align-items: center; gap: 12px; }
+.prow__top .delta { align-self: center; }
+
+.prow__bot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--cw-line);
+}
+
+.prow__qty { font-size: 11px; color: var(--cw-dim); font-variant-numeric: tabular-nums; }
+
+.prow__val { text-align: right; }
+.prow__val b { display: block; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.prow__val i { display: block; margin-top: 2px; font-size: 10px; font-style: normal; font-weight: 600; }
+.prow__val .up { color: var(--cw-mint-d); }
+.prow__val .down { color: var(--cw-rose); }
+
+/* ---------- 05 币种详情：价格 + 走势 + 概览 + 买卖 ------------------------ */
+
+.scr__body--detail { top: 92px; }
+
+.dtcard {
+  position: relative;
+  padding: 16px 16px 14px;
+  border-radius: 20px;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+}
+
+.dtcard__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.dt__num { font-size: 32px; font-weight: 700; letter-spacing: -.8px; font-variant-numeric: tabular-nums; line-height: 1.05; }
+.dt__unit { display: block; margin-top: 3px; font-size: 11px; color: var(--cw-dim); }
+
+/* 走势图：虚线网格 + 一条面积曲线 + 一个黄色价格气泡，全部用 SVG 画 */
+.chart { position: relative; margin-top: 12px; }
+.chart svg { display: block; width: 100%; height: auto; }
+.chart__x {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 8.5px;
+  color: var(--cw-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.bubble {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--cw-gold);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(214, 156, 10, .3);
+}
+
+.ranges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  list-style: none;
+}
+
+.ranges li {
+  padding: 6px 11px;
+  border-radius: 8px;
+  color: #b6bcc7;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.ranges li.on { background: var(--cw-mint); color: #fff; }
+
+.ov {
+  margin-top: 15px;
+  padding: 14px 16px 6px;
+  border-radius: 20px;
+  background: var(--cw-card);
+  box-shadow: var(--cw-shadow);
+}
+
+.ov__t { font-size: 13.5px; font-weight: 700; }
+
+.ov__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 22px;
+  margin-top: 4px;
+}
+
+.ov__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--cw-line);
+  font-size: 10px;
+  color: var(--cw-dim);
+}
+
+.ov__row b {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--cw-ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ov__grid .ov__row:nth-last-child(-n+2) { border-bottom: 0; }
+
+.sect--last { margin: 18px 0 10px; }
+
+.btn {
+  height: 46px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--cw-mint);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* 底部买卖条：详情页没有 tab，换成两颗等宽按钮 */
+.tradebar {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  gap: 10px;
+  padding: 12px 20px 22px;
+  background: var(--cw-card);
+}
+
+.tradebar .btn { flex: 1; }
+.btn--sell { background: var(--cw-rose); }
+.btn--buy { background: var(--cw-mint); }
+
+/* ============================================================================
+   封面 292x200 / 主视觉 824x474 —— 用上面五屏的渲染图拼版
+   ========================================================================== */
+
+.cv, .hero {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(150deg, #f0fdf8 0%, #e3f9f0 46%, #d3f4e7 100%);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* 两团薄荷辉光，压住纸感底色，避免大片死白 */
+.cv__sky, .hero__sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(46% 52% at 92% 2%, rgba(58, 214, 160, .34) 0%, rgba(58, 214, 160, 0) 68%),
+    radial-gradient(52% 46% at 4% 102%, rgba(36, 189, 136, .20) 0%, rgba(36, 189, 136, 0) 70%);
+}
+
+/* 极淡的等距网格：金融感来自「格子」，不是来自装饰 */
+.cv__grid, .hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(20, 120, 92, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 120, 92, .07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse at 74% 30%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse at 74% 30%, #000 0%, transparent 70%);
+}
+
+/* 手机截图外框：封面与主视觉共用，只改尺寸 */
+.shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(16, 96, 74, .1);
+  box-shadow: 0 16px 34px rgba(12, 74, 58, .2);
+}
+
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+
+.cv__copy { position: absolute; left: 18px; top: 20px; width: 132px; }
+
+.cv__eyebrow {
+  display: inline-block;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: rgba(36, 189, 136, .13);
+  color: #1a9c72;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .9px;
+}
+
+.cv__title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.8px;
+  color: #0d2a20;
+}
+
+.cv__rule { display: block; width: 3px; height: 22px; border-radius: 2px; background: #2fcf98; }
+
+.cv__en {
+  margin-top: 6px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  color: #12996f;
+}
+
+.cv__sub {
+  margin-top: 9px;
+  font-size: 9.5px;
+  line-height: 1.55;
+  color: #4a6b60;
+}
+
+.cv__meta {
+  position: absolute;
+  left: 18px; bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .7px;
+  color: #4d7a6b;
+}
+
+.cv__dot { width: 5px; height: 5px; border-radius: 50%; background: #2fcf98; }
+
+.hero__copy { position: absolute; left: 56px; top: 74px; width: 360px; }
+
+.hero__eyebrow {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: rgba(36, 189, 136, .14);
+  color: #148a64;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.hero__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -1.6px;
+  color: #0b2a1f;
+}
+
+.hero__rule { display: block; width: 5px; height: 40px; border-radius: 3px; background: #2fcf98; }
+
+.hero__en {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  color: #109c72;
+}
+
+.hero__lead {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #3f6459;
+}
+
+.hero__chips { display: flex; gap: 8px; margin-top: 22px; }
+
+.hero__chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .86);
+  border: 1px solid rgba(36, 189, 136, .22);
+  color: #15795a;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.hero__note {
+  position: absolute;
+  left: 56px; bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #4d7a6b;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero__note i { width: 6px; height: 6px; border-radius: 50%; background: #2fcf98; }
+.hero__note b { color: #e2566a; }

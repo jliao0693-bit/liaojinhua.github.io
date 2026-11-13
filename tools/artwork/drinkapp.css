@@ -1,0 +1,230 @@
+/* ============================================================================
+   DIY 饮品 · DRINK MIXING COMMUNITY
+   ----------------------------------------------------------------------------
+   CSS 化的素材：封面 292x200、主视觉 824x474。界面部分不用 CSS 重绘，直接把
+   设计稿原图（assets/images/drink-*.png）以 .dk-shot 拼进去。
+   由 tools/build-images.ps1 用无头 Chrome 截图成
+   assets/images/work-drink*.png 与 drink-hero.png。
+
+   配色照搬 App 自身：带一点紫的冷白底（#f7f4fd）、浅薰衣草卡（#efe7fd）、
+   主色紫（#a97bf0）、奶油黄只给「试一下」的按钮（#ffd84d）、近黑正文（#1b1b1b）。
+   形状全部走大圆角：卡片 24–28px、图标底 20px、按钮一律胶囊。
+   标题用重字重几何无衬线，配一条奶油黄圆头下划线 —— 全站唯一的装饰动作。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow: hidden;
+  background: #f7f4fd;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --dk-mist: #f7f4fd;
+  --dk-lilac: #efe7fd;
+  --dk-grape: #a97bf0;
+  --dk-grape-deep: #7b45d6;
+  --dk-butter: #ffd84d;
+  --dk-berry: #ff5b7f;
+  --dk-ink: #1b1b1b;
+  --dk-ink-soft: #5b5570;
+  --dk-ink-dim: #948da8;
+}
+
+/* 紫雾底：右上一点主色紫、左下一点奶油黄，大面积留白 */
+.dk-mist {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(72% 60% at 84% 2%, rgba(169, 123, 240, .34) 0%, rgba(169, 123, 240, 0) 64%),
+    radial-gradient(62% 54% at 4% 98%, rgba(255, 216, 77, .30) 0%, rgba(255, 216, 77, 0) 62%),
+    linear-gradient(170deg, #fbf9ff 0%, #f7f4fd 46%, #efe7fd 100%);
+}
+
+/* 弥散色块：超出画布的大圆，只留一段弧 */
+.dk-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+/* 网点：极淡的一层，只在大图里出现，给留白一点质地 */
+.dk-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(123, 69, 214, .20) 0 1px, transparent 1px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse at 86% 10%, #000 0%, transparent 56%);
+  mask-image: radial-gradient(ellipse at 86% 10%, #000 0%, transparent 56%);
+}
+
+/* 奶油黄圆头下划线：App 里 Try Now 按钮的那颗黄，压到标题下面一截 */
+.dk-rule {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--dk-butter);
+}
+
+/* 真实界面截图：白卡 + 柔和紫投影，像两杯摆在桌上的饮品卡 */
+.dk-shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(91, 85, 112, .12);
+  box-shadow: 0 20px 38px rgba(74, 52, 120, .24), 0 0 0 4px rgba(255, 255, 255, .88);
+  background: #fff;
+}
+.dk-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ---------------------------------------------------------------- 封面 292x200 */
+.dk-cover {
+  position: relative;
+  width: 292px;
+  height: 200px;
+  overflow: hidden;
+  background: var(--dk-mist);
+}
+
+.dk-cover__eyebrow {
+  position: absolute; left: 16px; top: 15px;
+  padding: 3px 9px 2px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(169, 123, 240, .55);
+  color: var(--dk-grape-deep);
+  font-size: 7.5px; font-weight: 800; letter-spacing: .18em;
+}
+
+/* 标题 + 黄线：先在标题下面压一条圆头黄线，再把字放上去 */
+.dk-cover__title {
+  position: absolute; left: 15px; top: 39px;
+  isolation: isolate;
+}
+
+.dk-cover__title .dk-rule {
+  left: -3px; bottom: 3px; width: calc(100% + 6px); height: 10px;
+  z-index: -1;
+}
+
+.dk-cover__cn {
+  font-size: 26px; font-weight: 800; line-height: 1.14;
+  letter-spacing: .01em;
+  color: var(--dk-ink);
+}
+
+.dk-cover__en {
+  position: absolute; left: 17px; top: 79px;
+  font-size: 7px; font-weight: 800; letter-spacing: .26em;
+  color: var(--dk-ink-dim);
+}
+
+.dk-cover__sub {
+  position: absolute; left: 17px; top: 94px; width: 140px;
+  font-size: 10.5px; line-height: 1.5; letter-spacing: .03em;
+  color: var(--dk-ink-soft);
+}
+
+/* 金币条：App 里那条 My coins 渐变条，缩成一颗小胶囊 */
+.dk-cover__coin {
+  position: absolute; left: 17px; top: 130px;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px 3px;
+  border-radius: 999px;
+  background: linear-gradient(96deg, #c9a6fb 0%, #a97bf0 62%, #9a68ec 100%);
+  color: #fff;
+  font-size: 8px; font-weight: 800; letter-spacing: .06em;
+  box-shadow: 0 4px 10px rgba(123, 69, 214, .28);
+}
+.dk-cover__coin i {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--dk-butter);
+}
+
+.dk-cover__meta {
+  position: absolute; left: 17px; bottom: 15px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 8.5px; font-weight: 800; letter-spacing: .06em;
+  color: var(--dk-ink-dim);
+}
+
+.dk-cover__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--dk-grape);
+  box-shadow: 0 0 0 1px rgba(27, 27, 27, .16);
+}
+
+
+/* ------------------------------------------------------------ 主视觉 824x474 */
+.dk-hero {
+  position: relative;
+  width: 824px;
+  height: 474px;
+  overflow: hidden;
+  background: var(--dk-mist);
+}
+
+.dk-hero__copy { position: absolute; left: 56px; top: 74px; width: 360px; }
+
+.dk-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 12px 4px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(169, 123, 240, .5);
+  color: var(--dk-grape-deep);
+  font-size: 10px; font-weight: 800; letter-spacing: .2em;
+}
+
+.dk-hero__title {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  margin-top: 22px;
+  font-size: 54px; font-weight: 800; line-height: 1.04;
+  letter-spacing: .01em;
+  color: var(--dk-ink);
+}
+
+.dk-hero__title .dk-rule {
+  left: -2px; bottom: 6px; width: 110px; height: 14px;
+  z-index: -1;
+}
+
+.dk-hero__en {
+  margin-top: 14px;
+  font-size: 11px; font-weight: 800; letter-spacing: .4em;
+  color: var(--dk-ink-dim);
+}
+
+.dk-hero__lead {
+  margin-top: 20px;
+  font-size: 13px; line-height: 1.92;
+  color: #4f4966;
+}
+
+.dk-hero__chips { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.dk-hero__chip {
+  padding: 7px 13px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(123, 69, 214, .18);
+  background: rgba(255, 255, 255, .82);
+  color: #4a4260;
+  font-size: 11px; letter-spacing: .04em;
+}
+
+/* 左下角一行小注：真实数字，来自首页与个人中心 */
+.dk-hero__note {
+  position: absolute; left: 56px; bottom: 46px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 800; letter-spacing: .08em;
+  color: var(--dk-ink-dim);
+}
+.dk-hero__note i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--dk-grape);
+  box-shadow: 0 0 0 1px rgba(27, 27, 27, .14);
+}

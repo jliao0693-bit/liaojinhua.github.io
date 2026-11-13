@@ -1,0 +1,218 @@
+/* ============================================================================
+   潜水分享 · DIVE SHARE
+   ----------------------------------------------------------------------------
+   CSS 化的素材：封面 292x200、主视觉 824x474。界面部分不用 CSS 重绘，直接把
+   设计稿原图（assets/images/diveshare-*.png）以 .ds-shot 拼进去。
+   由 tools/build-images.ps1 用无头 Chrome 截图成
+   assets/images/work-dive*.png 与 dive-hero.png。
+
+   配色照搬 App 自身：深水暗底（#051018 → #0e2a38）、珊瑚橙主操作（#f4623a）、
+   海蓝链接与已关注（#2f9bf5 / #33d67d）、雾白文字（#eaf4f8）。
+   标题沿用 App 里的衬线字，其余全部无衬线 —— 一屏里只有一种字族做对比。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow: hidden;
+  background: #051018;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --ds-ember: #f4623a;
+  --ds-ember-soft: #ffb59e;
+  --ds-lagoon: #2f9bf5;
+  --ds-mint: #33d67d;
+  --ds-fog: #eaf4f8;
+  --ds-fog-soft: #9fc0d0;
+  --ds-fog-dim: #6f93a6;
+  --ds-serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+}
+
+/* 深水底：从顶部透下来的一束光，往下沉到近黑 */
+.ds-water {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 78% at 74% -14%, rgba(120, 214, 255, .38) 0%, rgba(47, 155, 245, .18) 34%, rgba(6, 26, 38, 0) 66%),
+    linear-gradient(168deg, #10394a 0%, #0a2331 36%, #071a25 66%, #040d14 100%);
+}
+
+/* 光柱：几道光从水面斜插下来，只在大图里明显 */
+.ds-ray {
+  position: absolute;
+  top: -34%;
+  height: 168%;
+  background: linear-gradient(180deg, rgba(206, 240, 255, .34), rgba(206, 240, 255, 0));
+  filter: blur(9px);
+  transform-origin: top center;
+}
+
+/* 水面焦散：一圈极淡的水纹，暗示头顶还有水面 */
+.ds-caustic {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-radial-gradient(circle at 78% -8%, rgba(180, 232, 255, .16) 0 1px, transparent 1px 16px);
+  -webkit-mask-image: radial-gradient(ellipse at 78% -8%, #000 0%, transparent 62%);
+  mask-image: radial-gradient(ellipse at 78% -8%, #000 0%, transparent 62%);
+}
+
+/* 气泡：右下角一串小点 */
+.ds-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(210, 240, 255, .30);
+  box-shadow: 0 0 0 1px rgba(210, 240, 255, .16) inset;
+}
+
+/* 真实界面截图：深色描边 + 海蓝辉光，像漂在深水里的一部手机 */
+.ds-shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid rgba(160, 214, 240, .32);
+  box-shadow: 0 22px 40px rgba(0, 8, 14, .62), 0 0 0 4px rgba(120, 200, 240, .10);
+  background: #061520;
+}
+.ds-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ---------------------------------------------------------------- 封面 292x200 */
+.ds-cover {
+  position: relative;
+  width: 292px;
+  height: 200px;
+  overflow: hidden;
+  background: #051018;
+}
+
+.ds-cover__eyebrow {
+  position: absolute; left: 16px; top: 15px;
+  padding: 3px 8px 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 98, 58, .52);
+  background: rgba(244, 98, 58, .16);
+  color: var(--ds-ember-soft);
+  font-size: 7.5px; font-weight: 700; letter-spacing: .18em;
+}
+
+.ds-cover__cn {
+  position: absolute; left: 15px; top: 43px;
+  font-family: var(--ds-serif);
+  font-size: 26px; font-weight: 700; line-height: 1.15;
+  color: var(--ds-fog);
+}
+
+.ds-cover__en {
+  position: absolute; left: 17px; top: 82px;
+  font-size: 7.5px; font-weight: 700; letter-spacing: .3em;
+  color: var(--ds-fog-dim);
+}
+
+.ds-cover__sub {
+  position: absolute; left: 17px; top: 97px;
+  font-size: 10.5px; letter-spacing: .05em;
+  color: var(--ds-fog-soft);
+}
+
+/* 潜点胶囊：App 里压在照片底部的「Indonesia」压条 */
+.ds-cover__spot {
+  position: absolute; left: 17px; top: 120px;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px 2px;
+  border-radius: 999px;
+  background: rgba(6, 21, 32, .82);
+  border: 1px solid rgba(160, 214, 240, .28);
+  color: var(--ds-fog);
+  font-family: var(--ds-serif);
+  font-size: 8px; letter-spacing: .03em;
+}
+.ds-cover__spot i {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--ds-ember);
+  box-shadow: 0 0 0 2px rgba(244, 98, 58, .24);
+}
+
+.ds-cover__meta {
+  position: absolute; left: 17px; bottom: 16px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 8.5px; font-weight: 700; letter-spacing: .06em;
+  color: var(--ds-fog-dim);
+}
+
+.ds-cover__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #ffd9cd, var(--ds-ember));
+  box-shadow: 0 0 0 1px rgba(160, 46, 20, .5);
+}
+
+
+/* ------------------------------------------------------------ 主视觉 824x474 */
+.ds-hero {
+  position: relative;
+  width: 824px;
+  height: 474px;
+  overflow: hidden;
+  background: #051018;
+}
+
+.ds-hero .ds-caustic {
+  background-image: repeating-radial-gradient(circle at 74% -6%, rgba(180, 232, 255, .13) 0 1px, transparent 1px 18px);
+}
+
+.ds-hero__copy { position: absolute; left: 56px; top: 84px; width: 350px; }
+
+.ds-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 12px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 98, 58, .46);
+  background: rgba(244, 98, 58, .14);
+  color: var(--ds-ember-soft);
+  font-size: 10px; font-weight: 700; letter-spacing: .2em;
+}
+
+.ds-hero__title {
+  margin-top: 22px;
+  font-family: var(--ds-serif);
+  font-size: 54px; font-weight: 700; line-height: 1.06;
+  color: var(--ds-fog);
+}
+
+.ds-hero__en {
+  margin-top: 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: .44em;
+  color: var(--ds-fog-dim);
+}
+
+.ds-hero__lead {
+  margin-top: 24px;
+  font-size: 13px; line-height: 1.9;
+  color: #b6d2de;
+}
+
+.ds-hero__chips { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px; }
+.ds-hero__chip {
+  padding: 7px 13px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(160, 214, 240, .28);
+  background: rgba(255, 255, 255, .06);
+  color: #cfe3ec;
+  font-size: 11px; letter-spacing: .04em;
+}
+
+/* 左下角一行小注：点赞 / 评论 / 潜数这类真实数字 */
+.ds-hero__note {
+  position: absolute; left: 56px; bottom: 48px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 700; letter-spacing: .08em;
+  color: var(--ds-fog-dim);
+}
+.ds-hero__note i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #ffd9cd, var(--ds-ember));
+  box-shadow: 0 0 0 1px rgba(160, 46, 20, .44);
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>项目规范 · 智慧城市 · 指挥大屏 — 12 的个人空间</title>
+  <meta name="description" content="智慧城市指挥大屏的项目规范：地图底图、指标翻牌、异常流三个自建组件，1920 / 4K / 拼屏三档适配。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html">作品</a>
+        <a class="nav__link" href="../design-system.html" aria-current="page">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../design-system.html#plspec-title">设计规范</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">项目规范</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Project Spec · 大屏</span>
+      <h1 class="phead__title">智慧城市 · 指挥大屏</h1>
+      <p class="phead__lead">
+        大屏只有一块固定画布：1920 × 1080 等比缩放、不重排。远距离可视优先，颜色只承担语义，
+        装饰性元素一律让位给读数。
+      </p>
+    </header>
+
+    <section class="case-meta" aria-label="规范信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">适配范围</span>
+        <span class="meta-item__v">固定画布 · 1920 × 1080</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">设计稿</span>
+        <span class="meta-item__v">1920 × 1080</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">适配优先</span>
+        <span class="meta-item__v">远距离可视</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">规范版本</span>
+        <span class="meta-item__v">v1.0</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="comp-title">
+      <div class="block__head">
+        <h2 class="block__title" id="comp-title">专项组件</h2>
+        <p class="block__note">三层结构里各有一个自建组件</p>
+      </div>
+
+      <div class="spec-cards">
+        <article class="spec-card glass glass--soft glass--d60">
+          <h3 class="spec-card__title">地图底图</h3>
+          <p class="spec-card__desc">
+            深色底图 + 单色描边，点位只用三种语义色；图例固定在左下角，缩放时位置不动。
+          </p>
+        </article>
+
+        <article class="spec-card glass glass--soft glass--d60">
+          <h3 class="spec-card__title">指标翻牌</h3>
+          <p class="spec-card__desc">
+            大号数字 + 单位，等宽字形；每 30 秒轮播一次，切换只做淡入，不做位移。
+          </p>
+        </article>
+
+        <article class="spec-card glass glass--soft glass--d60">
+          <h3 class="spec-card__title">异常流</h3>
+          <p class="spec-card__desc">
+            事件按严重度排序，最新一条置顶高亮 3 秒后回落；不弹窗、不遮挡地图。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="device-title">
+      <div class="block__head">
+        <h2 class="block__title" id="device-title">设备适配规范</h2>
+        <p class="block__note">一套栅格覆盖 1080p 与 4K，拼屏只拆列</p>
+      </div>
+
+      <div class="spec-devices">
+        <div class="spec-device glass glass--soft glass--d35">
+          <div class="spec-device__head">
+            <span class="plspec-card__device plspec-card__device--screen">1080p</span>
+            <span class="spec-device__size">1920 × 1080</span>
+          </div>
+          <p class="spec-device__desc">
+            基准画布：间距按 8 的倍数，顶部结论条固定 96 高，底部异常流固定 240。
+          </p>
+        </div>
+
+        <div class="spec-device glass glass--soft glass--d35">
+          <div class="spec-device__head">
+            <span class="plspec-card__device plspec-card__device--screen">2K / 4K</span>
+            <span class="spec-device__size">2560 / 3840</span>
+          </div>
+          <p class="spec-device__desc">
+            等比放大，字号与线宽同步缩放，不新增内容 —— 两档共用同一套栅格。
+          </p>
+        </div>
+
+        <div class="spec-device glass glass--soft glass--d35">
+          <div class="spec-device__head">
+            <span class="plspec-card__device plspec-card__device--screen">拼屏</span>
+            <span class="spec-device__size">3 × 1</span>
+          </div>
+          <p class="spec-device__desc">
+            内容按 3 列拆到三块屏，接缝两侧各留 24 安全区，跨屏元素不跨越接缝。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block--last" aria-labelledby="token-title">
+      <div class="block__head">
+        <h2 class="block__title" id="token-title">颜色与字体（项目级）</h2>
+        <p class="block__note">只覆盖项目差异，其余回到主要设计规范</p>
+      </div>
+
+      <div class="spec-tokens">
+        <div class="spec-token glass glass--soft glass--d60">
+          <span class="spec-token__label">渐变</span>
+          <span class="spec-token__bar" style="background: linear-gradient(160deg, #1B2233 0%, #10131F 100%)"></span>
+          <span class="spec-token__value">linear-gradient(160deg, #1B2233 → #10131F)</span>
+          <p class="spec-token__note">
+            深底渐变压住整屏；数据色只用三档语义：红=告警、黄=预警、青=正常，其余全是灰阶。
+          </p>
+        </div>
+
+        <div class="spec-token glass glass--soft glass--d60">
+          <span class="spec-token__label">字体</span>
+          <div class="spec-type">
+            <div class="spec-type__row">
+              <span class="spec-type__sample" style="font-size: 48px; font-weight: 700; line-height: 1.2">48</span>
+              <span class="spec-type__spec">48 / 58 · Bold · tabular</span>
+            </div>
+            <div class="spec-type__row">
+              <span class="spec-type__sample" style="font-size: 24px; font-weight: 600; line-height: 1.35">标题 24</span>
+              <span class="spec-type__spec">24 / 32 · SemiBold</span>
+            </div>
+          </div>
+          <p class="spec-token__note">
+            远距离可读下限 18：低于 18 的说明文字并进图例，不上屏。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下份项目规范">
+      <a class="pager__link glass glass--soft glass--d35" href="dashboard-bi.html">
+        <span class="pager__dir">上一份</span>
+        <span class="pager__title">洞察 · 数据看板</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="fitness-app.html">
+        <span class="pager__dir">下一份</span>
+        <span class="pager__title">悦动 · 健身 App</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+
+  </div>
+</body>
+</html>

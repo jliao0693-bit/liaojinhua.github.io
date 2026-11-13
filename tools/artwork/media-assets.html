@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>媒资后台 · 素材管理（重绘稿）</title>
+<link rel="stylesheet" href="mediaportal.css" />
+</head>
+<body>
+<!--
+  素材管理（1920x1080）
+  重绘自原稿截图：面包屑「素材管理 / 原始素材库 / 个人素材」，左侧四组导航，
+  右侧「分类 → 批量操作 → 六个筛选 → 七个分段 tab → 五列素材网格」。
+  这一屏要回答的是「这批素材在哪、能不能批量处理」，所以操作条在最上面，
+  筛选和分面夹在中间，网格吃到页面底部（第三行被裁掉，暗示还有更多）。
+-->
+<div class="mp-app" id="assets">
+
+  <header class="mp-top">
+    <div class="mp-brand">
+      <div class="mp-brand__sun">
+        <b>SUN</b>
+        <span>SICHUAN OBSERVATION</span>
+      </div>
+      <span class="mp-brand__rule"></span>
+    </div>
+
+    <nav class="mp-nav">
+      <span class="mp-nav__item">工作台</span>
+      <span class="mp-nav__item">任务管理</span>
+      <span class="mp-nav__item">线索采集</span>
+      <span class="mp-nav__item">选题策划</span>
+      <span class="mp-nav__item mp-nav__item--on">素材管理</span>
+      <span class="mp-nav__item">稿件管理</span>
+      <span class="mp-nav__item">融合发布</span>
+      <span class="mp-nav__item">数据统计</span>
+      <span class="mp-nav__item">工具箱</span>
+      <span class="mp-nav__item">系统配置</span>
+    </nav>
+
+    <div class="mp-top__aside">
+      <svg class="mp-top__ico ic ic--w" viewBox="0 0 24 24"><use href="#i-phone" /></svg>
+      <svg class="mp-top__ico ic ic--w" viewBox="0 0 24 24">
+        <use href="#i-bell" />
+        <i>4</i>
+      </svg>
+      <div class="mp-user">
+        <span class="mp-user__ava"></span>
+        <span>用户名</span>
+        <svg class="ic ic--w" viewBox="0 0 24 24" style="width:11px;height:11px;opacity:.8"><use href="#i-car" /></svg>
+      </div>
+    </div>
+  </header>
+
+  <div class="mp-crumb">
+    素材管理<span class="mp-crumb__sep">/</span>原始素材库<span class="mp-crumb__sep">/</span><span class="mp-crumb__here">个人素材</span>
+  </div>
+
+  <div class="mp-work">
+
+    <!-- ---------- 侧栏 ---------- -->
+    <aside class="mp-side">
+      <div class="mp-side__group">
+        <svg class="ic ic--w" viewBox="0 0 24 24"><use href="#i-folder" /></svg>
+        线索库
+        <span class="mp-side__caret mp-side__caret--up"></span>
+      </div>
+      <div class="mp-side__item mp-side__item--on">热点线索</div>
+      <div class="mp-side__item">内部线索</div>
+
+      <div class="mp-side__group">
+        <svg class="ic ic--w" viewBox="0 0 24 24"><use href="#i-folder" /></svg>
+        素材库
+        <span class="mp-side__caret"></span>
+      </div>
+
+      <div class="mp-side__group">
+        <svg class="ic ic--w" viewBox="0 0 24 24"><use href="#i-audit" /></svg>
+        采集管理
+        <span class="mp-side__caret mp-side__caret--up"></span>
+      </div>
+      <div class="mp-side__item">我的采集需求</div>
+      <div class="mp-side__item">需求评估</div>
+      <div class="mp-side__item">采集评估</div>
+      <div class="mp-side__item">采集数据分析</div>
+      <div class="mp-side__item">采集策略</div>
+    </aside>
+
+
+    <!-- ---------- 主区 ---------- -->
+    <main class="mp-main">
+
+      <div class="mp-cats">
+        <span class="mp-cats__all">全部分类</span>
+        <span class="mp-cats__item">视频<span class="mp-car"></span></span>
+        <span class="mp-cats__item">新闻<span class="mp-car"></span></span>
+        <span class="mp-cats__item">成都大运会<span class="mp-car"></span></span>
+        <span class="mp-cats__item">开幕式<span class="mp-car"></span></span>
+        <span class="mp-cats__item">男子轮滑赛<span class="mp-car"></span></span>
+      </div>
+
+      <div class="mp-ops">
+        <span class="mp-btn mp-btn--blue">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-up" /></svg>上架
+        </span>
+        <span class="mp-btn mp-btn--blue">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-group" /></svg>聚合包
+        </span>
+        <span class="mp-btn mp-btn--amber">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-send" /></svg>送审
+        </span>
+        <span class="mp-btn mp-btn--red">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-trash" /></svg>删除
+        </span>
+
+        <span class="mp-ops__rule"></span>
+
+        <span class="mp-btn mp-btn--plain">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-down" /></svg>下载
+        </span>
+        <span class="mp-btn mp-btn--plain">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-copy" /></svg>复制
+        </span>
+        <span class="mp-btn mp-btn--plain">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-share" /></svg>共享
+        </span>
+        <span class="mp-btn mp-btn--plain">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-move" /></svg>移动
+        </span>
+      </div>
+
+      <div class="mp-filter">
+        <span class="mp-select mp-select--w1">审核状态<span class="mp-car"></span></span>
+        <span class="mp-select mp-select--w1">编目状态<span class="mp-car"></span></span>
+        <span class="mp-select mp-select--w3">码率<span class="mp-car"></span></span>
+        <span class="mp-select mp-select--w3">时长<span class="mp-car"></span></span>
+        <span class="mp-input mp-input--date">
+          <svg class="ic ic--w" viewBox="0 0 24 24"><use href="#i-cal" /></svg>创建时间
+        </span>
+        <span class="mp-input mp-input--find">
+          <svg class="ic ic--w" viewBox="0 0 24 24"><use href="#i-search" /></svg>请输入
+        </span>
+        <span class="mp-btn mp-btn--blue" style="width:92px">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-search" /></svg>搜索
+        </span>
+        <span class="mp-btn mp-btn--ghost" style="width:92px">
+          <svg class="ic ic--w" viewBox="0 0 24 24" style="width:15px;height:15px"><use href="#i-reset" /></svg>重置
+        </span>
+      </div>
+
+      <div class="mp-seg">
+        <div class="mp-seg__track">
+          <span class="mp-seg__item mp-seg__item--on">全部</span>
+          <span class="mp-seg__item">视频</span>
+          <span class="mp-seg__item">图片</span>
+          <span class="mp-seg__item">音频</span>
+          <span class="mp-seg__item">文档</span>
+          <span class="mp-seg__item">其他</span>
+          <span class="mp-seg__item">聚合包</span>
+        </div>
+        <span class="mp-check"><i class="mp-box"></i>全选</span>
+        <span class="mp-btn mp-btn--ghost mp-sort">时间排序<span class="mp-car"></span></span>
+      </div>
+
+
+      <div class="mp-grid">
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-1.png" alt="素材缩略图：一位戴眼镜的男士在户外站立" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-2.png" alt="素材缩略图：手捧花束的白背心人像" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item mp-item--on">
+          <span class="mp-item__check"></span>
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-3.png" alt="素材缩略图：水下潜泳者与鱼群" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <span class="mp-item__dots"></span>
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-4.png" alt="素材缩略图：泳池边的女孩" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+            <div class="mp-menu">
+              <span>复制</span><span>移动</span><span>下载</span><span>分享链接</span>
+            </div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item mp-item--folder">
+          <span class="mp-item__pin"><svg class="ic ic--f" viewBox="0 0 24 24"><use href="#i-pin" /></svg></span>
+          <span class="mp-folder"></span>
+          <span class="mp-item__name">聚合包名称</span>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-5.png" alt="素材缩略图：闭眼的人像特写" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-6.png" alt="素材缩略图：欧洲街景与教堂" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-7.png" alt="素材缩略图：水下拍摄的潜泳者" />
+            <div class="mp-item__flags"><span class="mp-badge">视频</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-8.png" alt="素材缩略图：阳光下的人像侧脸" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-9.png" alt="素材缩略图：潜水员在珊瑚礁前" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">影视</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：七个子</span></p>
+            <p class="mp-item__time">2024/04/01 09:21</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-1.png" alt="素材缩略图：草坪上的人像" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：陈滢</span></p>
+            <p class="mp-item__time">2024/03/29 16:42</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-2.png" alt="素材缩略图：街头手持花束的人像" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">城市</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：陈滢</span></p>
+            <p class="mp-item__time">2024/03/29 15:08</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-3.png" alt="素材缩略图：珊瑚礁间的潜泳者" />
+            <div class="mp-item__flags"><span class="mp-badge">视频</span><span class="mp-tag">人物</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：李默</span></p>
+            <p class="mp-item__time">2024/03/28 10:16</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-4.png" alt="素材缩略图：深潜中的水下影像" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">环境</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：李默</span></p>
+            <p class="mp-item__time">2024/03/28 09:51</p>
+          </div>
+        </article>
+
+        <article class="mp-item">
+          <div class="mp-item__thumb">
+            <img src="../../assets/images/media-thumb-5.png" alt="素材缩略图：花丛中抱猫的人像" />
+            <div class="mp-item__flags"><span class="mp-badge">图片</span><span class="mp-tag">人物</span><span class="mp-tag">生活</span></div>
+          </div>
+          <div class="mp-item__meta">
+            <p class="mp-item__row"><span>来源：四川强国学习平台</span><span>上传人：周聿</span></p>
+            <p class="mp-item__time">2024/03/27 14:33</p>
+          </div>
+        </article>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- 图标库：与工作台共用同一套 1.6px 细线 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.6 7.2h6l2 2.6h8.8V19H3.6V7.2Z"/></symbol>
+  <symbol id="i-audit" viewBox="0 0 24 24"><path d="M6 5.2h12V20H6z"/><path d="M9.4 5.2V3.6h5.2v1.6"/><path d="M9.4 10.6h7.2M9.4 14.4h7.2M9.4 18.2h4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.6" width="10" height="18.8" rx="2.6"/><path d="M10.6 5.2h2.8"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6.2 16.6V11a5.8 5.8 0 0 1 11.6 0v5.6l1.6 2.2H4.6l1.6-2.2Z"/><path d="M10 20.6a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M6.4 9.4 12 15l5.6-5.6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16.5V4.6"/><path d="M7.4 9.2 12 4.6l4.6 4.6"/><path d="M4.2 15.8v3.6h15.6v-3.6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4.6v11.9"/><path d="M7.4 11.9 12 16.5l4.6-4.6"/><path d="M4.2 15.8v3.6h15.6v-3.6"/></symbol>
+  <symbol id="i-group" viewBox="0 0 24 24"><rect x="3.6" y="3.6" width="7.4" height="7.4" rx="1.6"/><rect x="13" y="3.6" width="7.4" height="7.4" rx="1.6"/><rect x="3.6" y="13" width="7.4" height="7.4" rx="1.6"/><rect x="13" y="13" width="7.4" height="7.4" rx="1.6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M3.8 12 20.2 4.2l-6.1 15.6-3.3-6.2-7-1.6Z"/><path d="M10.8 13.6 20.2 4.2"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.6 7h14.8"/><path d="M9.4 7V4.4h5.2V7"/><path d="M6.6 7l1 13h8.8l1-13"/><path d="M10.6 10.6v6M13.4 10.6v6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.4" y="8.4" width="11.6" height="11.6" rx="2"/><path d="M15.6 5.2H6.4a2 2 0 0 0-2 2v9.2"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.4"/><circle cx="17.6" cy="6" r="2.4"/><circle cx="17.6" cy="18" r="2.4"/><path d="M8.2 10.8l7.2-3.6M8.2 13.2l7.2 3.6"/></symbol>
+  <symbol id="i-move" viewBox="0 0 24 24"><path d="M12 3.4v17.2M3.4 12h17.2"/><path d="M9.2 6.2 12 3.4l2.8 2.8M9.2 17.8 12 20.6l2.8-2.8M6.2 9.2 3.4 12l2.8 2.8M17.8 9.2 20.6 12l-2.8 2.8"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.6" y="5.4" width="16.8" height="15" rx="2"/><path d="M3.6 9.8h16.8"/><path d="M8 3.4v3.4M16 3.4v3.4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.6"/><path d="M15.8 15.8 20.4 20.4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 20.8c4.2-4.4 6.4-7.4 6.4-10A6.4 6.4 0 0 0 5.6 10.8c0 2.6 2.2 5.6 6.4 10Z"/><circle cx="12" cy="10.6" r="2.2"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4.2V9h-4.8"/></symbol>
+</svg>
+</body>
+</html>

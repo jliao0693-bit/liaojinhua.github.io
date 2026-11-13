@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>项目规范 · 洞察数据看板 — 12 的个人空间</title>
+  <meta name="description" content="洞察数据看板项目规范：项目概述、目标与范围、协作流程、交付清单、验收标准与版本记录。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="index.html">首页</a>
+        <a class="nav__link" href="works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="design-system.html">设计规范</a>
+        <a class="nav__link" href="about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">项目规范</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Project Spec · v1.2</span>
+      <h1 class="phead__title">项目规范 · 洞察数据看板</h1>
+      <p class="phead__lead">
+        这份规范写给一起做项目的人：产品、前端、运营。它说明项目要解决什么、交付什么、按什么顺序推进，
+        以及什么样才算做完。所有条目都可以被逐条验收。
+      </p>
+    </header>
+
+    <div class="doc">
+
+      <aside class="doc__toc glass glass--soft glass--d35" aria-label="目录">
+        <p class="toc__label">On this page</p>
+        <nav class="toc" aria-label="章节导航">
+          <a class="toc__link" href="#s1" aria-current="true">01 · 项目概述</a>
+          <a class="toc__link" href="#s2">02 · 目标与范围</a>
+          <a class="toc__link" href="#s3">03 · 协作流程</a>
+          <a class="toc__link" href="#s4">04 · 交付清单</a>
+          <a class="toc__link" href="#s5">05 · 验收标准</a>
+          <a class="toc__link" href="#s6">06 · 版本记录</a>
+        </nav>
+      </aside>
+
+      <div class="doc__body">
+
+        <section class="docsec glass glass--soft glass--d60" id="s1" aria-labelledby="s1t">
+          <span class="docsec__num">01</span>
+          <h2 class="docsec__title" id="s1t">项目概述</h2>
+          <div class="prose">
+            <p>
+              ApexHub 是一套面向内容运营的数据工具，现有 12 张报表分散在四个入口，指标口径由各业务线自行维护。
+              本次项目在不改动数据底层的前提下，重构信息架构与界面，交付一个统一的数据看板。
+            </p>
+            <p>
+              项目由 <strong>产品 1 人、设计 1 人、前端 2 人</strong> 共同推进，周期 4 周，第 5 周进入灰度。
+            </p>
+          </div>
+        </section>
+
+        <section class="docsec glass glass--soft glass--d60" id="s2" aria-labelledby="s2t">
+          <span class="docsec__num">02</span>
+          <h2 class="docsec__title" id="s2t">目标与范围</h2>
+          <div class="prose">
+            <p><strong>在范围内</strong></p>
+          </div>
+          <ul class="bullets">
+            <li>首页工作台：KPI 概览、趋势图、异常动态流。</li>
+            <li>全局筛选器：时间 / 渠道 / 设备三组，状态可在页面间保持。</li>
+            <li>二级钻取页：从任一指标进入明细表，支持导出 CSV。</li>
+          </ul>
+          <div class="prose">
+            <p><strong>不在范围内</strong></p>
+          </div>
+          <ul class="bullets">
+            <li>数据底层口径调整、埋点新增、权限系统改造。</li>
+            <li>移动端适配（本次仅覆盖 ≥1280px 的桌面端）。</li>
+          </ul>
+        </section>
+
+        <section class="docsec glass glass--soft glass--d60" id="s3" aria-labelledby="s3t">
+          <span class="docsec__num">03</span>
+          <h2 class="docsec__title" id="s3t">协作流程</h2>
+          <div class="steps">
+            <div class="step">
+              <span class="step__idx">Step 01</span>
+              <span class="step__title">对齐问题</span>
+              <span class="step__text">6 场访谈 + 报表盘点，输出问题清单与指标字典。</span>
+            </div>
+            <div class="step">
+              <span class="step__idx">Step 02</span>
+              <span class="step__title">结构设计</span>
+              <span class="step__text">信息架构、页面线框、筛选器状态矩阵。</span>
+            </div>
+            <div class="step">
+              <span class="step__idx">Step 03</span>
+              <span class="step__title">视觉与组件</span>
+              <span class="step__text">玻璃层规范、图表配色、KPI 卡组件与标注。</span>
+            </div>
+            <div class="step">
+              <span class="step__idx">Step 04</span>
+              <span class="step__title">走查与灰度</span>
+              <span class="step__text">双周走查、可用性评分、灰度 10% 观察一周。</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="docsec glass glass--soft glass--d60" id="s4" aria-labelledby="s4t">
+          <span class="docsec__num">04</span>
+          <h2 class="docsec__title" id="s4t">交付清单</h2>
+          <div class="table-wrap">
+            <table class="table">
+              <caption class="sr-only">项目交付清单</caption>
+              <thead>
+                <tr>
+                  <th scope="col">编号</th>
+                  <th scope="col">交付物</th>
+                  <th scope="col">格式</th>
+                  <th scope="col">负责人</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>D-01</td>
+                  <td><strong>信息架构图</strong><br />4 个入口收敛为 1 个首页 + 3 个钻取页</td>
+                  <td>Ardot 画板</td>
+                  <td>设计</td>
+                </tr>
+                <tr>
+                  <td>D-02</td>
+                  <td><strong>高保真界面</strong><br />桌面端 1440 宽，含空 / 载入 / 异常三态</td>
+                  <td>Figma + PNG</td>
+                  <td>设计</td>
+                </tr>
+                <tr>
+                  <td>D-03</td>
+                  <td><strong>组件与标注</strong><br />KPI 卡、筛选器、图表容器、表格</td>
+                  <td>组件库</td>
+                  <td>设计 / 前端</td>
+                </tr>
+                <tr>
+                  <td>D-04</td>
+                  <td><strong>指标字典</strong><br />36 个指标的口径、来源与刷新频率</td>
+                  <td>表格文档</td>
+                  <td>产品</td>
+                </tr>
+                <tr>
+                  <td>D-05</td>
+                  <td><strong>走查记录</strong><br />双周走查问题单与修复状态</td>
+                  <td>在线表格</td>
+                  <td>全员</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="docsec glass glass--soft glass--d60" id="s5" aria-labelledby="s5t">
+          <span class="docsec__num">05</span>
+          <h2 class="docsec__title" id="s5t">验收标准</h2>
+          <ul class="checklist">
+            <li>首屏 3 秒内可读完 4 项核心指标，且不出现横向滚动。</li>
+            <li>所有筛选器状态在页面跳转后保持，刷新后可通过 URL 复现。</li>
+            <li>玻璃层不遮挡文字：正文与数字对比度 ≥ 4.5:1。</li>
+            <li>图表配色与设计规范页一致，正向 / 负向各有唯一色。</li>
+            <li>空态、加载、异常三种状态均有明确文案与下一步操作。</li>
+            <li>键盘可完成筛选与钻取，焦点顺序与视觉顺序一致。</li>
+          </ul>
+        </section>
+
+        <section class="docsec glass glass--soft glass--d60" id="s6" aria-labelledby="s6t">
+          <span class="docsec__num">06</span>
+          <h2 class="docsec__title" id="s6t">版本记录</h2>
+          <div class="table-wrap">
+            <table class="table">
+              <caption class="sr-only">规范版本记录</caption>
+              <thead>
+                <tr>
+                  <th scope="col">版本</th>
+                  <th scope="col">日期</th>
+                  <th scope="col">变更</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v1.2</td>
+                  <td>2025-06-28</td>
+                  <td>补充验收标准，明确玻璃层对比度下限。</td>
+                </tr>
+                <tr>
+                  <td>v1.1</td>
+                  <td>2025-06-14</td>
+                  <td>筛选器由四组收敛为三组，移除「地区」维度。</td>
+                </tr>
+                <tr>
+                  <td>v1.0</td>
+                  <td>2025-06-02</td>
+                  <td>首版规范，确定范围、流程与交付清单。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="pager" style="padding: 0">
+          <a class="pager__link glass glass--soft glass--d35" href="works.html">
+            <span class="pager__dir">返回</span>
+            <span class="pager__title">全部作品</span>
+          </a>
+          <a class="pager__link pager__link--next glass glass--soft glass--d35" href="design-system.html">
+            <span class="pager__dir">下一份</span>
+            <span class="pager__title">设计规范</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="works.html">作品</a>
+          <a class="footer__link" href="design-system.html">设计规范</a>
+          <a class="footer__link" href="about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>阅读 App · 充值返券长页 — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="阅读 App 充值活动页案例：480 × 2077 长页——顶部倒计时（07D 24H 56M）与 Maximize Your Savings 主标题打出「最高 90% off」，内容区用一条进度条把「读到第 20 章拿 50% 券 / 第 30 章拿 90% 券」写成两档，双倍券单独做成一张金卡，末尾用一排可用的在读作品把人推向解锁按钮；奶油白打底，玫红给主标题与券，珊瑚橙给礼物与书本，深梅色只给正文。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">阅读 App · 充值返券长页</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 阅读 App 充值活动页（任务 · 返券 · 2077px 长页）</span>
+      <h1 class="phead__title">阅读 App · 充值返券长页</h1>
+      <p class="phead__lead">
+        充值活动的难点不是「给多少优惠」，而是「让用户相信再读几章就能拿到」。所以这一页把优惠拆成两条进度：一条是章节数，一条是券的面额。用户看到的不是「90% off」这句话，而是自己离它还有几章。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">阅读 App 充值活动（站内长页 · 480 宽）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">活动页设计（信息结构 + 视觉 + 券组件）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/reading-campaign-hero.png" width="1648" height="948"
+          alt="阅读充值页主视觉：奶油白与玫红底上 2077px 活动长页与 90% OFF 券标，左侧玫红标题" />
+        <figcaption class="figure__cap">
+          主视觉 · 倒计时、进度条、券三件套，把「再读几章」变成看得见的距离。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">任务式充值 · 两档券 · 2077px</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这是一次面向在读用户的充值活动：读完 20 章解锁 50% off 券，读完 30 章解锁 90% off 券，另有双倍券可以叠加。活动页要在一屏内说清规则，又要让用户愿意继续往下读。</p>
+          <p>难点在两处：一是「90% off」这样的数字用户见得太多，已经不信；二是奖励分两档，容易让人以为拿不到最高档就白读。所以整页的主线不是优惠，而是进度——把章节数做成一条能看见终点的进度条。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">把优惠翻译成距离</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>倒计时开场：顶部三个胶囊写 07D / 24H / 56M，先给紧迫感，再给内容；数字用等宽字，跳动时不撑破版式。</li>
+          <li>主标题只喊一件事：Maximize Your Savings! 配一句「完成任务最高省 90%」，把「怎么省」放在标题下面而不是标题里。</li>
+          <li>进度条是整页的主角：一条横线从左到右标出 0 / 20 / 30 章，两个节点各挂一张券，用户一眼看到自己现在站在哪。</li>
+          <li>券做成可核对的卡片：面额、章节数、状态（Issued / Undone）三件事固定在一行里，拿到与没拿到用颜色区分，不靠文案解释。</li>
+          <li>双倍券单独一张金卡：不和两档奖励挤在一起，避免用户把「叠加」误解成「替代」。</li>
+          <li>末尾给「一律可用」：一排在读作品封面，说明券不挑书，把最后的犹豫压掉，再放解锁按钮。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="page-title">
+      <div class="block__head">
+        <h2 class="block__title" id="page-title">完整活动页</h2>
+        <p class="block__note">交付稿 · 480 × 2077 · 长页滚动</p>
+      </div>
+
+      <figure class="figure figure--page">
+        <img class="figure__img" src="../assets/images/reading-campaign-page.png" width="480" height="2077" alt="阅读充值完整活动页：倒计时与 Maximize Your Savings 标题、Reading rewards 进度条、两档券与双倍券金卡、在读作品与解锁按钮" />
+        <figcaption class="figure__cap">
+          完整活动页 · 倒计时 → 进度条 → 两档券 → 双倍券 → 可用作品 → 解锁按钮。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="flow-title">
+      <div class="block__head">
+        <h2 class="block__title" id="flow-title">奖励链路</h2>
+        <p class="block__note">读 → 解锁 → 用券</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">读</p>
+          <p class="flow__text">页面上半段只讲「读多少章」，进度条把当前章节与两个目标节点画在同一条线上。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">解锁</p>
+          <p class="flow__text">到 20 章发 50% 券、到 30 章发 90% 券，券卡状态从 Undone 变 Issued，颜色同步从灰边变实心。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">叠加</p>
+          <p class="flow__text">双倍券作为独立金卡出现在两档之间，明确写「可与章节券叠加」，不参与进度计算。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">用券</p>
+          <p class="flow__text">末尾列出全部在读作品，说明券全场可用，按钮直接进入解锁页，一步完成充值。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" aria-labelledby="colors-title">
+      <div class="block__head">
+        <h2 class="block__title" id="colors-title">色彩</h2>
+        <p class="block__note">奶油白打底 · 玫红主色 · 珊瑚橙副色</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--readcream"></span>
+          <span class="swatch swatch--readrose"></span>
+          <span class="swatch swatch--readcoral"></span>
+          <span class="swatch swatch--readplum"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>底色用奶油白（#fff0ea）而不是纯白，长页滚动时眼睛不容易累；玫红（#f1267a）只给主标题、券和按钮，负责「这是优惠」；珊瑚橙（#ff8a3d）只给礼物、书本与金币，负责「这里有奖励」；深梅（#33222a）承担全部正文，保证在浅底上长时间阅读也不发灰。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付</h2>
+        <p class="block__note">1 条长页 · 两层进度 · 3 类券</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">2077px</span>
+          <span class="stat__label">单页长度：倒计时、进度、券、可用作品、按钮五段连续滚动，不用跳转</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">2 档</span>
+          <span class="stat__label">章节奖励：20 章换 50% 券、30 章换 90% 券，节点直接挂在进度条上</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 类</span>
+          <span class="stat__label">券组件：章节券（两档）+ 双倍券，状态 Issued / Undone 一色区分</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="finance-campaign.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">金融活动页 · 三产品投放三连</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="jiujiu-app.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">啾啾 · 泛娱乐社交 App</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

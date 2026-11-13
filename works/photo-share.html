@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>摄影社区 · 摄影作品分享与找搭子 App — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="摄影社区 App 案例：一个把「今天拍什么」和「跟谁去拍」放在同一处的影像社区——整站界面一次交付：For You 首页（每日活动 + Selected + Inspiration）、探索（四个题材入口 + Quiz Match + Trending + 器材语音问答）、发布（AI 摄影助手 + Share + Events）、作品详情、个人主页（四项数据 + My coins + Gallery）；暖纸白底 + 荧光青柠高亮，把照片留在最前面。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">摄影社区 · 摄影作品分享与找搭子 App</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 摄影社区 App（C 端 · 影像社区）</span>
+      <h1 class="phead__title">摄影社区 · 摄影作品分享与找搭子 App</h1>
+      <p class="phead__lead">
+        拍照的人缺的不是相机，是「今天拍什么」和「跟谁去拍」：题材一年换三回，一个人扫街拍到第三个月就没劲了。这个 App 把两件事放进同一条动线——先在每日活动里接一个题目，再看别人怎么解，最后用四个小问题找到风格相近的搭子。整套界面按一屏一屏铺完，不是几张效果图。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">摄影社区 App（C 端 · 影像社区）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI + 交互设计（整个 App 的界面）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/photo-hero.png" width="1648" height="948"
+          alt="摄影社区 App 主视觉：暖纸白底上，作品详情与个人主页两块界面并排展示" />
+        <figcaption class="figure__cap">
+          主视觉 · 作品详情与个人主页同框：一半是「这张片子」，一半是「这个人」。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">影像社区 · 题目与搭子两条线</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这款 App 面向国内一二线的业余摄影爱好者：手机 + 一台微单的人很多，职业摄影师很少。旧版是一个纯粹按时间排的图片墙——一天能刷到几百张片子，但没有一个地方告诉新手「这个周末该拍什么」，也没有一个地方让两个人约着出门；器材讨论沉在列表最底部，谁想问一句「这支镜头值不值」，只能自己开帖。</p>
+          <p>重做没有加新功能，而是把「题目」和「人」提到最前面：首页 For You 用一条 Daily activities 挂住当天的活动，Selected 放一张编辑挑过的作品，Inspiration 双列承接浏览；探索页把题材做成四个圆形入口，Quiz Match 用四道题找风格相近的搭子，器材讨论改成语音问答；发布页给 AI 摄影助手一块固定的位置；作品详情与个人主页负责回答「这张片子是谁拍的」。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">一条活动开场，照片永远比按钮大</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>首页固定三段：Daily activities 一张活动卡（城市插画底 + 荧光笔标题 Capture city light and shadow + 右下角青柠 Join），Selected 一张横图作品卡（底部压作者行：头像 / 名字 / 点赞 / 评论），Inspiration 双列 4:5 竖图。第一屏永远只放「一条活动 + 一张大图 + 两个小图」，不堆信息。</li>
+          <li>活动卡是复用组件：浅蓝到浅橙的插画底、白色小胶囊标签、青柠 Join 按钮，标题用一支荧光笔压在半高位置。换活动只换图与文案，布局不动——所以发布页的 Events 能连排三条而不显得吵。</li>
+          <li>探索页只做「按题材找」和「按人找」两件事：Portrait / Building / Nightscape / landscape 四个圆形入口横排一行，下面 Quiz Match 用一张薄荷卡说清玩法（Answer the photography questions → Find a photograph partner who is similar to you）；Trending 沿用双列作品卡，器材讨论则是两条语音问答行，右侧一颗波形图标 + 一串头像 + 8 joined。</li>
+          <li>发布页把 AI 助手放在最上面，而不是藏在入口里：Hello, I'm your AI photography assistant 一张薄荷卡，配一只戴耳机的机器人；下面是 Share 的一颗大方卡（相机图标 + Edit），再往下才是 Events。发布不是终点，是「接着参加下一场」。</li>
+          <li>作品详情与个人主页是同一套骨架的两种排法：详情用整屏照片开场，sheet 从下沿以 32px 圆角升起，作者行、一句正文、三项数据、Gallery / Like 两颗 tab 依次往下；个人主页换成暗色大图 + 白色 sheet，多一条 My coins（999 + 相机金币图标）与四项数据，作品区双列。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">这个 App 是按整站交付的 · 这里挑 5 屏</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这次交付的是整个 App 的主界面，不是几张效果图：For You 首页、探索、发布、作品详情、个人主页，连同活动卡、Quiz Match、语音问答行、金币条与底部五格 tab 一起出稿。下面 5 屏全部来自设计稿原图。</p>
+          <p>挑这 5 屏，是因为它们各自回答一个不同的问题——今天拍什么（首页）、按什么题材找（探索）、怎么把片子发出去（发布）、这张片子是谁拍的（作品详情）、这个人拍过什么（个人主页）。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/photoshare-home.png" width="780" height="1688" alt="摄影社区 App 首页 For You：Daily activities 活动卡、Selected 横图作品、Inspiration 双列竖图与底部五格 tab" />
+          <figcaption class="shots__cap">首页 · 一条活动开场，Selected 一张大图，Inspiration 双列接住剩下的浏览。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/photoshare-explore.png" width="780" height="1688" alt="摄影社区 App 探索页：Portrait、Building、Nightscape、landscape 四个圆形题材入口，Quiz Match 薄荷卡、Trending 双列与 Equipment discussion 语音问答行" />
+          <figcaption class="shots__cap">探索 · 四个圆形题材入口 + Quiz Match 找搭子 + 器材讨论的语音问答行。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/photoshare-post.png" width="780" height="1970" alt="摄影社区 App 发布页：AI 摄影助手薄荷卡、Share 的 Edit 大方卡与三条 Daily activities 活动卡" />
+          <figcaption class="shots__cap">发布 · AI 助手放在最上面，Share 一颗大方卡，Events 连排三条活动。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/photoshare-detail.png" width="780" height="1688" alt="摄影社区 App 作品详情：整屏人像照片、底部白色 sheet 与作者行、一句正文、三项数据、Gallery 与 Like 双列作品" />
+          <figcaption class="shots__cap">作品详情 · 照片占上半屏，sheet 承担作者、正文、三项数据与两颗 tab。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/photoshare-me.png" width="780" height="1688" alt="摄影社区 App 个人主页：暗色大图开场、白色 sheet 上的头像与名字、四项数据、My coins 999 与 Gallery 双列" />
+          <figcaption class="shots__cap">个人主页 · 大图开场，sheet 里是四项数据、My coins 与双列 Gallery。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">暖纸白底 · 荧光青柠 · 薄薄荷 · 珊瑚粉 · 近黑</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--paper"></span>
+          <span class="swatch swatch--lime"></span>
+          <span class="swatch swatch--mintcard"></span>
+          <span class="swatch swatch--rosy"></span>
+          <span class="swatch swatch--photoblack"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>整站底色是一张暖纸白 #f4f2ec，不是纯白：照片压在纸上，边缘不发青，看久了也不刺。荧光青柠 #d8f36b 是全站唯一的高饱和色，只做两件事——把标题的最后一行「划」出来（一支荧光笔压在半高位置），以及 Join 这类「点了一定会参加」的按钮；薄荷 #eaf6dd 只给需要说明的卡（AI 助手、Quiz Match、My coins），因为它比青柠安静，能装长句子；珊瑚粉 #ff8f8f 是题材标签（portrait / building），小面积、只出现在缩略图左上角；正文回到近黑 #1b1b1b，副文 #5b5f58、辅助 #8d9187 各降一档。形状全部走大圆角：卡片 20–24px，活动卡与作品图 24px，sheet 32px，按钮与标签一律胶囊。层级只靠两件事拉开——图片面积和字重；除了那支荧光笔，全站不做其它装饰。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">3 个「社区 + 内容」带来的取舍</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>首页既要挂住今日活动，又要给作品流位置：活动卡一放大，第一张作品就整张看不见了。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把第一屏拆成固定的三段配额：活动卡固定 1 张（约 190px 高），Selected 固定 1 张横图，Inspiration 固定露出 2 张竖图的上半截。活动再怎么换图换文案，这个配额不动，滚动距离也就不会因为活动数量变化而跳动。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>荧光笔标题在浅色底上很容易变成一块脏黄，尤其换了几种绿以后。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>定死一条规则：荧光笔只压标题的最后一小段，颜色固定 #d8f36b，高度压到字高的 40%，永远不进正文；正文与副文一律走近黑与灰，不做任何底色。这样一支笔在整站只出现三五次，反而成了这套稿子的记忆点。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>作品详情要同时讲「这张照片」和「这个人」，全屏大图与作者信息抢同一块地方。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>上半屏让给照片，一像素都不压字；sheet 从图片下沿以 32px 圆角升起，按「作者行 → 一句正文 → 三项数据 → Gallery / Like」分四段，每段之间只用 16px 空隙，不加分割线。想看更多作品就往下滚 Gallery，不用跳页。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 从两屏打样铺到整个 App</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 把「一条活动」做成封面</p>
+          <p class="flow__text">先定气质：暖纸白 + 荧光笔 + 满屏照片，读起来像一本摄影杂志的目录页，而不是一个社区工具。用首页与探索两屏打样，确认「照片永远比按钮大、青柠只给一次点击」这条底线，再动其他页面。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 先拆两条路，再铺全站</p>
+          <p class="flow__text">把「拍什么」与「跟谁拍」拆成两条独立的线：内容线是 Daily activities → Selected → 作品详情 → 个人主页，人的线是探索 → Quiz Match → 器材讨论 → 消息；两条各自铺完之后，再补发布、金币与设置。活动卡、题材标签、语音问答行、金币条、底部五格 tab 收成一套组件规范。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付组件 Variant 与页面清单，和开发一起走查 iOS / Android：暖白在 OLED 与低亮度下的偏色、4:5 竖图与 3:2 横图混排时作者行的对齐、长活动标题与长简介是否顶破卡片、底部 tab 与 sheet 的安全区，逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">全站</span>
+          <span class="stat__label">For You / 探索 / 发布 / 作品详情 / 个人主页 / 活动详情 / Quiz Match / 器材讨论 / 消息 / 金币 / 设置</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">暖白 + 青柠规范：荧光笔标题、活动卡、题材标签、语音问答行、金币条</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 段</span>
+          <span class="stat__label">核心动线：接一个活动 → 看别人怎么拍 → 找到风格相近的搭子</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="dive-share.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">潜水分享 · 潜水员约潜社区 App</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="diy-drink.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">DIY 饮品 · 自己调一杯的饮品社区 App</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+/* ============================================================================
+   金融借款 App · INSTALLMENT LOAN (ES / EN)
+   ----------------------------------------------------------------------------
+   CSS 化的素材：封面 292x200、主视觉 824x474。界面部分不用 CSS 重绘，直接把
+   设计稿原图（assets/images/loan-*.png）以 .lp-shot 拼进去。
+   由 tools/build-images.ps1 用无头 Chrome 截图成
+   assets/images/work-loan*.png 与 loan-hero.png。
+
+   配色照搬 App 自身：暖纸白底（#f7f1e7）、深松绿金额卡（#14524a）、
+   金黄只给「已还 / 进度 / 优惠」（#d8b64a）、陶土橙是英文版 Banner（#c3714f）、
+   酒红只给逾期（#4a1728）。形状走大圆角 + 胶囊，装饰只留一枚同心的涟漪圆。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow: hidden;
+  background: #f7f1e7;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --lp-paper: #f7f1e7;
+  --lp-paper-soft: #fbf7f0;
+  --lp-pine: #14524a;
+  --lp-pine-deep: #0d3c36;
+  --lp-gold: #d8b64a;
+  --lp-clay: #c3714f;
+  --lp-wine: #4a1728;
+  --lp-ink: #1d1a17;
+  --lp-ink-soft: #6b6157;
+  --lp-ink-dim: #9a8f83;
+}
+
+/* 暖纸底：右上一点松绿、左下一点金，大面积留白 */
+.lp-paper {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 58% at 88% 0%, rgba(20, 82, 74, .20) 0%, rgba(20, 82, 74, 0) 62%),
+    radial-gradient(58% 50% at 2% 100%, rgba(216, 182, 74, .24) 0%, rgba(216, 182, 74, 0) 60%),
+    linear-gradient(168deg, #fbf7f0 0%, #f7f1e7 52%, #efe7d9 100%);
+}
+
+/* 涟漪圆：Banner 右上那枚同心圆，只留一两道弧 */
+.lp-radar {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(20, 82, 74, .16);
+}
+.lp-radar::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 6px; height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--lp-gold);
+}
+
+/* 金色圆头下划线：App 里进度条与 Paid 状态的那颗金，压到标题下面一截 */
+.lp-rule {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--lp-gold);
+}
+
+/* 真实界面截图：暖白边 + 松绿投影，像两张摆在同一张桌上的账单 */
+.lp-shot {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(107, 97, 87, .14);
+  box-shadow: 0 20px 38px rgba(41, 33, 24, .26), 0 0 0 4px rgba(255, 253, 249, .9);
+  background: #fff;
+}
+.lp-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+
+
+/* ---------------------------------------------------------------- 封面 292x200 */
+.lp-cover {
+  position: relative;
+  width: 292px;
+  height: 200px;
+  overflow: hidden;
+  background: var(--lp-paper);
+}
+
+.lp-cover__eyebrow {
+  position: absolute; left: 16px; top: 15px;
+  padding: 3px 9px 2px;
+  border-radius: 999px;
+  background: #fffdf9;
+  border: 1px solid rgba(20, 82, 74, .45);
+  color: var(--lp-pine);
+  font-size: 7.5px; font-weight: 800; letter-spacing: .18em;
+}
+
+/* 标题 + 金线：先在标题下面压一条圆头金线，再把字放上去 */
+.lp-cover__title {
+  position: absolute; left: 15px; top: 39px;
+  isolation: isolate;
+}
+
+.lp-cover__title .lp-rule {
+  left: -3px; bottom: 3px; width: calc(100% + 6px); height: 10px;
+  z-index: -1;
+}
+
+.lp-cover__cn {
+  font-size: 26px; font-weight: 800; line-height: 1.14;
+  letter-spacing: .01em;
+  color: var(--lp-ink);
+}
+
+.lp-cover__en {
+  position: absolute; left: 17px; top: 79px;
+  font-size: 7px; font-weight: 800; letter-spacing: .24em;
+  color: var(--lp-ink-dim);
+}
+
+.lp-cover__sub {
+  position: absolute; left: 17px; top: 94px; width: 132px;
+  font-size: 10.5px; line-height: 1.5; letter-spacing: .03em;
+  color: var(--lp-ink-soft);
+}
+
+/* 进度胶囊：App 里那张深绿卡的 Progress，缩成一颗小胶囊 */
+.lp-cover__paid {
+  position: absolute; left: 17px; top: 131px;
+  width: 116px;
+  padding: 6px 10px 7px;
+  border-radius: 12px;
+  background: var(--lp-pine);
+  box-shadow: 0 6px 14px rgba(13, 60, 54, .30);
+}
+.lp-cover__paid span {
+  display: block;
+  color: var(--lp-gold);
+  font-size: 7px; font-weight: 800; letter-spacing: .14em;
+}
+.lp-cover__track {
+  position: relative;
+  margin-top: 5px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .22);
+  overflow: hidden;
+}
+.lp-cover__track i {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 68%;
+  border-radius: 999px;
+  background: var(--lp-gold);
+}
+
+.lp-cover__meta {
+  position: absolute; left: 17px; bottom: 15px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 8px; font-weight: 800; letter-spacing: .08em;
+  color: var(--lp-ink-dim);
+}
+
+.lp-cover__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--lp-pine);
+  box-shadow: 0 0 0 1px rgba(29, 26, 23, .16);
+}
+
+
+/* ------------------------------------------------------------ 主视觉 824x474 */
+.lp-hero {
+  position: relative;
+  width: 824px;
+  height: 474px;
+  overflow: hidden;
+  background: var(--lp-paper);
+}
+
+.lp-hero__copy { position: absolute; left: 56px; top: 74px; width: 360px; }
+
+.lp-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 12px 4px;
+  border-radius: 999px;
+  background: #fffdf9;
+  border: 1px solid rgba(20, 82, 74, .42);
+  color: var(--lp-pine);
+  font-size: 10px; font-weight: 800; letter-spacing: .2em;
+}
+
+.lp-hero__title {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  margin-top: 22px;
+  font-size: 54px; font-weight: 800; line-height: 1.04;
+  letter-spacing: .01em;
+  color: var(--lp-ink);
+}
+
+.lp-hero__title .lp-rule {
+  left: -2px; bottom: 6px; width: 110px; height: 14px;
+  z-index: -1;
+}
+
+.lp-hero__en {
+  margin-top: 14px;
+  font-size: 11px; font-weight: 800; letter-spacing: .34em;
+  color: var(--lp-ink-dim);
+}
+
+.lp-hero__lead {
+  margin-top: 20px;
+  font-size: 13px; line-height: 1.92;
+  color: #574d43;
+}
+
+.lp-hero__chips { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.lp-hero__chip {
+  padding: 7px 13px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 82, 74, .18);
+  background: rgba(255, 253, 249, .86);
+  color: #4d453b;
+  font-size: 11px; letter-spacing: .04em;
+}
+
+/* 左下角一行小注：真实数字，来自 Plan 与 Perfil 两屏 */
+.lp-hero__note {
+  position: absolute; left: 56px; bottom: 46px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 800; letter-spacing: .08em;
+  color: var(--lp-ink-dim);
+}
+.lp-hero__note i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--lp-pine);
+  box-shadow: 0 0 0 1px rgba(29, 26, 23, .14);
+}
+

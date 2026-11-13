@@ -1,0 +1,1116 @@
+/* ==========================================================================
+   12 的个人空间 - cover artwork
+   ----------------------------------------------------------------------------
+   The canvas stores six bitmap fills (avatar, hero dashboard, 4 project
+   covers). Ardot's export API refuses while the file has no open editor
+   session, so each is rebuilt here as a CSS spot illustration at its exact
+   box size. Every wrapper is a drop-in replacement point: swap in an <img>
+   and the layout will not move.
+
+   Node map:
+     2:84  avatar                -> .avatar
+     2:25  hero dashboard        -> .shot
+     2:41  work/x fitness app    -> .cover--fitness
+     2:46  work/x analytics      -> .cover--dash
+     2:51  work/x product promo  -> .cover--promo
+     2:56  work/x sale banner    -> .cover--mint
+
+   不在设计稿里的三处（后来加项目时补的，盒子与字号同上）：
+      work/ai-edit-emotion   AI 剪辑 · 营销视频 · 金融类型 1  -> .cover--video.cover--video--warm
+     work/ai-edit-reversal  AI 剪辑 · 营销视频 · 金融类型 2  -> .cover--video
+     work/ai-edit-trend     AI 剪辑 · 营销视频 · 金融类型 3  -> .cover--video.cover--video--trend
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   2:84 Avatar - 180x180, r90
+   -------------------------------------------------------------------------- */
+.avatar {
+  background:
+    radial-gradient(120% 90% at 30% 8%, #EFF2FF 0%, rgba(239, 242, 255, 0) 60%),
+    radial-gradient(90% 80% at 82% 92%, #F6E9FF 0%, rgba(246, 233, 255, 0) 65%),
+    linear-gradient(165deg, #E3E9FF 0%, #EDE8FF 55%, #DCE6FA 100%);
+}
+
+/* Top bun, peeking above the hair silhouette. Paints under the hair/frame. */
+.avatar::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50px;
+  height: 46px;
+  margin-left: -25px;
+  border-radius: 50%;
+  background: linear-gradient(170deg, #3C3648 0%, #262130 100%);
+}
+
+/* Illustrated portrait rim: soft white band + violet inner glint. */
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 7px solid rgba(255, 255, 255, .55);
+  box-shadow:
+    inset 0 0 0 2px rgba(178, 140, 255, .32),
+    inset 0 0 18px rgba(120, 150, 240, .22);
+  pointer-events: none;
+}
+
+.avatar__hair {
+  position: absolute;
+  left: 50%;
+  top: 14%;
+  width: 80px;
+  height: 96px;
+  margin-left: -40px;
+  border-radius: 40px 40px 34px 34px;
+  background: linear-gradient(170deg, #3C3648 0%, #262130 100%);
+}
+
+/* two strands falling over the shoulders */
+.avatar__hair::before,
+.avatar__hair::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  width: 16px;
+  height: 70px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #322C3E 0%, #211C2A 100%);
+}
+
+.avatar__hair::before { left: -7px; }
+.avatar__hair::after { right: -7px; }
+
+.avatar__face {
+  position: absolute;
+  left: 50%;
+  top: 29%;
+  width: 72px;
+  height: 78px;
+  margin-left: -36px;
+  border-radius: 50% 50% 46% 46%;
+  background: linear-gradient(180deg, #F8DECD 0%, #EFC9B4 100%);
+}
+
+/* Eyes: two soft dots, generous spacing keeps the face calm at 180px. */
+.avatar__face::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 34px;
+  width: 34px;
+  height: 5px;
+  margin-left: -17px;
+  background:
+    radial-gradient(circle at 4px 2.5px, #2E2A38 2.4px, rgba(46, 42, 56, 0) 2.6px),
+    radial-gradient(circle at 30px 2.5px, #2E2A38 2.4px, rgba(46, 42, 56, 0) 2.6px);
+}
+
+/* Mouth: a shallow smile arc. */
+.avatar__face::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 48px;
+  width: 14px;
+  height: 8px;
+  margin-left: -7px;
+  border-bottom: 2px solid #C98F76;
+  border-radius: 0 0 14px 14px;
+}
+
+.avatar__neck {
+  position: absolute;
+  left: 50%;
+  top: 63%;
+  width: 24px;
+  height: 22px;
+  margin-left: -12px;
+  border-radius: 0 0 10px 10px;
+  background: #EAC3AE;
+}
+
+.avatar__top {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  width: 132px;
+  height: 62px;
+  margin-left: -66px;
+  border-radius: 66px 66px 0 0;
+  background: linear-gradient(180deg, #C9D9F0 0%, #A8BFE0 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, .9);
+}
+
+.avatar__name {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, .60);
+  border: 1px solid rgba(255, 255, 255, .75);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  line-height: 1;
+  color: #5E6E8C;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   2:25 Hero dashboard - 512x340, r18  (ApexHub)
+   -------------------------------------------------------------------------- */
+.shot {
+  display: flex;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #44506B;
+  background:
+    radial-gradient(120% 90% at 16% 6%, rgba(255, 255, 255, .42), rgba(255, 255, 255, 0) 56%),
+    radial-gradient(90% 80% at 94% 98%, rgba(255, 255, 255, .26), rgba(255, 255, 255, 0) 62%),
+    linear-gradient(140deg, #6E96EE 0%, #8A7BE8 46%, #B57FE4 100%);
+}
+
+.shot__side {
+  flex: 0 0 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 10px;
+  background: rgba(255, 255, 255, .16);
+  border-right: 1px solid rgba(255, 255, 255, .30);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.shot__brand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: #fff;
+}
+
+.shot__brand-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-violet));
+}
+
+.shot__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 15px;
+  padding: 0 6px;
+  border-radius: 5px;
+  font-size: 6px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .86);
+  white-space: nowrap;
+}
+
+.shot__nav-item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: .35;
+}
+
+.shot__nav-item--active {
+  background: rgba(255, 255, 255, .30);
+  color: #fff;
+  font-weight: 600;
+}
+
+.shot__nav-item--active::before {
+  background: #fff;
+  opacity: 1;
+}
+
+.shot__user {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  padding: 5px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .26);
+}
+
+.shot__user-avatar {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(150deg, #C9B7FF, #8FA8FF);
+}
+
+.shot__user-name { font-size: 5.5px; font-weight: 600; color: #fff; line-height: 1.3; }
+.shot__user-role { font-size: 5px; color: rgba(255, 255, 255, .72); line-height: 1.3; }
+
+.shot__main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 10px 12px;
+  margin: 10px 10px 10px 0;
+  min-width: 0;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .26);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+}
+
+.shot__topbar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.shot__search {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 16px;
+  padding: 0 7px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, .48);
+  border: 1px solid rgba(255, 255, 255, .55);
+  font-size: 5.5px;
+  color: #55658A;
+}
+
+.shot__search::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid #A9B4CC;
+}
+
+.shot__icon {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .48);
+  border: 1px solid rgba(255, 255, 255, .55);
+}
+
+.shot__me {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(150deg, #C9B7FF, #8FA8FF);
+  border: 1.5px solid #fff;
+}
+
+/* KPI row */
+.shot__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.shot__kpi {
+  padding: 5px 6px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(255, 255, 255, .62);
+  box-shadow: 0 3px 8px rgba(96, 118, 200, .07);
+}
+
+.shot__kpi-label { font-size: 5px; color: #8A96B2; line-height: 1.4; }
+.shot__kpi-value { font-size: 9.5px; font-weight: 700; color: #1D2340; line-height: 1.35; letter-spacing: -.02em; }
+.shot__kpi-delta { font-size: 4.5px; font-weight: 600; color: #37A88A; line-height: 1.4; }
+.shot__kpi-delta--down { color: #D9738A; }
+
+/* chart + activity */
+.shot__row {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 7px;
+  min-height: 0;
+}
+
+.shot__chart {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(255, 255, 255, .62);
+  box-shadow: 0 3px 8px rgba(96, 118, 200, .07);
+  min-width: 0;
+}
+
+.shot__chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.shot__chart-title { font-size: 6px; font-weight: 600; color: #2C3552; }
+
+.shot__pill {
+  padding: 1px 5px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, .55);
+  font-size: 4.5px;
+  color: #55658A;
+  white-space: nowrap;
+}
+
+.shot__plot { flex: 1 1 auto; min-height: 0; }
+.shot__plot svg { display: block; width: 100%; height: 100%; }
+
+.shot__axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 4.5px;
+  color: #A2ACC2;
+}
+
+.shot__feed {
+  flex: 0 0 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(255, 255, 255, .62);
+  box-shadow: 0 3px 8px rgba(96, 118, 200, .07);
+}
+
+.shot__feed-title { font-size: 6px; font-weight: 600; color: #2C3552; }
+
+.shot__feed-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 4.5px;
+  color: #6B7794;
+  line-height: 1.3;
+}
+
+.shot__feed-item::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: linear-gradient(140deg, #D9E1FF, #EDE6FF);
+}
+
+/* --------------------------------------------------------------------------
+   Cover base - fills the 292x200 (r16) frame of a work card
+   -------------------------------------------------------------------------- */
+.cover {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   2:41 悦动 · 健身 App - sky-blue product shot with a centred phone
+   -------------------------------------------------------------------------- */
+.cover--fitness {
+  background: linear-gradient(170deg, #D8E9FF 0%, #EFF7FF 52%, #E4F0FF 100%);
+}
+
+.cover--fitness::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: -40px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0) 70%);
+}
+
+.cover--fitness::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -60px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(214, 233, 255, .6));
+}
+
+.phone {
+  position: absolute;
+  left: 50%;
+  top: 14px;
+  transform: translateX(-50%);
+  width: 98px;
+  height: 186px;
+  padding: 7px 7px 6px;
+  border-radius: 16px;
+  border: 2px solid #fff;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F9FF 100%);
+  box-shadow: 0 12px 26px rgba(88, 120, 190, .25);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1;
+}
+
+.phone__notch {
+  width: 24px;
+  height: 3px;
+  border-radius: 9px;
+  margin: 0 auto 1px;
+  background: #D9E5F7;
+}
+
+.phone__greet { font-size: 5.5px; font-weight: 700; line-height: 1.2; color: #22324D; }
+.phone__sub { font-size: 4px; line-height: 1.3; color: #8FA4C2; }
+
+.phone__rings {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 3px 0 1px;
+}
+
+.ring {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: conic-gradient(#6E9BFF 0 66%, #E4EEFF 66% 100%);
+}
+
+.ring::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.ring--alt { background: conic-gradient(#B28CFF 0 44%, #EDE7FF 44% 100%); }
+
+.phone__card {
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(120deg, #E9F0FF 0%, #F7FAFF 100%);
+}
+
+.phone__row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 13px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: #F2F7FE;
+}
+
+.phone__row::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: #CFE0FA;
+}
+
+.phone__tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 15px;
+  margin-top: auto;
+  border-radius: 7px;
+  background: #F3F8FF;
+}
+
+.phone__tab span {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: #C9D8F2;
+}
+
+.phone__tab span:first-child { background: #6E9BFF; }
+
+/* --------------------------------------------------------------------------
+   2:46 洞察 · 数据看板 - indigo/violet dashboard window
+   -------------------------------------------------------------------------- */
+.cover--dash {
+  background: linear-gradient(135deg, #3B37C9 0%, #6B45DA 55%, #8A5AE8 100%);
+}
+
+.cover--dash::before {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: -70px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .34), rgba(255, 255, 255, 0) 68%);
+}
+
+.win {
+  position: absolute;
+  inset: 14px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(255, 255, 255, .12);
+  box-shadow: 0 14px 30px rgba(30, 16, 90, .32);
+}
+
+.win__side {
+  flex: 0 0 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 5px;
+  background: rgba(26, 18, 78, .45);
+}
+
+.win__logo {
+  width: 11px;
+  height: 11px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #A8BEFF, #D9B6FF);
+}
+
+.win__nav {
+  height: 4.5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .28);
+}
+
+.win__nav--on { background: rgba(255, 255, 255, .85); }
+
+.win__main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 7px;
+  min-width: 0;
+}
+
+.win__bar {
+  width: 42%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .55);
+}
+
+.win__kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.win__kpi {
+  height: 17px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .22);
+  border: 1px solid rgba(255, 255, 255, .18);
+}
+
+.win__chart {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, .16);
+}
+
+.win__chart svg { display: block; width: 100%; height: 100%; }
+
+.win__donut {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: conic-gradient(#8FE3D2 0 58%, rgba(255, 255, 255, .32) 58% 100%);
+}
+
+.win__donut::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: rgba(58, 40, 150, .85);
+}
+
+/* --------------------------------------------------------------------------
+   2:51 新品发布 · 宣传图 - rose/lilac promo key visual
+   -------------------------------------------------------------------------- */
+.cover--promo {
+  background: linear-gradient(125deg, #F8E7F6 0%, #E8E4FF 45%, #DBE8FF 100%);
+}
+
+.cover--promo::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: -60px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0) 70%);
+}
+
+.promo__title {
+  position: absolute;
+  left: 16px;
+  top: 26px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: #241E33;
+}
+
+.promo__title span {
+  display: block;
+  background: linear-gradient(90deg, #E4629F 0%, #9A6BE8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.promo__eyebrow {
+  position: absolute;
+  left: 17px;
+  top: 15px;
+  margin: 0;
+  font-size: 4.5px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #8A7C9E;
+}
+
+/* abstract product: headphone band on a soft disc */
+.promo__product {
+  position: absolute;
+  right: 16px;
+  top: 24px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 28%, #FFFFFF 0%, #F1E9FF 58%, #DBD2FF 100%);
+  box-shadow: 0 16px 32px rgba(150, 120, 220, .28);
+}
+
+.promo__product::before {
+  content: "";
+  position: absolute;
+  inset: 22px 20px 26px;
+  border: 7px solid #2A2438;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+}
+
+.promo__product::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  width: 14px;
+  height: 24px;
+  border-radius: 7px;
+  background: #2A2438;
+  box-shadow: 42px 0 0 #2A2438;
+}
+
+.promo__tag {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(255, 255, 255, .9);
+  font-size: 5px;
+  font-weight: 600;
+  color: #4A3E63;
+}
+
+.promo__off {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  background: #241E33;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   2:56 盛夏促销 · Banner - mint sale banner
+   -------------------------------------------------------------------------- */
+.cover--mint {
+  background: linear-gradient(150deg, #DDF6EC 0%, #F1FBF6 45%, #D5EEE6 100%);
+}
+
+.cover--mint::before {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -70px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0) 70%);
+}
+
+.mint__title {
+  position: absolute;
+  left: 16px;
+  top: 26px;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #10453A;
+}
+
+.mint__sub {
+  position: absolute;
+  left: 17px;
+  top: 64px;
+  margin: 0;
+  font-size: 4.5px;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: #4E8F7F;
+}
+
+.mint__badge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #10453A;
+  font-size: 6px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  color: #DDF6EC;
+}
+
+.bottle {
+  position: absolute;
+  bottom: 16px;
+  border-radius: 6px 6px 9px 9px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #DFF3EB 100%);
+  border: 1px solid rgba(255, 255, 255, .95);
+  box-shadow: 0 12px 22px rgba(56, 138, 118, .20);
+}
+
+.bottle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -7px;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 8px;
+  border-radius: 2px;
+  background: #BFE9DA;
+}
+
+.bottle--1 { right: 82px; width: 22px; height: 50px; }
+.bottle--2 { right: 50px; width: 26px; height: 68px; }
+.bottle--3 { right: 20px; width: 22px; height: 40px; }
+
+/* --------------------------------------------------------------------------
+   work/ai-edit-* AI 剪辑 · 营销视频三支（金融类型 1 / 2 / 3）- 竖版播放器 + 剪辑时间轴
+   这套封面不在设计稿里：新增「AI 剪辑 / 生成」项目时补的，沿用同一套
+   盒子尺寸（292 x 200 r16）与字号，所以和其余封面并排不会跳。
+
+   三支片子共用同一套结构，只换配色：颜色全部收在 --cv-* 变量里，
+   下面两个修饰类各覆盖一遍即可，其余规则不重复。
+     .cover--video            金融类型 2 反转（冷蓝紫，默认）
+     .cover--video--warm      金融类型 1 情绪（暖橙粉）
+     .cover--video--trend     金融类型 3 潮流（亮橙高饱和）
+   -------------------------------------------------------------------------- */
+.cover--video {
+  --cv-bg: linear-gradient(140deg, #E7ECFF 0%, #F4F0FF 46%, #E0F2F4 100%);
+  --cv-reel: linear-gradient(165deg, #2A3350 0%, #171C2B 58%, #10131F 100%);
+  --cv-glow: rgba(178, 140, 255, .55);
+  --cv-ink: #241E33;
+  --cv-ink-soft: #8A7C9E;
+  --cv-chip-ink: #4A3E63;
+  --cv-accent: linear-gradient(90deg, #7399FF 0%, #B28CFF 100%);
+  --cv-title: linear-gradient(90deg, #6E9BFF 0%, #B28CFF 58%, #73D9BF 100%);
+  --cv-track: rgba(58, 40, 150, .14);
+  background: var(--cv-bg);
+}
+
+/* 金融类型 1（情绪向）：暖橙粉，对应「发薪日前的窘迫 -> 到账」这条片子 */
+.cover--video--warm {
+  --cv-bg: linear-gradient(140deg, #FFF2E2 0%, #FFE8EC 46%, #FDE7D3 100%);
+  --cv-reel: linear-gradient(165deg, #4A2C2A 0%, #2A1817 58%, #1C100F 100%);
+  --cv-glow: rgba(255, 176, 108, .55);
+  --cv-ink: #2B1B18;
+  --cv-ink-soft: #A07E74;
+  --cv-chip-ink: #6B4238;
+  --cv-accent: linear-gradient(90deg, #FFB35C 0%, #F2799A 100%);
+  --cv-title: linear-gradient(90deg, #FF9F5A 0%, #F2799A 58%, #FFC978 100%);
+  --cv-track: rgba(160, 70, 40, .16);
+}
+
+/* 金融类型 3（潮流向）：亮橙高饱和，画面本身就是「刷到就停」的那种 */
+.cover--video--trend {
+  --cv-bg: linear-gradient(140deg, #FFF3E6 0%, #FFE3CE 48%, #EAF9F1 100%);
+  --cv-reel: linear-gradient(165deg, #FFAE5C 0%, #F4794C 56%, #E85A6E 100%);
+  --cv-glow: rgba(255, 255, 255, .48);
+  --cv-ink: #241A14;
+  --cv-ink-soft: #A9764F;
+  --cv-chip-ink: #6B4326;
+  --cv-accent: linear-gradient(90deg, #FF8A3D 0%, #F2607E 100%);
+  --cv-title: linear-gradient(90deg, #FF8A3D 0%, #F2607E 58%, #37C79A 100%);
+  --cv-track: rgba(190, 90, 40, .16);
+}
+
+.cover--video::before {
+  content: "";
+  position: absolute;
+  right: -48px;
+  top: -62px;
+  width: 172px;
+  height: 172px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0) 70%);
+}
+
+/* 9:16 竖版播放框：720 x 1280 的片子按比例缩到 90 x 160 */
+.reel {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  width: 90px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--cv-reel);
+  box-shadow:
+    0 14px 26px rgba(26, 34, 66, .26),
+    inset 0 0 0 1px rgba(255, 255, 255, .16);
+}
+
+/* 画面里的一点光，避免整块死黑 */
+.reel::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -24px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--cv-glow), transparent 68%);
+}
+
+.reel__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .28);
+}
+
+.reel__play::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  border-left: 9px solid var(--cv-ink);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.reel__time {
+  position: absolute;
+  left: 10px;
+  bottom: 18px;
+  font-size: 4.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: rgba(255, 255, 255, .72);
+}
+
+.reel__bar {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 12px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .26);
+}
+
+.reel__bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42%;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--cv-accent);
+}
+
+/* 右侧文字栏：eyebrow -> 标题 -> 一条剪辑时间轴 -> 标签 */
+.video-cover__eyebrow {
+  position: absolute;
+  left: 120px;
+  top: 26px;
+  margin: 0;
+  font-size: 4.5px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--cv-ink-soft);
+}
+
+.video-cover__title {
+  position: absolute;
+  left: 120px;
+  top: 40px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -.01em;
+  color: var(--cv-ink);
+}
+
+.video-cover__title span {
+  display: block;
+  text-transform: uppercase;
+  background: var(--cv-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.video-cover__track {
+  position: absolute;
+  left: 120px;
+  top: 84px;
+  width: 138px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--cv-track);
+}
+
+/* 已剪进时间轴的部分 + 播放头 */
+.video-cover__track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 54%;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--cv-accent);
+}
+
+.video-cover__track::after {
+  content: "";
+  position: absolute;
+  left: 54%;
+  top: -3px;
+  width: 2px;
+  height: 10px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--cv-ink);
+}
+
+.video-cover__wave {
+  position: absolute;
+  left: 120px;
+  top: 98px;
+  width: 138px;
+  height: 26px;
+}
+
+.video-cover__chip {
+  position: absolute;
+  left: 120px;
+  bottom: 16px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .8);
+  border: 1px solid rgba(255, 255, 255, .95);
+  font-size: 5px;
+  font-weight: 600;
+  color: var(--cv-chip-ink);
+}
+
+.video-cover__ratio {
+  position: absolute;
+  right: 16px;
+  top: 18px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: var(--cv-ink);
+  font-size: 5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #fff;
+}
+

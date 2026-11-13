@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>主要设计规范 · 12 的个人空间</title>
+  <meta name="description" content="12 的个人空间 · 主要设计规范：项目级适配规范置顶，色彩系统、字体规范、间距与圆角、玻璃质感与常用组件按分类切换查看。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="index.html">首页</a>
+        <a class="nav__link" href="works.html">作品</a>
+        <a class="nav__link" href="design-system.html" aria-current="page">设计规范</a>
+        <a class="nav__link" href="about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">主要设计规范</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Main Design System · v1.2</span>
+      <h1 class="phead__title">主要设计规范</h1>
+      <p class="phead__lead">
+        统一的设计语言，从色彩、字体到组件，让每个作品都保持一致的品质感。下面按分类切换查看，
+        所有数值都可以在 <code>assets/styles.css</code> 的 <code>:root</code> 里找到对应的 CSS 变量。
+      </p>
+    </header>
+
+    <!-- 项目级规范置顶：卡片不再写死 3 个示例，而是由 assets/spec-cards.js 按
+         「实际上传的作品」渲染（assets/works-index.js 的出厂 19 个 + 管理页上传 / 隐藏后的结果）。
+         一屏 3 张、每 15s 前进一张，位移与进度条复用首页的 assets/carousel.js。
+         容器标 data-carousel="manual"：自动初始化会跳过，等卡片渲染完再 init。
+         下面的 3 张静态卡就是数据的前三项，没有 JS 时依旧可见。 -->
+    <section class="block" aria-labelledby="plspec-title">
+      <div class="plspec__head">
+        <h2 class="plspec__tag" id="plspec-title">项目级规范</h2>
+        <p class="plspec__note">每个项目因设备与场景不同，衍生独立的适配规范 · 按实际上传的作品生成</p>
+        <p class="plspec__docs">
+          <span class="plspec__docs-k">完整示例</span>
+          <a href="spec/fitness-app.html">移动端</a>
+          <a href="spec/dashboard-bi.html">PC 端</a>
+          <a href="spec/city-screen.html">大屏</a>
+        </p>
+      </div>
+
+      <div class="carousel plspec-carousel" data-carousel="manual" data-spec-carousel
+        data-carousel-interval="15000" role="region" aria-roledescription="carousel"
+        aria-label="项目级规范">
+        <div class="carousel__viewport">
+          <div class="carousel__track" data-carousel-track>
+            <a class="plspec-card carousel__slide glass glass--soft glass--d60" href="works/jiujiu-app.html"
+              role="group" aria-roledescription="slide" aria-label="1 / 19">
+              <span class="plspec-card__device plspec-card__device--mobile">移动端</span>
+              <h3 class="plspec-card__title">啾啾 · 泛娱乐社交 App</h3>
+              <p class="plspec-card__desc">iOS / Android 双端，竖屏为主，触控优先 · 社交 / 泛娱乐</p>
+              <span class="plspec-card__more">查看项目详情</span>
+            </a>
+
+            <a class="plspec-card carousel__slide glass glass--soft glass--d60" href="works/soundlive.html"
+              role="group" aria-roledescription="slide" aria-label="2 / 19">
+              <span class="plspec-card__device plspec-card__device--mobile">移动端</span>
+              <h3 class="plspec-card__title">声浪 · 音乐直播分享 App</h3>
+              <p class="plspec-card__desc">iOS / Android 双端，竖屏为主，触控优先 · 社交 / 泛娱乐</p>
+              <span class="plspec-card__more">查看项目详情</span>
+            </a>
+
+            <a class="plspec-card carousel__slide glass glass--soft glass--d60" href="works/food-social.html"
+              role="group" aria-roledescription="slide" aria-label="3 / 19">
+              <span class="plspec-card__device plspec-card__device--mobile">移动端</span>
+              <h3 class="plspec-card__title">美食社交 App · 美食社区与同城约饭</h3>
+              <p class="plspec-card__desc">iOS / Android 双端，竖屏为主，触控优先 · 社交 / 泛娱乐</p>
+              <span class="plspec-card__more">查看项目详情</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 控制条：当前序号 · 15s 进度 · 手动前后 -->
+        <div class="carousel__bar">
+          <p class="carousel__counter" data-carousel-counter>01 / 19</p>
+          <span class="carousel__progress" aria-hidden="true">
+            <span class="carousel__progress-fill" data-carousel-bar></span>
+          </span>
+          <div class="carousel__nav">
+            <button class="carousel__btn glass glass--d35" type="button" data-carousel-prev
+              aria-label="上一个项目">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M13 8H3.8M7.2 4.4 3.6 8l3.6 3.6" stroke="currentColor" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="carousel__btn glass glass--d35" type="button" data-carousel-next
+              aria-label="下一个项目">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h9.2M8.8 4.4 12.4 8l-3.6 3.6" stroke="currentColor" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 主要设计规范：色彩 / 字体 / 间距 / 玻璃 / 组件改为标签页，点一下只看一类，
+         避免整页一直往下滚；项目级规范（按设备拆分）已经在这块之上单独成段。 -->
+    <section class="block" aria-labelledby="ds-title">
+      <div class="ds-tabs glass glass--soft glass--d60" data-ds-tabs>
+        <div class="ds-tabs__head">
+          <h2 class="ds-tabs__title" id="ds-title">主要设计规范</h2>
+          <p class="ds-tabs__hint">点击分类切换查看，五类规范共用同一套设计令牌</p>
+        </div>
+
+        <div class="ds-tabs__bar" role="tablist" aria-label="主要设计规范分类">
+          <button class="ds-tab" type="button" role="tab" id="tab-color" aria-controls="panel-color"
+            aria-selected="true" data-ds-tab="color">色彩系统</button>
+          <button class="ds-tab" type="button" role="tab" id="tab-type" aria-controls="panel-type"
+            aria-selected="false" tabindex="-1" data-ds-tab="type">字体规范</button>
+          <button class="ds-tab" type="button" role="tab" id="tab-space" aria-controls="panel-space"
+            aria-selected="false" tabindex="-1" data-ds-tab="space">间距与圆角</button>
+          <button class="ds-tab" type="button" role="tab" id="tab-glass" aria-controls="panel-glass"
+            aria-selected="false" tabindex="-1" data-ds-tab="glass">玻璃质感</button>
+          <button class="ds-tab" type="button" role="tab" id="tab-comp" aria-controls="panel-comp"
+            aria-selected="false" tabindex="-1" data-ds-tab="comp">组件</button>
+        </div>
+
+        <div class="ds-panels">
+          <div class="ds-panel" role="tabpanel" id="panel-color" aria-labelledby="tab-color" tabindex="0"
+            data-ds-panel="color">
+            <p class="ds-panel__note">
+              以白为底，蓝紫渐变点缀，青绿与墨黑构建层次。玻璃折射让色彩柔和通透，正负向变化各占一色。
+            </p>
+
+            <div class="color-grid">
+              <div class="color-card">
+                <span class="color-card__chip" style="background: #7399FF"></span>
+                <span class="color-card__name">品牌蓝</span>
+                <span class="color-card__hex">#7399FF</span>
+              </div>
+              <div class="color-card">
+                <span class="color-card__chip" style="background: #B28CFF"></span>
+                <span class="color-card__name">品牌紫</span>
+                <span class="color-card__hex">#B28CFF</span>
+              </div>
+              <div class="color-card">
+                <span class="color-card__chip" style="background: #73D9BF"></span>
+                <span class="color-card__name">青绿 · 正向</span>
+                <span class="color-card__hex">#73D9BF</span>
+              </div>
+              <div class="color-card">
+                <span class="color-card__chip" style="background: #141822"></span>
+                <span class="color-card__name">墨黑 · 标题</span>
+                <span class="color-card__hex">#141822</span>
+              </div>
+              <div class="color-card">
+                <span class="color-card__chip" style="background: #5B6472"></span>
+                <span class="color-card__name">正文</span>
+                <span class="color-card__hex">#5B6472</span>
+              </div>
+              <div class="color-card">
+                <span class="color-card__chip" style="background: #D9DEEB"></span>
+                <span class="color-card__name">分割线</span>
+                <span class="color-card__hex">#D9DEEB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-panel" role="tabpanel" id="panel-type" aria-labelledby="tab-type" tabindex="0"
+            data-ds-panel="type" hidden>
+            <p class="ds-panel__note">
+              西文与数字用 Inter，中文回退到 Noto Sans SC / 苹方 / 微软雅黑。标题收紧字距，正文保持 28px 行高。
+            </p>
+
+            <div class="type-row">
+              <span class="type-row__name">Display / 52</span>
+              <span style="font-size: 52px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; color: var(--ink)">Aa 展示标题</span>
+              <span class="type-row__spec">52 / 62 · Bold · -2%</span>
+            </div>
+            <div class="type-row">
+              <span class="type-row__name">Page / 44</span>
+              <span style="font-size: 44px; font-weight: 700; line-height: 1.2; letter-spacing: -.02em; color: var(--ink)">Aa 页面标题</span>
+              <span class="type-row__spec">44 / 53 · Bold · -2%</span>
+            </div>
+            <div class="type-row">
+              <span class="type-row__name">Section / 30</span>
+              <span style="font-size: 30px; font-weight: 700; line-height: 36px; color: var(--ink)">Aa 区块标题</span>
+              <span class="type-row__spec">30 / 36 · Bold</span>
+            </div>
+            <div class="type-row">
+              <span class="type-row__name">Card / 17</span>
+              <span style="font-size: 17px; font-weight: 600; line-height: 20px; color: var(--ink)">Aa 卡片标题</span>
+              <span class="type-row__spec">17 / 20 · SemiBold</span>
+            </div>
+            <div class="type-row">
+              <span class="type-row__name">Body / 16</span>
+              <span style="font-size: 16px; line-height: 28px; color: var(--body)">Aa 正文，用于段落与长文本说明。</span>
+              <span class="type-row__spec">16 / 28 · Regular</span>
+            </div>
+            <div class="type-row">
+              <span class="type-row__name">Caption / 13</span>
+              <span style="font-size: 13px; font-weight: 500; line-height: 16px; color: var(--muted-2)">Aa 辅助说明 13px</span>
+              <span class="type-row__spec">13 / 16 · Medium</span>
+            </div>
+          </div>
+
+          <div class="ds-panel" role="tabpanel" id="panel-space" aria-labelledby="tab-space" tabindex="0"
+            data-ds-panel="space" hidden>
+            <p class="ds-panel__note">
+              间距以 8 为步进，页面外边距固定 48px，栅格间距 24px。圆角分五档，越大的容器用越大的圆角。
+            </p>
+
+            <div class="space-row" aria-label="间距刻度">
+              <div class="space"><span class="space__bar" style="width: 12px; height: 8px"></span><span class="space__label">8</span></div>
+              <div class="space"><span class="space__bar" style="width: 12px; height: 12px"></span><span class="space__label">12</span></div>
+              <div class="space"><span class="space__bar" style="width: 12px; height: 16px"></span><span class="space__label">16</span></div>
+              <div class="space"><span class="space__bar" style="width: 12px; height: 24px"></span><span class="space__label">24</span></div>
+              <div class="space"><span class="space__bar" style="width: 12px; height: 32px"></span><span class="space__label">32</span></div>
+              <div class="space"><span class="space__bar" style="width: 12px; height: 48px"></span><span class="space__label">48</span></div>
+              <div class="space"><span class="space__bar" style="width: 12px; height: 64px"></span><span class="space__label">64</span></div>
+            </div>
+
+            <div class="radius-row" aria-label="圆角刻度">
+              <div class="radius"><span class="radius__box" style="border-radius: 16px"></span><span class="space__label">chip · 16</span></div>
+              <div class="radius"><span class="radius__box" style="border-radius: 18px"></span><span class="space__label">shot · 18</span></div>
+              <div class="radius"><span class="radius__box" style="border-radius: 20px"></span><span class="space__label">panel · 20</span></div>
+              <div class="radius"><span class="radius__box" style="border-radius: 22px"></span><span class="space__label">card · 22</span></div>
+              <div class="radius"><span class="radius__box" style="border-radius: 28px"></span><span class="space__label">hero · 28</span></div>
+              <div class="radius"><span class="radius__box" style="border-radius: 999px"></span><span class="space__label">pill · 999</span></div>
+            </div>
+          </div>
+
+          <div class="ds-panel" role="tabpanel" id="panel-glass" aria-labelledby="tab-glass" tabindex="0"
+            data-ds-panel="glass" hidden>
+            <p class="ds-panel__note">
+              画布的 GLASS 效果含折射、厚度与光照三个参数，浏览器没有对应能力，按深度映射为
+              <code>backdrop-filter</code> 的模糊 / 饱和度组合，并叠加 1px 高光描边与 inset 顶光。
+            </p>
+
+            <div class="glass-demo">
+              <span class="glass-swatch glass glass--faint glass--d35">.glass--d35</span>
+              <span class="glass-swatch glass glass--soft glass--d60">.glass--d60</span>
+              <span class="glass-swatch glass glass--strong glass--d70">.glass--d70</span>
+            </div>
+
+            <div class="table-wrap">
+              <table class="table">
+                <caption class="sr-only">玻璃层参数映射</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">层级</th>
+                    <th scope="col">白色填充</th>
+                    <th scope="col">模糊 / 饱和</th>
+                    <th scope="col">用在哪</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.glass--d35</td>
+                    <td>35%</td>
+                    <td>10px / 120%</td>
+                    <td>筛选项、次级按钮、信息小卡</td>
+                  </tr>
+                  <tr>
+                    <td>.glass--d60</td>
+                    <td>40%</td>
+                    <td>18px / 140%</td>
+                    <td>作品卡、规范卡、文档段落</td>
+                  </tr>
+                  <tr>
+                    <td>.glass--d70</td>
+                    <td>30%</td>
+                    <td>26px / 160%</td>
+                    <td>Hero 视觉框、浮层</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <div class="ds-panel" role="tabpanel" id="panel-comp" aria-labelledby="tab-comp" tabindex="0"
+            data-ds-panel="comp" hidden>
+            <p class="ds-panel__note">按钮胶囊形，主按钮墨黑、次按钮玻璃白；筛选 chip 35 高，卡片圆角 22。</p>
+
+            <div class="comp-row">
+              <span class="comp-label">按钮</span>
+              <a class="btn btn--primary" href="works.html">浏览作品</a>
+              <a class="btn btn--ghost glass glass--d35" href="about.html">联系我</a>
+              <a class="more-btn glass glass--d35" href="works.html">
+                查看全部作品
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h9.2M8.8 4.4 12.4 8l-3.6 3.6" stroke="currentColor" stroke-width="1.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="comp-row">
+              <span class="comp-label">筛选</span>
+              <span class="chip chip--active">全部</span>
+              <span class="chip glass glass--d35">App 设计</span>
+              <span class="chip glass glass--d35">PC 端设计</span>
+            </div>
+
+            <div class="comp-row">
+              <span class="comp-label">标签</span>
+              <span class="tag">iOS</span>
+              <span class="tag">设计系统</span>
+              <span class="tag">B 端</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block--last" aria-labelledby="rule-title">
+      <div class="ds-block glass glass--soft glass--d60">
+        <h2 class="ds-block__title" id="rule-title">使用原则</h2>
+        <ul class="checklist">
+          <li>玻璃层只用来区分层级，不叠加超过两层，否则文字对比度会掉。</li>
+          <li>同一屏内只允许一处品牌渐变做视觉重心，其余用中性色。</li>
+          <li>圆角跟随容器尺寸：越大的容器用越大的圆角，不混用。</li>
+          <li>数据类界面优先保证读数清晰，装饰性光晕不得压过数字。</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="works.html">作品</a>
+          <a class="footer__link" href="design-system.html">设计规范</a>
+          <a class="footer__link" href="about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+
+  <!-- 项目级规范卡片：carousel.js 提供轮播，works-index + works-store 提供数据，
+       spec-cards.js 渲染完卡片后手动调 Carousel.init（容器是 data-carousel="manual"） -->
+  <script src="assets/carousel.js?v=1" defer></script>
+  <script src="assets/works-index.js" defer></script>
+  <script src="assets/works-store.js" defer></script>
+  <script src="assets/spec-cards.js?v=1" defer></script>
+  <script src="assets/ds-tabs.js?v=1" defer></script>
+</body>
+</html>
+

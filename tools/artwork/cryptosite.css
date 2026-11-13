@@ -1,0 +1,284 @@
+/* ============================================================================
+   CRAPPO · 加密资产交易官网（金融 / PC 端）
+   ----------------------------------------------------------------------------
+   CSS 化的素材：封面 292x200、主视觉 824x474。页面本身不重绘，直接把设计稿的
+   分段截图（assets/images/crypto-*.png）装进「浏览器窗口」里拼版。
+   由 tools/build-images.ps1 截图成 assets/images/work-crypto*.png 与 crypto-hero.png。
+
+   配色照搬官网自身（取自原图取色）：
+     深海墨蓝 #0d0d2b  —— 整站底色，首屏与页脚
+     深紫     #2b076e  —— 产品特性那一段的底色，用来换气口
+     电光蓝   #3671e9  —— 唯一的动作色（Try for FREE / Calculate / Subscribe）
+     紫罗兰   #4610ad / #654cb2 —— 等距插画里的币与显卡
+     薄荷绿   #6edcb5 / 玫红 #ff325f —— 只用在这两处：涨、跌
+   形状：按钮一律胶囊（r999），窗口 10px，卡片 16–24px。
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow: hidden;
+  background: #0d0d2b;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --cs-void: #0d0d2b;
+  --cs-void-2: #161633;
+  --cs-nebula: #2b076e;
+  --cs-violet: #4610ad;
+  --cs-lav: #654cb2;
+  --cs-volt: #3671e9;
+  --cs-mint: #6edcb5;
+  --cs-pink: #ff325f;
+  --cs-fog: #f9fafd;
+  --cs-text: #ffffff;
+  --cs-dim: rgba(255, 255, 255, .58);
+  --cs-faint: rgba(255, 255, 255, .34);
+}
+
+/* 底色：一处电光蓝辉光 + 一处紫罗兰辉光，压在墨蓝上 */
+.cs-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(52% 46% at 88% 4%, rgba(54, 113, 233, .42) 0%, rgba(54, 113, 233, 0) 66%),
+    radial-gradient(58% 52% at 6% 104%, rgba(70, 16, 173, .60) 0%, rgba(70, 16, 173, 0) 68%),
+    linear-gradient(168deg, #12112f 0%, #0d0d2b 46%, #0a0a23 100%);
+}
+
+/* 极淡的网格：像交易终端，但只在四角露一点 */
+.cs-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse at 82% 18%, #000 0%, transparent 62%);
+  mask-image: radial-gradient(ellipse at 82% 18%, #000 0%, transparent 62%);
+}
+
+/* 浏览器窗口：深色 chrome + 地址栏三点，装一整段设计稿 */
+.cs-frame {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #0f0e28;
+  border: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: 0 20px 40px rgba(4, 3, 20, .62), 0 0 0 1px rgba(255, 255, 255, .05) inset;
+}
+
+.cs-frame__bar {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding-left: 7px;
+  background: #1b1940;
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.cs-frame__bar i {
+  width: 3.5px; height: 3.5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .34);
+}
+
+.cs-frame__bar i:first-child { background: rgba(255, 87, 87, .72); }
+
+.cs-frame__view {
+  position: absolute;
+  left: 0; right: 0; top: 13px; bottom: 0;
+  overflow: hidden;
+}
+
+.cs-frame__view img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+}
+
+/* 封面那张窗格只取首屏的等距插画（x 755–1245 / y 300–850 的放大裁切），
+   避免小尺寸下把标题切成半截字 */
+.cs-frame__view .cs-zoom {
+  position: absolute;
+  width: 364px;
+  height: auto;
+  max-width: none;
+  left: -191px;
+  top: -76px;
+  object-fit: fill;
+  object-position: 0 0;
+}
+
+
+/* ---------------------------------------------------------------- 封面 292x200 */
+.cs-cover {
+  position: relative;
+  width: 292px;
+  height: 200px;
+  overflow: hidden;
+  background: var(--cs-void);
+}
+
+.cs-cover__eyebrow {
+  position: absolute; left: 16px; top: 15px;
+  padding: 3px 9px 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(54, 113, 233, .52);
+  background: rgba(54, 113, 233, .16);
+  color: #9ec0ff;
+  font-size: 7.5px; font-weight: 800; letter-spacing: .18em;
+}
+
+.cs-cover__title {
+  position: absolute; left: 15px; top: 40px;
+  font-size: 26px; font-weight: 800; line-height: 1.1;
+  letter-spacing: .01em;
+  color: var(--cs-text);
+}
+
+.cs-cover__en {
+  position: absolute; left: 17px; top: 80px;
+  font-size: 6.5px; font-weight: 800; letter-spacing: .24em;
+  color: var(--cs-faint);
+}
+
+.cs-cover__sub {
+  position: absolute; left: 17px; top: 95px; width: 128px;
+  font-size: 10.5px; line-height: 1.52; letter-spacing: .02em;
+  color: var(--cs-dim);
+}
+
+/* 主推按钮：官网唯一的动作色，缩成一颗小胶囊 */
+.cs-cover__cta {
+  position: absolute; left: 17px; top: 134px;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 11px 3px;
+  border-radius: 999px;
+  background: var(--cs-volt);
+  color: #fff;
+  font-size: 8px; font-weight: 800; letter-spacing: .04em;
+  box-shadow: 0 6px 14px rgba(54, 113, 233, .38);
+}
+.cs-cover__cta i {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: inset 0 0 0 2.5px var(--cs-volt);
+}
+
+.cs-cover__meta {
+  position: absolute; left: 17px; bottom: 13px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 8.5px; font-weight: 800; letter-spacing: .06em;
+  color: var(--cs-faint);
+}
+
+.cs-cover__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--cs-mint);
+  box-shadow: 0 0 0 1px rgba(13, 13, 43, .5);
+}
+
+
+/* ------------------------------------------------------------ 主视觉 824x474 */
+.cs-hero {
+  position: relative;
+  width: 824px;
+  height: 474px;
+  overflow: hidden;
+  background: var(--cs-void);
+}
+
+.cs-hero__copy { position: absolute; left: 56px; top: 88px; width: 336px; }
+
+.cs-hero__eyebrow {
+  display: inline-block;
+  padding: 5px 12px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(54, 113, 233, .5);
+  background: rgba(54, 113, 233, .15);
+  color: #9ec0ff;
+  font-size: 10px; font-weight: 800; letter-spacing: .2em;
+}
+
+.cs-hero__title {
+  margin-top: 20px;
+  font-size: 50px; font-weight: 800; line-height: 1.06;
+  letter-spacing: .01em;
+  color: var(--cs-text);
+}
+
+.cs-hero__en {
+  margin-top: 14px;
+  font-size: 11px; font-weight: 800; letter-spacing: .34em;
+  color: var(--cs-faint);
+}
+
+.cs-hero__lead {
+  margin-top: 18px;
+  font-size: 13px; line-height: 1.92;
+  color: rgba(255, 255, 255, .62);
+}
+
+.cs-hero__chips { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.cs-hero__chip {
+  padding: 7px 13px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .05);
+  color: rgba(255, 255, 255, .78);
+  font-size: 11px; letter-spacing: .04em;
+}
+
+/* 六段结构一行：首屏 → 特性 → 计算器 → 币价 → 背书 → 订阅 */
+.cs-hero__map {
+  margin-top: 24px;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  font-size: 10.5px; letter-spacing: .04em;
+  color: rgba(255, 255, 255, .46);
+}
+.cs-hero__map i {
+  font-style: normal;
+  color: rgba(54, 113, 233, .85);
+  font-size: 11px;
+}
+
+/* 左下角一行小注：真实行情数字，来自首页 K 线那一段 */
+.cs-hero__note {
+  position: absolute; left: 56px; bottom: 44px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 800; letter-spacing: .08em;
+  color: var(--cs-faint);
+}
+.cs-hero__note i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--cs-mint);
+}
+.cs-hero__note b { color: var(--cs-pink); font-weight: 800; }
+
+/* 窗口下方的三个数字：$30B / 10M+ / 195 */
+.cs-hero__stats {
+  position: absolute; left: 404px; top: 356px;
+  display: flex; gap: 10px;
+}
+.cs-hero__stat {
+  display: flex; align-items: baseline; gap: 6px;
+  padding: 7px 12px 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .05);
+}
+.cs-hero__stat b {
+  font-size: 15px; font-weight: 800; letter-spacing: .01em;
+  color: #fff;
+}
+.cs-hero__stat span { font-size: 9.5px; color: var(--cs-faint); }

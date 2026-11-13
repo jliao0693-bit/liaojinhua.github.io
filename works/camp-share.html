@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>露营分享 · 户外足迹社区 App — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="露营分享 App 案例：把「去哪条路线」和「这条路长什么样」放进同一个社区——热门地点横滑、Popular Notes 双列笔记、地点榜单、动态详情与留言、草稿式发布、金币购买会员，整套界面一次交付（另附首页第二版导出），一套薄荷绿 + 珊瑚红 + 金币黄的组件规范。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">露营分享 · 户外足迹社区 App</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 露营分享 App（C 端 · 海外户外社区）</span>
+      <h1 class="phead__title">露营分享 · 户外足迹社区 App</h1>
+      <p class="phead__lead">
+        一个户外社区的首页要同时回答三个问题：去哪、别人怎么走、还有什么值得去。这次没有加功能，只是把三件事分别交给三种容器——横滑给地点、双列给笔记、文字列表给榜单；再把一次徒步的完整过程（选地点 → 看足迹 → 留言 → 攒金币）串成一条动线。视觉取户外的颜色：薄荷绿铺底，翡翠绿只给主操作，珊瑚红只给点赞，金币黄只给会员。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">露营分享 App（海外 · C 端）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI + 交互设计（整套界面）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/campshare-hero.png" width="1648" height="948"
+          alt="露营分享 App 主视觉：薄荷绿背景上，首页与动态详情两块界面并排展示" />
+        <figcaption class="figure__cap">
+          主视觉 · 首页与动态详情同框：一半是别人走过的路线，一半是这条足迹本身。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">海外市场 · 户外社区</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这款 App 服务的是「走完一段路想说两句」的人：有人走完 Inca Trail，回来只想把照片和路线留给后来者；也有人只是刷到别人拍的雪山，想知道那到底是哪。旧版首页把热门地点、笔记、榜单全塞进一条按时间排的信息流，三件事互相打断——找路线的人被笔记淹没，想看图的人被榜单截断。</p>
+          <p>重做没有加功能，只是把三件事重新排了位置：地点用横滑，笔记用双列，榜单用文字列表。剩下的难点于是变成两个很具体的工艺问题——照片上的字怎么压才不挡人，以及那篇「写了一半的笔记」到底去哪了。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">三种容器，一条动线</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>首页三段式，一屏回答三个问题：Welcome back! 下面先给 popular places 横滑（一次露出 2.5 张，右边缘留半张暗示还能滑），再给 Popular Notes 双列笔记，最后给 Recommended locations 榜单（1 / 2 / 3 名次牌直接写在左边）。</li>
+          <li>笔记卡固定五个位置：头像 + 昵称、地点、标题、1:1 方图、底部点赞与评论。图片上除了右上角一个角标以外不放任何文字；标题最多一行，超出省略；地点名用 12px 灰色小字紧跟昵称，不换行。</li>
+          <li>详情页把「图 → 人 → 字 → 互动」压成一列：大图占上半屏，作者卡做成白色圆角卡「骑」在图片下沿，正文、点赞、评论依次往下，评论输入固定在底部。</li>
+          <li>发布不做空白编辑器：顶部是插画 + 一句 Share your footprints with everyone! + 一颗 Release 主按钮，正下方直接就是 My drafts 草稿箱，每条草稿给标题、缩略图、日期和编辑 / 删除两颗图标。</li>
+          <li>金币单独成一屏：余额放最上面（大字 + balance），下面 3 × 3 套餐网格，选中格整块加深、价格胶囊变实心，其余留白，让「买多少」一眼可比。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">整套交付 · 这里列出 6 屏：首页 / 动态详情 / 他人主页 / 发布 / 个人主页 / 金币购买</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这个 App 同样是按整站交付的，下面 6 屏只是其中一部分，全部来自设计稿原图。同一批导出里另有一版首页（第 7 张），保留作对照，没有进正文。</p>
+          <p>挑这 6 屏是因为它们各自回答一个不同的问题——内容怎么分三层（首页）、一条足迹长什么样（动态详情）、这个人去过哪（他人主页）、写一半的东西放哪（发布与草稿）、自己攒了多少（个人主页）、钱怎么花（金币购买）。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/campshare-home.png" width="780" height="1688" alt="露营分享 App 首页：热门地点横滑、Popular Notes 双列笔记与推荐地点榜单" />
+          <figcaption class="shots__cap">首页 · 三段式：地点横滑 → 笔记双列 → 地点榜单，一屏三个答案。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/campshare-post.png" width="780" height="1688" alt="露营分享 App 动态详情页：大图、作者卡、正文、点赞评论与留言列表" />
+          <figcaption class="shots__cap">动态详情 · 大图占半屏，作者卡骑在图下沿，留言区从卡片底下穿过。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/campshare-other.png" width="780" height="1688" alt="露营分享 App 他人主页：封面大图、作者信息与按日期排列的足迹列表" />
+          <figcaption class="shots__cap">他人主页 · 封面 + 作者信息 + 足迹列表，聊之前先看这个人走过哪。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/campshare-publish.png" width="780" height="1688" alt="露营分享 App 发布页：插画与 Release 按钮，下方是热门地点与 My drafts 草稿箱" />
+          <figcaption class="shots__cap">发布 · 一句 Release 起头，草稿箱就铺在下面，写一半的笔记有地方回来。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/campshare-me.png" width="780" height="1688" alt="露营分享 App 个人主页：封面大图、金币 / 关注 / 点赞三项数据、金币横幅与 Personal Works" />
+          <figcaption class="shots__cap">个人主页 · 5 金币 / 13 关注 / 196 赞，金币横幅直接挂在作品区上方。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/campshare-coins.png" width="780" height="1688" alt="露营分享 App 金币购买页：余额、金币图标与九宫格金币套餐" />
+          <figcaption class="shots__cap">金币购买 · 余额在最上面，九宫格套餐选中一格整块加深。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">薄荷绿 · 翡翠绿 · 珊瑚红 · 金币黄</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--mintsoft"></span>
+          <span class="swatch swatch--jade"></span>
+          <span class="swatch swatch--coral"></span>
+          <span class="swatch swatch--gold"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>薄荷绿 #d9f8ec 铺满整屏，是纸；翡翠绿 #22e39a 只给「按下去会发生事」的地方——Release 主按钮、Tab 选中、发送；珊瑚红 #ff5a4e 只给点赞与删除，全屏只有这两处会出现暖色；金币黄 #f6c445 严格留在金币、余额与会员横幅里。标题走衬线（Welcome back! / Gold Coins），正文回到系统无衬线，一屏里只用一个衬线标题做对比，其余靠字重分层次。形状上卡片 20–28px 圆角、图片圆角比卡片小一档、按钮全部胶囊、阴影极浅——户外实拍本身已经够重，界面要往后退。地点名统一做成压在照片底部的深色胶囊（📍 Peru Inca Trail），位置固定在左下，长名字截断。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">1 个最关键的取舍：一屏塞三件事</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>首页要同时放热门地点、笔记和榜单，三块都想抢第一眼，往下滚两屏就散了。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>用三种不同容器区分层级，而不是靠字号和分隔线：地点横滑（一次露 2.5 张，右边缘留半张暗示可滑）、笔记双列方图（可以无限刷）、榜单单行文字（一眼扫完）。三块之间统一 24px 间距、块标题统一衬线小字，用户靠容器形状就知道自己在看第几层。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 定薄荷绿、定三种容器、对双端</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 一条「足迹」串起地点与人</p>
+          <p class="flow__text">先定气质：薄荷绿底 + 衬线标题 + 实拍大图，读起来像一本旅行杂志而不是一个社交软件。用首页与动态详情两屏打样，确认「照片在前、界面退后」这条底线。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 先定三种容器，再铺全站</p>
+          <p class="flow__text">把横滑、双列、榜单三种容器在首页跑通，再往外铺：动态详情、他人主页、发布（含草稿）、个人主页、金币购买；金币、地点胶囊、底部 Tab 收成一套图标与组件规范。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付组件 Variant 与页面清单，和开发一起走查 iOS / Android：长屏照片在 2x / 3x 下的裁切、薄荷绿在 OLED 上的偏色、长地点名与长留言是否顶破卡片，逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">全站</span>
+          <span class="stat__label">首页 / 动态详情 / 他人主页 / 发布 / 个人主页 / 金币购买（另附首页第二版导出）</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">薄荷绿 + 珊瑚红规范：衬线标题、圆角卡、地点压条、九宫格金币套餐</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 段</span>
+          <span class="stat__label">核心动线：找地点 → 看足迹 → 留言 / 充金币</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="food-social.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">美食社交 App · 美食社区与同城约饭</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="swim-social.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">游泳社交 · 游泳技术分享社区 App</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

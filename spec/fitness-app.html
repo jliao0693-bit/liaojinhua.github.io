@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>项目规范 · 悦动 · 健身 App — 12 的个人空间</title>
+  <meta name="description" content="悦动健身 App 的移动端项目规范：专项组件、三档设备适配与项目级颜色字体。入口在设计规范页的「项目级规范」。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html">作品</a>
+        <a class="nav__link" href="../design-system.html" aria-current="page">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../design-system.html#plspec-title">设计规范</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">项目规范</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Project Spec · 移动端</span>
+      <h1 class="phead__title">悦动 · 健身 App</h1>
+      <p class="phead__lead">
+        通用设计规范管「都一样的地方」，这一页管「不一样的地方」：iOS / Android 双端、竖屏为主的健身场景里，
+        哪三个组件要单独做、每个尺寸档怎么留白、颜色与字号怎么定。
+      </p>
+    </header>
+
+    <section class="case-meta" aria-label="规范信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">适配范围</span>
+        <span class="meta-item__v">双端 · iOS / Android</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">设计稿</span>
+        <span class="meta-item__v">375 × 812</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">适配优先</span>
+        <span class="meta-item__v">移动优先</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">规范版本</span>
+        <span class="meta-item__v">v1.0</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="comp-title">
+      <div class="block__head">
+        <h2 class="block__title" id="comp-title">专项组件</h2>
+        <p class="block__note">通用组件够不用的地方，项目内单独长了三个</p>
+      </div>
+
+      <div class="spec-cards">
+        <article class="spec-card glass glass--soft glass--d60">
+          <h3 class="spec-card__title">运动圆环</h3>
+          <p class="spec-card__desc">
+            核心数据组件：一段弧表示今日步数与目标达成率，开口朝下、弧宽 270°，数值压在圆心。
+          </p>
+        </article>
+
+        <article class="spec-card glass glass--soft glass--d60">
+          <h3 class="spec-card__title">训练进度条</h3>
+          <p class="spec-card__desc">
+            多段式进度条，分段标题、剩余值、总步数三行信息；数值与圆环同源，避免两处对不上。
+          </p>
+        </article>
+
+        <article class="spec-card glass glass--soft glass--d60">
+          <h3 class="spec-card__title">健康卡片</h3>
+          <p class="spec-card__desc">
+            通用卡片在项目内加一层：睡眠、心率、静息能量三行指标，圆角与圆环描边保持同一档。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="device-title">
+      <div class="block__head">
+        <h2 class="block__title" id="device-title">设备适配规范</h2>
+        <p class="block__note">三档画布，各自只回答「留白多少、要不要重排」</p>
+      </div>
+
+      <div class="spec-devices">
+        <div class="spec-device glass glass--soft glass--d35">
+          <div class="spec-device__head">
+            <span class="plspec-card__device plspec-card__device--mobile">iPhone</span>
+            <span class="spec-device__size">375 × 812</span>
+          </div>
+          <p class="spec-device__desc">
+            安全区上下内缩：状态栏 44、Home Bar 34；375–430 各机型等比放大，布局不重排。
+          </p>
+        </div>
+
+        <div class="spec-device glass glass--soft glass--d35">
+          <div class="spec-device__head">
+            <span class="plspec-card__device plspec-card__device--mobile">Android</span>
+            <span class="spec-device__size">360–414 可变宽</span>
+          </div>
+          <p class="spec-device__desc">
+            以 dp 为单位，间距取 4 的倍数；字体跟随系统字号缩放，最大 1.3 倍，超出后说明文字截断。
+          </p>
+        </div>
+
+        <div class="spec-device glass glass--soft glass--d35">
+          <div class="spec-device__head">
+            <span class="plspec-card__device plspec-card__device--mobile">平板</span>
+            <span class="spec-device__size">768–1024</span>
+          </div>
+          <p class="spec-device__desc">
+            双栏栅格：圆环与列表左右分栏，页面内边距由 16 放大到 24，卡片一屏两列。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block--last" aria-labelledby="token-title">
+      <div class="block__head">
+        <h2 class="block__title" id="token-title">颜色与字体（项目级）</h2>
+        <p class="block__note">只覆盖项目差异，其余回到主要设计规范</p>
+      </div>
+
+      <div class="spec-tokens">
+        <div class="spec-token glass glass--soft glass--d60">
+          <span class="spec-token__label">渐变</span>
+          <span class="spec-token__bar" style="background: linear-gradient(90deg, #7399FF 0%, #73D9BF 100%)"></span>
+          <span class="spec-token__value">linear-gradient(90deg, #7399FF → #73D9BF)</span>
+          <p class="spec-token__note">
+            只用于圆环与进度条描边；同一屏只出现一条渐变，其余用中性色。
+          </p>
+        </div>
+
+        <div class="spec-token glass glass--soft glass--d60">
+          <span class="spec-token__label">字体</span>
+          <div class="spec-type">
+            <div class="spec-type__row">
+              <span class="spec-type__sample" style="font-size: 24px; font-weight: 600; line-height: 1.4">标题 24</span>
+              <span class="spec-type__spec">24 / 34 · SemiBold</span>
+            </div>
+            <div class="spec-type__row">
+              <span class="spec-type__sample" style="font-size: 17px; font-weight: 400; line-height: 1.4">正文 17</span>
+              <span class="spec-type__spec">17 / 24 · Regular</span>
+            </div>
+          </div>
+          <p class="spec-token__note">
+            行高 1.4；数字用等宽字形，进度跳动时宽度不抖。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下份项目规范">
+      <a class="pager__link glass glass--soft glass--d35" href="city-screen.html">
+        <span class="pager__dir">上一份</span>
+        <span class="pager__title">智慧城市 · 指挥大屏</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="dashboard-bi.html">
+        <span class="pager__dir">下一份</span>
+        <span class="pager__title">洞察 · 数据看板</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+
+  </div>
+</body>
+</html>

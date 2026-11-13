@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>潜水分享 · 潜水员约潜社区 App — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="潜水分享 App 案例：一个把「去哪潜」和「跟谁一起潜」放在同一处的潜水社区——整站界面一次交付：登录、首页（热门潜点 + Recommendation）、推荐详情与留言、Community Picks 潜点榜、探索（Snorkeling / deep dive）、消息（AI assistant ＋ 好友与私聊）、个人主页；深水暗底 + 珊瑚橙 + 衬线标题，把水下实拍推到最前面。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">潜水分享 · 潜水员约潜社区 App</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 潜水分享 App（C 端 · 海外潜水社区）</span>
+      <h1 class="phead__title">潜水分享 · 潜水员约潜社区 App</h1>
+      <p class="phead__lead">
+        潜水员缺的从来不是装备，是同伴：潜点散落在海岛，船位要凑人，陌生人之间又缺一个共同的语境。这个 App 就是把「看别人的海」和「找到下一个同行的人」放进同一条动线——先逛潜点，再看别人的推荐，最后在消息里把时间与船位对上。整套界面按一屏一屏铺完，不是几张效果图。
+      </p>
+    </header>
+
+    <section class="case-meta case-meta--3" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">潜水分享 App（C 端 · 海外潜水社区）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI + 交互设计（整个 App 的界面）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/dive-hero.png" width="1648" height="948"
+          alt="潜水分享 App 主视觉：深水暗色背景上，Community Picks 潜点榜与个人主页两块界面并排展示" />
+        <figcaption class="figure__cap">
+          主视觉 · 潜点榜与个人主页同框：一半是「去哪潜」，一半是「我是谁」。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">海外潜水社区 · 潜点与同伴两条线</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这款 App 面向东南亚与美洲的休闲潜水员：一年下水三五次的人，和一年下水五十次的人混在同一个社区里。旧版把两类内容塞进同一条按时间排的信息流——新手刷到一堆深潜炫技，找不到「这个季节哪个岛能见度最好」；老手发了作品也只有陌生人点个赞，凑不齐下一次船位。</p>
+          <p>重做没有加新功能，而是把「去哪潜」和「跟谁潜」分开：首页用 Hotspots 横滑挂住潜点，Recommendation 承接单列内容流；Community Picks 把潜点做成有图文介绍的榜单；探索页按 Snorkeling / deep dive 切内容；最后落到消息——AI 助手先答天气与水温，人和人再谈船位。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">一屏一张卡，水下实拍永远在前</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>首页做成「一张大图 + 三个潜点 + 一条内容」：顶部是全屏水下实拍，一句 Let's discover the joy of diving together 直接压在画面里；Hotspots 横滑只有三张（Indonesia / Philippines / Malaysia），第一屏固定露出 2.5 张，滑动本身就是暗示「还有别的岛」。</li>
+          <li>推荐卡只留四处信息：作者行（头像 / 名字 / 地点 / 关注 / 更多）、一段视频或大图、一句正文、三个数字（1.2k 点赞 / 203 评论 / 鱼骨分享）。作者行固定在卡片顶部同一高度，不管图片多高都不跳动。</li>
+          <li>Community Picks 一行一潜点：左边竖版实拍缩略图，右边潜点名 + 一段能直接读的介绍，底部叠三颗头像表示「谁去过」、右侧一枚鱼骨分享。潜点名走衬线，介绍走无衬线两行截断——一眼就能判断要不要点进去。</li>
+          <li>探索页只做一件事：按潜水方式分内容。顶部两颗 tab（Snorkeling / deep dive），选中态用一条海蓝下划线而不是填色块；下面沿用推荐卡，去掉「更多」与关注，因为这一页是「看内容」，不是「认识人」。</li>
+          <li>个人主页用实拍开场 + 深色大圆角 sheet：照片占上半屏，sheet 从图下沿以 200px 圆角升起；头像骑在分界线上，昵称 Anne 与地点 Peru Inca Trail 压在第一行，往下是四项数据（点赞 / 评论 / 关注 / 潜数）、一条渐变金币条（My coins）与 Details 作品区。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">这个 App 是按整站交付的 · 这里挑 8 屏</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这次交付的是整个 App 的界面，不是几张效果图：登录选择、首页、推荐详情与留言、Community Picks 潜点榜、探索、消息（AI assistant ＋ 好友与私聊）、个人主页、金币与设置，连同空态与加载态一起出稿。下面 8 屏全部来自设计稿原图，是这套稿子里的一小部分。</p>
+          <p>挑这 8 屏，是因为它们各自回答一个不同的问题——第一眼看到什么（首页）、点进去之后信不信（推荐详情）、去哪潜（潜点榜）、按什么方式找内容（探索）、怎么把人约成（消息）、怎么进来（登录）、这个人是谁（个人主页）、他潜过什么（个人主页下滑）。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-home.png" width="780" height="1688" alt="潜水分享 App 首页：水下实拍顶部配像素风标语、Hotspots 三张潜点横滑、Recommendation 单列推荐卡与底部五格 tab" />
+          <figcaption class="shots__cap">首页 · 水下实拍顶住第一眼，Hotspots 露出 2.5 张，Recommendation 接着往下。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-post.png" width="780" height="1688" alt="潜水分享 App 推荐详情：顶部返回与 View Details 标题、作者卡与视频、点赞评论、下方留言列表与吸底输入框" />
+          <figcaption class="shots__cap">推荐详情 · 作者行压在图上，留言从卡片下沿接着排，输入框吸底。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-places.png" width="780" height="1688" alt="潜水分享 App Community Picks 潜点榜：一行一潜点的竖图卡片，含 Indonesia、Philippines、Malaysia、Thailand" />
+          <figcaption class="shots__cap">Community Picks · 一行一潜点：竖图 + 名称 + 两行介绍 + 去过的人。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-explore.png" width="780" height="1688" alt="潜水分享 App 探索页：Snorkeling 与 deep dive 两颗 tab，下面两条推荐卡与底部 tab" />
+          <figcaption class="shots__cap">探索 · 两颗 tab 按潜水方式切内容，这一页只留看与赞，不留关注。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-messages.png" width="780" height="1688" alt="潜水分享 App 消息页：AI assistant 卡片、My Friend 与 Friend request 两颗胶囊、Recent chats 列表" />
+          <figcaption class="shots__cap">消息 · AI 助手先答天气与水温，人才谈船位；好友与请求各一颗胶囊。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-login.png" width="780" height="1688" alt="潜水分享 App 登录选择页：整屏水下实拍，下方 Sign in with Apple、Sign up、Log in 三颗胶囊与协议小字" />
+          <figcaption class="shots__cap">登录 · 一张水下实拍做整屏，三颗胶囊定主次，协议压成一行小字。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-me.png" width="780" height="1688" alt="潜水分享 App 个人主页：实拍开场、大圆角深色 sheet、头像与昵称、四项数据胶囊、My coins 渐变条与 Details 作品" />
+          <figcaption class="shots__cap">个人主页 · 实拍开场，sheet 承担简介、四项数据与金币条，Details 接着滚。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/diveshare-me-detail.png" width="780" height="1688" alt="潜水分享 App 个人主页下滑：作品卡的作者行与大图，底部固定五格 tab" />
+          <figcaption class="shots__cap">个人主页（下滑）· 作者行压在大图上，作品按 4:5 竖图排，底部 tab 常驻。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">深水暗底 · 珊瑚橙 · 海蓝 · 薄荷绿 · 雾白</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--abyss"></span>
+          <span class="swatch swatch--ember"></span>
+          <span class="swatch swatch--lagoon"></span>
+          <span class="swatch swatch--divegreen"></span>
+          <span class="swatch swatch--froth"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>深水暗底 #0b1a22 铺满整屏，是海水；珊瑚橙 #f4623a 只给「按下去一定会发生事」的地方——底栏正中那颗加号、主按钮、点赞；海蓝 #2f9bf5 只做链接与 Sign in with Apple，绿色 #33d67d 只留给「已关注」这一种状态；文字用雾白 #eaf4f8，比纯白软一档，压在暗底上久看不刺。整个 App 只有两档字号层级在标题上：衬线 42px（页面主标题）与 28px（区块标题），正文回到系统无衬线——一屏里只用一个衬线标题做对比，剩下全靠字重分层次。首页那句 Let's discover the joy of diving together 是唯一的例外：像素风的 8-bit 字形，只用一次，用来把「这是海」这件事说清楚。形状上 sheet 用 200px 超大圆角（模拟浮出水面），卡片 20–28px，缩略图 14px，按钮全部胶囊；水下实拍永远带一层 12–18% 的暗角，文字只在实色层上出现。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">3 个「深色 + 大图」带来的取舍</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>首页既要给潜点入口，又要给内容流：hero 一占满屏，第一张推荐卡就整张看不见了。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>hero 只负责气质，不负责入口：Hotspots 用负 margin 骑在 hero 下沿，横滑卡片自带高度、不额外占位；Recommendation 从第二屏开始。这样第一屏永远固定是「大图 + 三个潜点 + 第一张卡的上沿」，滚动距离也不会因为潜点数量变化而跳动。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>深色界面 + 满屏水下实拍，文字和图很容易糊在一起：白字压在亮水面上读不出来，图一压暗又失去通透感。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>定一条硬规则：文字只落在实色层（#0b1a22 / #17242b）上，实拍永远不进文字区。照片统一压 12–18% 暗角、标题走衬线加大字号；反过来，图片区域里只允许出现压在底部的深色胶囊（潜点名）与一枚圆形播放键——凡是需要读的句子，一律退到实拍之外的卡片上。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>金币、关注数、潜数都想要一块位置，个人主页第一屏塞不下第五个数字。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把四项数据压成一条描边胶囊（点赞 / 评论 / 关注 / 潜数），横向等分、图标在左数字在右；金币不混进这条胶囊，单独做成一条渐变横幅 My coins——余额用大字，右侧一颗星星。作品区整体挪到第二屏，第一屏只留「这个人是谁、有多少人信他、他有多少金币」。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 从两屏打样铺到整个 App</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 把「海」做成封面</p>
+          <p class="flow__text">先定气质：深水暗底 + 衬线标题 + 满屏水下实拍，读起来像一本潜水日志，而不是一个社区工具。用首页与 Community Picks 两屏打样，确认「实拍在前、界面退后」这条底线，再动其他页面。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 先拆两条路，再铺全站</p>
+          <p class="flow__text">把「去哪潜」与「跟谁潜」拆成两条独立的线：潜点线是 Hotspots → Community Picks，人的线是 Recommendation → 推荐详情 → 消息 → 个人主页；两条各自铺完之后，再补登录、探索、金币与设置。鱼骨分享、关注胶囊、金币条、底部五格 tab 收成一套图标与组件规范。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付组件 Variant 与页面清单，和开发一起走查 iOS / Android：深色界面在 OLED 上的偏色、长屏水下实拍在 2x / 3x 下的裁切、底部 tab 与吸底输入框的安全区，以及长潜点名与长简介是否顶破卡片，逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">全站</span>
+          <span class="stat__label">登录 / 首页 / 推荐详情 / 潜点榜 / 探索 / 消息（AI 助手 + 私聊）/ 个人主页 / 金币 / 设置</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">深水暗色规范：衬线标题、珊瑚橙主操作、渐变金币条、鱼骨分享图标</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">3 段</span>
+          <span class="stat__label">核心动线：逛潜点 → 看推荐 → 在消息里约下一次下水</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="swim-social.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">游泳社交 · 游泳技术分享社区 App</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="photo-share.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">摄影社区 · 摄影作品分享与找搭子 App</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>

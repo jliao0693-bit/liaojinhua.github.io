@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>作品列表 · 12 的个人空间</title>
+  <meta name="description" content="12 的个人空间 · 作品列表：11 个 App 界面项目（啾啾社交、声浪音乐直播、美食社交、露营分享、游泳社交、潜水分享、摄影社区、DIY 饮品、分期借款、加密钱包、香水香方社区）、2 个 PC 端后台 / 官网项目（加密资产交易官网、融媒体媒资后台）、3 个运营 / 营销活动页（夏日趣市促销、金融活动三连、阅读充值返券）与 3 支 AI 剪辑营销视频，支持按类型与细分领域两级筛选。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="assets/images/logo-12-favicon.png" />
+
+  <!-- Inter + Noto Sans SC, same stack as the home page. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tokens + shells come from styles.css; only page-level layout lives here. -->
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Header - identical to the home page, 1440 x 72 -->
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="index.html">首页</a>
+        <a class="nav__link" href="works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="design-system.html">设计规范</a>
+        <a class="nav__link" href="about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">作品列表</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Portfolio · 19 Projects</span>
+      <h1 class="phead__title">作品列表</h1>
+      <p class="phead__lead">
+        十一个 App 界面项目，两个 PC 端后台 / 官网项目，三个运营 / 营销活动页，三支 AI 剪辑营销视频。
+        App 与后台项目从信息结构讲到组件规范，活动页把「一屏说清一个优惠」拆开讲，
+        视频项目讲「怎么让同一套模板持续出片」。先按类型、再按细分领域筛选，
+        点击任意卡片可以看到完整的设计过程与交付物。
+      </p>
+    </header>
+
+    <section class="block" aria-labelledby="list-title">
+      <h2 class="sr-only" id="list-title">全部作品</h2>
+
+      <!-- 两级筛选：一级是作品类型，二级是该类型下的细分领域。
+           默认「全部」时不出现细分（筛选区只有一行类型胶囊）；点某个类型后，才展开该类型的一组细分。
+           显隐与计数由 assets/works-filter.js 处理，卡片上的 data-cat / data-sub 即归属。 -->
+      <div class="filters filters--tree" data-filter-root>
+        <div class="filters__head">
+          <div class="filters__row" role="group" aria-label="按作品类型筛选">
+            <button type="button" class="chip chip--active glass glass--d35" data-cat-btn="all" aria-pressed="true">全部</button>
+            <button type="button" class="chip glass glass--d35" data-cat-btn="app" aria-pressed="false">App 设计</button>
+            <button type="button" class="chip glass glass--d35" data-cat-btn="pc" aria-pressed="false">PC 端设计</button>
+            <button type="button" class="chip glass glass--d35" data-cat-btn="promo" aria-pressed="false">运营 / 营销</button>
+            <button type="button" class="chip glass glass--d35" data-cat-btn="ai" aria-pressed="false">AI 剪辑 / 生成</button>
+          </div>
+          <div class="filters__aside">
+            <p class="block__note" data-filter-count aria-live="polite">共 19 个项目 · 按更新时间排序</p>
+            <a class="chip chip--tool" href="manage.html">＋ 上传 / 管理作品</a>
+            <button type="button" class="chip chip--tool chip--toggle" data-editmode-toggle aria-pressed="false">管理模式</button>
+          </div>
+        </div>
+
+        <div class="filters__group" data-group="app" role="group" aria-label="App 细分领域" hidden>
+          <p class="filters__label">App 细分领域</p>
+          <div class="filters__row">
+            <button type="button" class="chip chip--sub" data-sub="social" aria-pressed="false">社交 / 泛娱乐</button>
+            <button type="button" class="chip chip--sub" data-sub="outdoor" aria-pressed="false">户外 / 生活方式</button>
+            <button type="button" class="chip chip--sub" data-sub="sport" aria-pressed="false">运动 / 技术社区</button>
+            <button type="button" class="chip chip--sub" data-sub="finance" aria-pressed="false">金融 / 工具</button>
+          </div>
+        </div>
+
+        <div class="filters__group" data-group="pc" role="group" aria-label="PC 端细分领域" hidden>
+          <p class="filters__label">PC 端细分领域</p>
+          <div class="filters__row">
+            <button type="button" class="chip chip--sub" data-sub="saas" aria-pressed="false">后台 / 官网 / SaaS</button>
+          </div>
+        </div>
+
+        <div class="filters__group" data-group="promo" role="group" aria-label="运营 / 营销细分领域" hidden>
+          <p class="filters__label">运营 / 营销细分领域</p>
+          <div class="filters__row">
+            <button type="button" class="chip chip--sub" data-sub="ecom" aria-pressed="false">电商 / 大促</button>
+            <button type="button" class="chip chip--sub" data-sub="finance" aria-pressed="false">金融 / 投资</button>
+            <button type="button" class="chip chip--sub" data-sub="content" aria-pressed="false">内容 / 充值</button>
+          </div>
+        </div>
+
+        <div class="filters__group" data-group="ai" role="group" aria-label="AI 生成细分" hidden>
+          <p class="filters__label">AI 生成细分</p>
+          <div class="filters__row">
+            <button type="button" class="chip chip--sub" data-sub="video" aria-pressed="false">AI 剪辑视频</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="works-grid" data-works-grid>
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="social">
+          <a class="work__cover" href="works/jiujiu-app.html">
+            <img class="work__img" src="assets/images/work-jiujiu.png" width="292" height="200"
+              alt="啾啾 App 主视觉：品牌小鸟与登录页界面" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/jiujiu-app.html">啾啾 · 泛娱乐社交 App</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">泛娱乐社交</li>
+              <li class="tag">整个 App</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="social">
+          <a class="work__cover" href="works/soundlive.html">
+            <img class="work__img" src="assets/images/work-soundlive.png" width="292" height="200"
+              alt="声浪 SoundLive 主视觉：直播间与热度榜界面并排" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/soundlive.html">声浪 · 音乐直播分享 App</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">音乐直播</li>
+              <li class="tag">全站界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="social">
+          <a class="work__cover" href="works/food-social.html">
+            <img class="work__img" src="assets/images/work-foodsocial.png" width="292" height="200"
+              alt="美食社交 App 主视觉：粉彩渐变背景上的社区首页与卡片页" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/food-social.html">美食社交 App · 美食社区与同城约饭</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">美食社区</li>
+              <li class="tag">整套界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="outdoor">
+          <a class="work__cover" href="works/camp-share.html">
+            <img class="work__img" src="assets/images/work-campshare.png" width="292" height="200"
+              alt="露营分享 App 主视觉：薄荷绿背景上的社区首页与金币购买页" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/camp-share.html">露营分享 App · 户外足迹社区</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">户外足迹</li>
+              <li class="tag">整套界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="sport">
+          <a class="work__cover" href="works/swim-social.html">
+            <img class="work__img" src="assets/images/work-swim.png" width="292" height="200"
+              alt="游泳社交 App 主视觉：淡紫蓝背景上的话题广场与视频通话界面" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/swim-social.html">游泳社交 · 游泳技术分享社区</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">话题社区</li>
+              <li class="tag">全站界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="outdoor">
+          <a class="work__cover" href="works/dive-share.html">
+            <img class="work__img" src="assets/images/work-dive.png" width="292" height="200"
+              alt="潜水分享 App 主视觉：深水暗色背景上的首页与潜点榜界面" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/dive-share.html">潜水分享 · 潜水员约潜社区 App</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">潜水社区</li>
+              <li class="tag">整套界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="social">
+          <a class="work__cover" href="works/photo-share.html">
+            <img class="work__img" src="assets/images/work-photo.png" width="292" height="200"
+              alt="摄影社区 App 主视觉：暖纸白底上的首页与探索界面" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/photo-share.html">摄影社区 · 摄影作品分享与找搭子 App</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">摄影社区</li>
+              <li class="tag">整套界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="social">
+          <a class="work__cover" href="works/diy-drink.html">
+            <img class="work__img" src="assets/images/work-drink.png" width="292" height="200"
+              alt="DIY 饮品 App 主视觉：紫雾底上的首页与发布页界面" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/diy-drink.html">DIY 饮品 · 自己调一杯的饮品社区 App</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">饮品社区</li>
+              <li class="tag">整套界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="finance">
+          <a class="work__cover" href="works/loan-app.html">
+            <img class="work__img" src="assets/images/work-loan.png" width="292" height="200"
+              alt="分期借款 App 主视觉：暖纸底上的还款计划与账单界面" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/loan-app.html">分期借款 App · 西语 / 英语双语钱包</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">金融 / 分期</li>
+              <li class="tag">西 / 英双语</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="finance">
+          <a class="work__cover" href="works/coin-wallet.html">
+            <img class="work__img" src="assets/images/work-coin.png" width="292" height="200"
+              alt="加密钱包 App 主视觉：薄荷绿纸面上的持仓与首页界面，左侧标题与五行说明" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/coin-wallet.html">加密钱包 App · 行情 / 持仓 / 买卖</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">金融 / 加密</li>
+              <li class="tag">五屏界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 香水 App · 香调分析 / 香方社区（六屏英文界面 · 封面与主视觉由 tools/artwork 渲染） -->
+        <article class="work glass glass--soft glass--d60" data-cat="app" data-sub="social">
+          <a class="work__cover" href="works/fragrance-app.html">
+            <img class="work__img" src="assets/images/work-fragrance.png" width="292" height="200"
+              alt="香水 App 主视觉：雾粉白与丁香紫纸面上首页与社区流两屏叠放，左侧香水 App 标题" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/fragrance-app.html">香水 App · 香调分析 / 香方社区</a></h3>
+            <p class="work__cat">App 设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">香氛社区</li>
+              <li class="tag">六屏界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="pc" data-sub="saas">
+          <a class="work__cover" href="works/crappo-site.html">
+            <img class="work__img" src="assets/images/work-crypto.png" width="292" height="200"
+              alt="CRAPPO 加密资产交易官网主视觉：墨蓝底上的标题与首屏插画窗口" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/crappo-site.html">CRAPPO · 加密资产交易官网（PC 端）</a></h3>
+            <p class="work__cat">PC 端设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">金融 / 加密</li>
+              <li class="tag">六段单页官网</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="pc" data-sub="saas">
+          <a class="work__cover" href="works/media-portal.html">
+            <img class="work__img" src="assets/images/work-media.png" width="292" height="200"
+              alt="融媒体媒资后台主视觉：工作台与素材管理两屏叠放，左侧是标题与配色说明" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/media-portal.html">融媒体媒资后台 · 工作台 / 素材管理</a></h3>
+            <p class="work__cat">PC 端设计</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">后台 / 媒资</li>
+              <li class="tag">两屏界面</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="ai" data-sub="video">
+          <a class="work__cover" href="works/ai-edit-emotion.html">
+            <img class="work__img" src="assets/images/work-video-emotion.png"
+              width="292" height="200" alt="AI 剪辑 · 营销视频 · 金融类型 1 封面：暖色竖版播放器与剪辑时间轴" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/ai-edit-emotion.html">AI 剪辑 · 营销视频 · 金融类型 1</a></h3>
+            <p class="work__cat">AI 剪辑 / 生成</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">情绪向</li>
+              <li class="tag">竖版</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="ai" data-sub="video">
+          <a class="work__cover" href="works/ai-edit-reversal.html">
+            <img class="work__img" src="assets/images/work-video-reversal.png"
+              width="292" height="200" alt="AI 剪辑 · 营销视频 · 金融类型 2 封面：冷色竖版播放器与剪辑时间轴" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/ai-edit-reversal.html">AI 剪辑 · 营销视频 · 金融类型 2</a></h3>
+            <p class="work__cat">AI 剪辑 / 生成</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">开场钩子</li>
+              <li class="tag">竖版</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="ai" data-sub="video">
+          <a class="work__cover" href="works/ai-edit-trend.html">
+            <img class="work__img" src="assets/images/work-video-trend.png"
+              width="292" height="200" alt="AI 剪辑 · 营销视频 · 金融类型 3 封面：亮橙竖版播放器与剪辑时间轴" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/ai-edit-trend.html">AI 剪辑 · 营销视频 · 金融类型 3</a></h3>
+            <p class="work__cat">AI 剪辑 / 生成</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">快节奏</li>
+              <li class="tag">竖版</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="promo" data-sub="ecom">
+          <a class="work__cover" href="works/summer-fair.html">
+            <img class="work__img" src="assets/images/work-summer-fair.png"
+              width="292" height="200" alt="夏日趣市促销活动页封面：活动长页、三档满减价签纸与天蓝标题" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/summer-fair.html">夏日趣市 · 电商促销页</a></h3>
+            <p class="work__cat">运营 / 营销</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">满减三档</li>
+              <li class="tag">单页 H5</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="promo" data-sub="finance">
+          <a class="work__cover" href="works/finance-campaign.html">
+            <img class="work__img" src="assets/images/work-finance-campaign.png"
+              width="292" height="200" alt="金融活动页封面：黑金底色上三张投放长页与香槟金标题" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/finance-campaign.html">金融活动页 · 三产品投放</a></h3>
+            <p class="work__cat">运营 / 营销</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">3 张投放稿</li>
+              <li class="tag">黑金 / 品牌蓝</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work glass glass--soft glass--d60" data-cat="promo" data-sub="content">
+          <a class="work__cover" href="works/reading-campaign.html">
+            <img class="work__img" src="assets/images/work-reading-campaign.png"
+              width="292" height="200" alt="阅读 App 充值返券长页封面：玫红长页与 90% OFF 券标" />
+          </a>
+          <div class="work__meta">
+            <h3 class="work__title"><a href="works/reading-campaign.html">阅读 App · 充值返券长页</a></h3>
+            <p class="work__cat">运营 / 营销</p>
+            <ul class="work__tags" aria-label="项目标签">
+              <li class="tag">任务返券</li>
+              <li class="tag">2077px 长页</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="works-empty" data-works-empty hidden>
+        这个筛选下还没有公开项目 · <a href="about.html">联系我</a> 可以拿到完整作品集
+      </p>
+
+      <p class="works-foot">以上 19 个项目均可点击进入详情页 · 需要完整作品集请<a href="about.html">联系我</a></p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="works.html">作品</a>
+          <a class="footer__link" href="design-system.html">设计规范</a>
+          <a class="footer__link" href="about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+
+  <!-- 作品数据层：出厂种子 -> 本地改动叠加 -> 两级筛选（顺序不能换） -->
+  <script src="assets/works-index.js" defer></script>
+  <script src="assets/works-store.js" defer></script>
+  <script src="assets/works-overlay.js" defer></script>
+  <script src="assets/works-filter.js?v=3" defer></script>
+</body>
+</html>
+

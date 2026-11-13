@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>美食社交 App · 美食社区与同城约饭 — 作品详情 · 12 的个人空间</title>
+  <meta name="description" content="美食社交 App 案例：把「看别人今天吃了什么」和「遇到同样爱吃的人」放进口袋，整套交付登录、社区 Feed、食材筛选、卡片滑选、发布、他人主页、动态详情、金币订阅、个人中心、资料填写共 11 屏界面，含一套粉彩渐变 + 大圆角的组件规范。" />
+  <meta name="theme-color" content="#F5F7FF" />
+  <link rel="icon" type="image/png" href="../assets/images/logo-12-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/pages.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a class="brand" href="../index.html" aria-label="12 的个人空间 · 首页">
+        <img class="brand__mark" src="../assets/images/logo-12.png" width="32" height="32" alt="" />
+        <span class="brand__text">12 的个人空间</span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__link" href="../index.html">首页</a>
+        <a class="nav__link" href="../works.html" aria-current="page">作品</a>
+        <a class="nav__link" href="../design-system.html">设计规范</a>
+        <a class="nav__link" href="../about.html">关于我</a>
+      </nav>
+    </header>
+
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="../index.html">首页</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <a href="../works.html">作品列表</a>
+      <span class="crumbs__sep" aria-hidden="true">/</span>
+      <span class="crumbs__here">美食社交 App · 美食社区与同城约饭</span>
+    </nav>
+
+    <header class="phead">
+      <span class="phead__eyebrow glass glass--soft glass--d35">Case Study · 美食社交 App（C 端 · 海外市场）</span>
+      <h1 class="phead__title">美食社交 App · 美食社区与同城约饭</h1>
+      <p class="phead__lead">
+        这款 App 把「吃饭」当成社交的由头：有人发今天做的菜，有人刷别人的餐桌顺便认识人，也有人只想找附近今晚能一起吃饭的伴。旧版只有一个信息流，两种意图挤在同一条流里——想安静看图的人被推荐卡片打断，想找人的人刷很久也碰不到一个能聊的。这次重做先拆模式，再把照片摆到文字前面，最后用金币把喜欢、送礼与订阅串成一条付费路径。视觉取美食本身的颜色：玫瑰粉做主操作，淡紫与柠檬黄做氛围，墨色只留给文字。
+      </p>
+    </header>
+
+    <section class="case-meta" aria-label="项目信息">
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">客户</span>
+        <span class="meta-item__v">美食社交 App（海外 · C 端）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">角色</span>
+        <span class="meta-item__v">UI + 交互设计（整套界面）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">周期</span>
+        <span class="meta-item__v">18 周（2025.07 - 2025.11）</span>
+      </div>
+      <div class="meta-item glass glass--soft glass--d35">
+        <span class="meta-item__k">工具</span>
+        <span class="meta-item__v">Figma</span>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="visual-title">
+      <h2 class="sr-only" id="visual-title">主视觉</h2>
+      <figure class="figure">
+        <img class="figure__img" src="../assets/images/foodsocial-hero.png" width="1648" height="948"
+          alt="美食社交 App 主视觉：粉彩渐变背景上，社区首页与他人主页两块界面并排展示" />
+        <figcaption class="figure__cap">
+          主视觉 · 双列社区首页与个人主页同框：一半是别人的餐桌，一半是这个人。
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="block" aria-labelledby="bg-title">
+      <div class="block__head">
+        <h2 class="block__title" id="bg-title">项目背景</h2>
+        <p class="block__note">海外市场 · 社区 + 交友</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>这款 App 面向海外年轻用户，内容与人都由「吃」这件事带出来：有人在社区里发今天做的菜，有人刷别人的餐桌顺便认识人，也有人只想找附近今晚能一起吃饭的伴。旧版只给了一个信息流，两种意图挤在同一条流里——想安静看图的人被推荐卡片打断，想找人的又要刷很久才碰得到一个能聊的。</p>
+          <p>重做时先把两条线拆开：Square 顶部留给「Feed / look for」两个模式，Feed 只放内容，look for 才出现食材筛选与人列表。剩下的问题就变成两个很具体的问题——照片怎么排才不像外卖菜单，金币怎么花才让人明白。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="strategy-title">
+      <div class="block__head">
+        <h2 class="block__title" id="strategy-title">设计策略</h2>
+        <p class="block__note">两条线，一套骨架</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <ul class="bullets">
+          <li>Square 顶部用一枚胶囊在 Feed 与 look for 之间切换：Feed 是双列瀑布流，look for 才展开「Looking for」食材筛选（主食 / 蔬菜 / 水果 / 肉 / 海鲜 / 蛋奶），筛完直接出人列表。</li>
+          <li>照片优先：双列卡片的所有文字都压在底部渐变压条上（昵称 + 认证 + 金币），礼物角标固定右上角，照片主体一个贴纸都不压。</li>
+          <li>卡片滑选只留四颗按钮：跳过、超级喜欢、喜欢、送礼。位置与颜色写死，滑到谁都长一样，不用重新找按钮。</li>
+          <li>金币贯穿三个场景：收礼、充值、订阅。套餐做成「金币数 + 价格」两段式整卡，选中态整张卡翻成玫红，价格随卡片一起变色。</li>
+          <li>发布不让人空手开始：Hot template 先给一排排好版的模板（带 Super Star 标签与热度值），选一张再换照片即可。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="screens-title">
+      <div class="block__head">
+        <h2 class="block__title" id="screens-title">部分界面截图</h2>
+        <p class="block__note">整套 11 屏里的 5 屏 · 社区首页 / 食材筛选 / 卡片滑选 / 他人主页 / 金币订阅</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="prose">
+          <p>下面 5 屏只是这批稿子里的一部分。实际交付覆盖登录选择、资料填写、社区首页、食材筛选、卡片滑选、发布（热模板）、他人主页、动态详情、金币订阅、个人中心等 11 屏，含空态与加载态。</p>
+          <p>挑这 5 屏，是因为它们各自回答一个不同的问题——内容怎么排（社区首页）、人怎么被筛出来（筛选）、一次只面对一个人时怎么操作（卡片滑选）、聊之前先看什么（他人主页）、钱花在哪（金币订阅）。</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/foodsocial-home.png" width="780" height="1688" alt="美食社交 App 社区首页：双列美食照片瀑布流，昵称与金币压在每个卡片底部" />
+          <figcaption class="shots__cap">社区首页 · 双列瀑布流，昵称与金币压在图底，礼物角标固定右上。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/foodsocial-filter.png" width="780" height="1688" alt="美食社交 App 筛选页：Feed 与 look for 胶囊切换，下方是食材勾选与用户列表" />
+          <figcaption class="shots__cap">食材筛选 · 勾「蔬菜 + 水果」，下面直接换成愿意吃这些的人。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/foodsocial-card.png" width="780" height="1688" alt="美食社交 App 卡片滑选页：全屏照片配底部资料条与四颗圆形操作按钮" />
+          <figcaption class="shots__cap">卡片滑选 · 一次一个人，四颗按钮位置写死，滑到谁都一样。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/foodsocial-other.png" width="780" height="1688" alt="美食社交 App 他人主页：封面照片、头像资料卡与按日期排列的动态列表" />
+          <figcaption class="shots__cap">他人主页 · 已关注可聊天，动态按日期排成时间线。</figcaption>
+        </figure>
+        <figure class="shots__item">
+          <img class="shots__img" src="../assets/images/foodsocial-coins.png" width="780" height="1688" alt="美食社交 App 金币订阅页：九宫格金币套餐，选中一项整卡变玫红，底部是 Upgrade 按钮" />
+          <figcaption class="shots__cap">金币订阅 · 套餐整卡化，选中态整张翻成玫红，价格跟着变色。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="lang-title">
+      <div class="block__head">
+        <h2 class="block__title" id="lang-title">视觉语言</h2>
+        <p class="block__note">玫瑰粉 · 淡紫 · 柠檬黄 · 墨</p>
+      </div>
+
+      <div class="panel glass glass--soft glass--d60">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch swatch--rose"></span>
+          <span class="swatch swatch--violet"></span>
+          <span class="swatch swatch--gold"></span>
+          <span class="swatch swatch--ink"></span>
+        </div>
+        <div class="prose" style="margin-top: 18px">
+          <p>主色玫瑰粉 #ff4d8d 只给「一定会被点的东西」：喜欢、送礼、Upgrade、主按钮；淡紫 #a78bfa 与天蓝是背景里的光，负责把人像与食物衬出来；柠檬黄 #ffcc4d 严格留给金币、皇冠与会员横幅。底色不走纯白，用冷调灰白压一层粉彩渐变，满屏食物照片才不刺眼。形状上统一 20–28px 大圆角 + 一层极浅的投影，按钮全部是胶囊；拉丁文案与数字用圆润的几何字形，中文回到系统黑体。字号层级只留四档：标题、卡片名、正文、辅助，靠权重区分而不是靠字号堆叠。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="problems-title">
+      <div class="block__head">
+        <h2 class="block__title" id="problems-title">遇到的问题与解决</h2>
+        <p class="block__note">5 个社区 + 交友混在一起的权衡</p>
+      </div>
+
+      <div class="qa">
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>社区内容和交友卡片放在同一条流里，刷的人不知道自己是在刷内容还是在挑人，两种需求都不被满足。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把「模式」提到最上层：Square 顶部一枚 Feed / look for 胶囊，切换时下半屏整体换组件——Feed 出双列内容卡，look for 出食材筛选 + 人列表；两个模式的卡片、筛选与空态各自独立，宁可多写一套也不复用。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>双列瀑布流要同时放照片、昵称、认证、金币和礼物角标，字一压上去就把菜挡住。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>文字只占三个固定锚点：底部 72px 的黑色渐变压条放昵称 + 认证 + 金币，礼物角标固定右上角；点赞与浏览数不进卡片，挪到详情页。照片主体区域一条文字都不放。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>金币既是送礼货币又是订阅货币，用户不知道充了能干嘛；充值页一屏九张套餐卡还长得一模一样。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>先讲用途再卖套餐：顶部一句话「买金币送给你喜欢的人」，套餐卡做成「金币数 + 价格」两段式整卡，选中态整卡翻成玫红并加顶部缺口造型；默认选中 600 那一档，其余按价格升序排。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>发布门槛高——用户打开发布页，面对空白编辑器和一句「分享你的生活」，不知道发什么。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>把 Hot template 放到发布页最上面：一排已经排好版的模板，带 Super Star 标签与真实热度值，选中即套用，用户只需要换照片。「发这个不会没人看」这件事因此有了依据。</p>
+        </div>
+        <div class="qa__card glass glass--soft glass--d35">
+          <p class="qa__row qa__row--q"><span class="qa__k">问题</span>「look for」里的人卡只能左右滑，划走就再也找不回来，用户越划越不敢决定。</p>
+          <p class="qa__row qa__row--a"><span class="qa__k">解决</span>卡片上只留三个决策信息：照片、昵称 + 认证、一行兴趣标签；右上角补一条剩余人数（还剩 12 位），并在左滑旁边放一颗「先存下」——把二选一改成三选一，手滑的代价从「永久失去」变成「稍后再聊」。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="process-title">
+      <div class="block__head">
+        <h2 class="block__title" id="process-title">从设计到交付</h2>
+        <p class="block__note">3 步 · 定粉彩、拆模式、对双端</p>
+      </div>
+
+      <ol class="flow">
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">1 · 概念 · 把「吃」变成社交由头</p>
+          <p class="flow__text">先定气质：粉彩渐变 + 大圆角 + 满屏食物照片，读起来像一本食谱而不是一个交友软件。再用登录页与社区首页两屏打样，确认「照片优先、文字让位」这条底线。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">2 · 制作 · 先拆模式，再铺全站</p>
+          <p class="flow__text">把 Square 的 Feed / look for 各自做成一屏模板，再往两边铺：登录选择、资料填写、社区首页、卡片滑选、发布、他人主页、动态详情、金币订阅、个人中心；金币、认证与皇冠收成一套图标规范。</p>
+        </li>
+        <li class="flow__item">
+          <span class="flow__dot" aria-hidden="true"></span>
+          <p class="flow__title">3 · 交付 · 组件、标注与走查</p>
+          <p class="flow__text">交付组件 Variant 与页面清单，和开发一起走查 iOS / Android：瀑布流图片在 2x / 3x 下的裁切、粉彩渐变在长屏上的色带、长昵称与长简介是否顶破底部压条，逐项确认。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block block--last" aria-labelledby="result-title">
+      <div class="block__head">
+        <h2 class="block__title" id="result-title">交付内容</h2>
+        <p class="block__note">这次做了什么</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">全站</span>
+          <span class="stat__label">登录 / 社区 / 筛选 / 卡片滑选 / 发布 / 他人主页 / 动态详情 / 金币订阅 / 个人中心 / 资料填写</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">1 套</span>
+          <span class="stat__label">粉彩渐变 + 大圆角规范：胶囊按钮、压条卡、金币与认证徽章</span>
+        </div>
+        <div class="stat glass glass--soft glass--d35">
+          <span class="stat__value">4 段</span>
+          <span class="stat__label">核心动线：刷内容 → 筛人 → 送礼 → 升级会员</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="上下个项目">
+      <a class="pager__link glass glass--soft glass--d35" href="soundlive.html">
+        <span class="pager__dir">上一个</span>
+        <span class="pager__title">声浪 · 音乐直播分享 App</span>
+      </a>
+      <a class="pager__link pager__link--next glass glass--soft glass--d35" href="camp-share.html">
+        <span class="pager__dir">下一个</span>
+        <span class="pager__title">露营分享 · 户外足迹社区 App</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <p class="footer__brand">12 的个人空间</p>
+        <nav class="footer__links" aria-label="页脚导航">
+          <a class="footer__link" href="../works.html">作品</a>
+          <a class="footer__link" href="../design-system.html">设计规范</a>
+          <a class="footer__link" href="../about.html">关于我</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <p class="footer__bottom">2025 · 12 的个人空间 · 用设计点亮体验。</p>
+    </footer>
+  </div>
+</body>
+</html>
